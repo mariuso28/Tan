@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+		    
+ 			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+ 			http://www.springframework.org/schema/tx
+        	    http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+		<context:annotation-config />
+		<bean class="org.rp.config.SecurityConfiguration" />
+		<bean class="org.rp.config.service.CustomUserDetailsService" />
+		<bean class="org.rp.config.service.CustomAuthenticationSuccessHandler" />
+		<bean class="org.rp.config.service.CustomAuthenticationFailureHandler" />
+
+		<import resource="rp-mail.xml"/>
+
+		<import resource="rp-persistence.xml"/>
+		
+		<bean id="gzAccountMgr"
+			class="org.rp.account.GzAccountMgr">
+		</bean>
+
+		<bean id="gzServices"
+			class="org.rp.services.GzServices" init-method="initServices" >
+			<property name="transactionManager" ref="transactionManager"/>
+			<property name="gzProperties" value="/home/pmk/Tan/rp.properties"/>
+			<property name="mail" ref="mail" />
+			<property name="gzAccountMgr" ref="gzAccountMgr" />
+			<property name="gzHome" ref="gzHome" />			<!-- do last -->
+		</bean>
+
+		<tx:annotation-driven transaction-manager="transactionManager"/>
+		<bean id="transactionManager" 
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/></bean>
+		
+
+</beans>

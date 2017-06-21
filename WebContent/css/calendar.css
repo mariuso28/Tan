@@ -1,0 +1,169 @@
+	.primoris-cl-header {
+		color: white;
+		font-family: Verdana;
+		font-size: 8pt;
+		background-image: url(primoris/Header.jpg);
+	}
+	.primoris-cl-on-month {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.primoris-cl-on-month-lit {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: #99CDFF;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.primoris-cl-off-month {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: gray;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.primoris-cl-off-month-lit {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: silver;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.primoris-cl-body {
+		border: 1px solid black;
+	}
+	.primoris-cl-year {
+		border: 1px solid black;
+		background-color:white;
+		border-collapse: collapse;
+		font-size: 7pt;
+		font-family: Verdana;
+		text-align: center;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.primoris-cl-year-lit {
+		background-color: silver;
+		border: 1px solid black;
+		border-collapse: collapse;
+		font-size: 7pt;
+		font-family: Verdana;
+		text-align: center;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.primoris-cl-day {
+		text-align: center;
+		font-size: 7pt;
+		font-family: Verdana;
+		padding-left: 7px;
+		padding-right: 7px;
+		background-image: url(primoris/days.jpg);
+	}
+	.primoris-cl-days 
+	{
+		background-image: url(primoris/days.jpg);
+	}
+
+	.basic-cl-header {
+		color: white;
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: blue;
+	}
+	.basic-cl-on-month {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: transparent;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.basic-cl-on-month-lit {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: blue;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.basic-cl-off-month {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: gray;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.basic-cl-off-month-lit {
+		font-family: Verdana;
+		font-size: 8pt;
+		background-color: silver;
+		color: white;
+		text-align: center;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+	}
+	.basic-cl-body {
+		border: 1px solid black;
+	}
+	.basic-cl-year {
+		border: 1px solid black;
+		background-color:white;
+		border-collapse: collapse;
+		border-spacing: 0px;
+		font-size: 7pt;
+		font-family: Verdana;
+		text-align: center;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.basic-cl-year-lit {
+		background-color: silver;
+		border: 1px solid black;
+		border-collapse: collapse;
+		font-size: 7pt;
+		font-family: Verdana;
+		text-align: center;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.basic-cl-day {
+		text-align: center;
+		font-size: 7pt;
+		font-family: Verdana;
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+
+
+	/* Not related to the calendar functioning. The following style rules
+	are purely for the supporting DateClick documentation */
+	.links 
+	{
+		color: #0082D6;
+		font-family: Verdana;
+		font-size: 8pt;
+	}
+	.subdued 
+	{
+		color: #CDCDCD;
+	}
+	.copyright 
+	{
+		color: Gray;
+		font-family: Verdana;
+		font-size: 7pt;
+	}

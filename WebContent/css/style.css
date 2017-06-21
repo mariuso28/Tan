@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+body {
+	font-family: 'Roboto Condensed';
+	font-size: 12px;
+	background-color: #333;
+}
+
+a {
+	color: inherit;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+input[type=submit] {
+		width: 100px;
+		height: 28px;
+		border-radius: 25px;
+		margin-right: 10px;
+		background-color: #00BB00;
+		color: #fff;
+		font-family: 'Roboto Condensed';
+		font-weight: 700;
+		line-height: 3px;
+		text-shadow: 1px 1px 0px #666;
+}
+
+input[type=text] {
+		background-color: #fff;
+		color: #555;
+		font-family: 'Roboto Condensed';
+		font-weight: 700;
+		font-size: 16px;
+		padding-left: 3px;
+}
+
+select {
+		width: 100px;
+		height: 28px;
+		float: left;
+		border-radius: 5px;
+		margin-right: 10px;
+		background-color: #ffeeaa;
+		color: #555;
+		font-family: 'Roboto Condensed';
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 3px;
+}
+
+.main {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	margin-top: 10px;
+}
+
+.headerPic {
+	float: left;
+	padding-right: 20px;
+	margin-bottom: 10px;
+}
+
+.headerWelcome {
+	float: left;
+}
+
+.navHeading {
+	float: left;
+	height: 30px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.sectionHeading {
+	float: left;
+	width: 100%;
+	background-color: #aaa;
+	color: #333;
+	font-size: 16px;
+}
+
+
+.sectionBody {
+	float: left;
+	width: 100%;
+	background-color: #fff;
+	color: #333;
+	font-size: 16px;
+}
+
+.lozengeButton {
+	float: left;
+	height: 25px;
+	width: 150px;
+	margin-top: 0px;
+	margin-right: 10px;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 25px;
+	text-align: center;
+	color: #FFF;
+	background-color: #3366ff;
+	border-radius: 12.5px;
+	border: 0px solid #999;
+	box-shadow: 1px 1px 2px #666;
+	text-shadow: 1px 1px 0px #666;
+}
