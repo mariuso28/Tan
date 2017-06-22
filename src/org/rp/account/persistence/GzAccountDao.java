@@ -41,6 +41,8 @@ public interface GzAccountDao {
 	public double getHigestDownstreamRoyalty(char type, String code) throws GzPersistenceException;
 	public Map<UUID, Double> getOutstandingInvoiceAmounts(GzBaseUser user) throws GzPersistenceException;
 	public double getDownStreamAccountBalance(GzBaseUser user, GzBaseUser parent) throws GzPersistenceException;
+	public void clearTurnoversAndDistributions() throws GzPersistenceException;
+	public void updateTransactionInvoiceIds(UUID transactionMatchId) throws GzPersistenceException;
 	
 	
 }

@@ -1939,3 +1939,1288 @@ Kind regards - RedPacket Gaming Support Team.
 15:33:02,357  INFO http-bio-8080-exec-1 CsvImporter:88 - %%% Importing transactions %%%
 15:33:02,357  INFO http-bio-8080-exec-1 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7599.0, rollingBet=804.0, fees=94.2]
 15:33:02,359  INFO http-bio-8080-exec-1 GzAccountMgr:32 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@2bd438cf source: Tue Jun 20 00:00:00 MYT 2017
+06:35:17,364  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+06:35:26,058  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+06:35:26,592  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+06:35:26,593  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+06:35:26,686  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:35:26,687  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+06:35:26,687  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:35:40,782  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+06:35:48,360  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : s1@rpco.com
+06:35:48,362  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : s1@rpco.com found with role :ROLE_SMA
+06:35:48,362  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : s1@rpco.com with authorities :[ROLE_SMA]
+06:35:48,454  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:35:48,454  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : s1@rpco.com authorities : [ROLE_SMA]
+06:35:48,455  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:36:14,901  INFO http-bio-8080-exec-2 GzAccountValues:30 - Creating account from : org.rp.web.account.GzAccountValues@1da78414
+06:36:14,902  INFO http-bio-8080-exec-2 GzAccountDaoImpl:638 - SELECT MAX(bankerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0'
+06:36:14,903  INFO http-bio-8080-exec-2 GzAccountDaoImpl:638 - SELECT MAX(playerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0'
+06:36:18,631  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+06:36:29,581  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : m1@rpco.com
+06:36:29,583  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : m1@rpco.com found with role :ROLE_MA
+06:36:29,583  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : m1@rpco.com with authorities :[ROLE_MA]
+06:36:29,672  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:36:29,672  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : m1@rpco.com authorities : [ROLE_MA]
+06:36:29,673  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:36:49,595  INFO http-bio-8080-exec-8 GzAccountValues:30 - Creating account from : org.rp.web.account.GzAccountValues@3b7a9a3e
+06:36:49,596  INFO http-bio-8080-exec-8 GzAccountDaoImpl:638 - SELECT MAX(bankerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0a0'
+06:36:49,599  INFO http-bio-8080-exec-8 GzAccountDaoImpl:638 - SELECT MAX(playerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0a0'
+06:36:53,393  INFO http-bio-8080-exec-8 GzLogonController:47 - Received request to signin XXX
+06:37:05,732  INFO http-bio-8080-exec-10 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+06:37:05,737  INFO http-bio-8080-exec-10 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+06:37:05,738  INFO http-bio-8080-exec-10 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+06:37:05,832  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:37:05,832  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+06:37:05,832  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:37:46,073  INFO http-bio-8080-exec-3 CsvImportMgr:91 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+06:37:46,078  INFO http-bio-8080-exec-3 CsvImportMgr:96 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+06:37:46,084  INFO http-bio-8080-exec-3 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:37:46,084  INFO http-bio-8080-exec-3 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:37:46,085  INFO http-bio-8080-exec-3 CsvImporter:81 - Read 5 Recs
+06:37:46,085  INFO http-bio-8080-exec-3 CsvImporter:88 - %%% Importing transactions %%%
+06:37:46,086  INFO http-bio-8080-exec-3 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:37:46,088  INFO http-bio-8080-exec-3 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:37:46,089  INFO http-bio-8080-exec-3 CsvImporter:130 - Creating player : koko@rpco.com for : a1@rpco.com
+06:37:46,179  INFO http-bio-8080-exec-3 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+06:37:46,180  INFO http-bio-8080-exec-3 GzBaseUserDaoImpl:142 - Got next leaf instance : 0
+06:37:46,182  INFO http-bio-8080-exec-3 GzBaseUserDaoImpl:154 - Using leaf instance : 1
+06:37:46,185  INFO http-bio-8080-exec-3 GzAccountMgr:32 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@163cc74e source: Thu Jun 22 00:00:00 MYT 2017
+06:37:50,482  INFO http-bio-8080-exec-3 GzAccountDaoImpl:555 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+06:39:33,295  INFO http-bio-8080-exec-7 CsvImportMgr:91 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+06:39:33,303  INFO http-bio-8080-exec-7 CsvImportMgr:96 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+06:39:33,304  INFO http-bio-8080-exec-7 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:39:33,306  INFO http-bio-8080-exec-7 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:39:33,307  INFO http-bio-8080-exec-7 CsvImporter:81 - Read 5 Recs
+06:39:33,307  INFO http-bio-8080-exec-7 CsvImporter:88 - %%% Importing transactions %%%
+06:39:33,308  INFO http-bio-8080-exec-7 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:39:33,310  INFO http-bio-8080-exec-7 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:39:33,314  INFO http-bio-8080-exec-7 GzAccountMgr:32 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@7bebf35 source: Thu Jun 22 00:00:00 MYT 2017
+06:53:41,995  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+06:53:43,959  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+06:53:44,430  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+06:53:44,430  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+06:53:44,512  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:53:44,512  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+06:53:44,512  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:56:42,302  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+06:56:43,919  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+06:56:44,293  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+06:56:44,294  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+06:56:44,375  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:56:44,376  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+06:56:44,377  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:57:46,152  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+06:57:47,795  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+06:57:48,229  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+06:57:48,229  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+06:57:48,315  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+06:57:48,315  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+06:57:48,315  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+06:57:52,923  INFO http-bio-8080-exec-6 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+06:57:52,929  INFO http-bio-8080-exec-6 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+06:57:52,934  INFO http-bio-8080-exec-6 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:57:52,935  INFO http-bio-8080-exec-6 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:57:52,935  INFO http-bio-8080-exec-6 CsvImporter:81 - Read 5 Recs
+06:57:52,935  INFO http-bio-8080-exec-6 CsvImporter:88 - %%% Importing transactions %%%
+06:57:52,936  INFO http-bio-8080-exec-6 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+06:57:52,937  INFO http-bio-8080-exec-6 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+06:57:52,940  INFO http-bio-8080-exec-6 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@60f0b975 source: Thu Jun 22 00:00:00 MYT 2017
+06:57:52,961  INFO http-bio-8080-exec-6 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@1f59e751 source: Thu Jun 22 00:00:00 MYT 2017
+07:01:27,320  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+07:01:28,920  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+07:01:29,391  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+07:01:29,391  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+07:01:29,475  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+07:01:29,475  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+07:01:29,475  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+07:04:46,878  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+07:04:48,522  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+07:04:48,528  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+07:04:48,529  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+07:04:48,623  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+07:04:48,624  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+07:04:48,624  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+07:04:51,414  INFO http-bio-8080-exec-6 GzAccountDaoImpl:555 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+07:08:42,925  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+07:08:46,644  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+07:08:47,118  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+07:08:47,119  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+07:08:47,201  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+07:08:47,202  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+07:08:47,202  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+07:08:52,948  INFO http-bio-8080-exec-9 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+07:08:52,958  INFO http-bio-8080-exec-9 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+07:08:52,965  INFO http-bio-8080-exec-9 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:08:52,965  INFO http-bio-8080-exec-9 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:08:52,966  INFO http-bio-8080-exec-9 CsvImporter:81 - Read 5 Recs
+07:08:52,966  INFO http-bio-8080-exec-9 CsvImporter:88 - %%% Importing transactions %%%
+07:08:52,966  INFO http-bio-8080-exec-9 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:08:52,968  INFO http-bio-8080-exec-9 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:08:52,970  INFO http-bio-8080-exec-9 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@611d11ca source: Thu Jun 22 00:00:00 MYT 2017
+07:08:52,979  INFO http-bio-8080-exec-9 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@56c503b4 source: Thu Jun 22 00:00:00 MYT 2017
+07:10:08,806  INFO http-bio-8080-exec-9 GzAccountValues:30 - Creating account from : org.rp.web.account.GzAccountValues@49716996
+07:10:15,790  INFO http-bio-8080-exec-2 GzAccountValues:30 - Creating account from : org.rp.web.account.GzAccountValues@77215cca
+07:10:37,802  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+07:10:39,620  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+07:10:39,624  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+07:10:39,625  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+07:10:39,726  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+07:10:39,726  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+07:10:39,727  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+07:10:51,155  INFO http-bio-8080-exec-4 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+07:10:51,161  INFO http-bio-8080-exec-4 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+07:10:51,161  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:10:51,162  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:10:51,162  INFO http-bio-8080-exec-4 CsvImporter:81 - Read 5 Recs
+07:10:51,162  INFO http-bio-8080-exec-4 CsvImporter:88 - %%% Importing transactions %%%
+07:10:51,163  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:10:51,164  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:10:51,165  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@7975fdb0 source: Thu Jun 22 00:00:00 MYT 2017
+07:10:51,170  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@675360d source: Thu Jun 22 00:00:00 MYT 2017
+07:11:14,816  INFO http-bio-8080-exec-3 GzAccountDaoImpl:555 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+07:11:38,256  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+07:11:39,684  INFO http-bio-8080-exec-5 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+07:11:40,090  INFO http-bio-8080-exec-5 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+07:11:40,092  INFO http-bio-8080-exec-5 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+07:11:40,171  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+07:11:40,171  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+07:11:40,171  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+07:11:54,596  INFO http-bio-8080-exec-5 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+07:11:54,600  INFO http-bio-8080-exec-5 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+07:11:54,605  INFO http-bio-8080-exec-5 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:11:54,606  INFO http-bio-8080-exec-5 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:11:54,606  INFO http-bio-8080-exec-5 CsvImporter:81 - Read 5 Recs
+07:11:54,606  INFO http-bio-8080-exec-5 CsvImporter:88 - %%% Importing transactions %%%
+07:11:54,607  INFO http-bio-8080-exec-5 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+07:11:54,608  INFO http-bio-8080-exec-5 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+07:11:54,610  INFO http-bio-8080-exec-5 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@156ca94c source: Thu Jun 22 00:00:00 MYT 2017
+07:11:54,622  INFO http-bio-8080-exec-5 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@5ef36a47 source: Thu Jun 22 00:00:00 MYT 2017
+07:11:57,369  INFO http-bio-8080-exec-4 GzAccountDaoImpl:555 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+08:03:15,556  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+08:03:17,291  INFO http-bio-8080-exec-10 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:03:17,784  INFO http-bio-8080-exec-10 CustomAuthenticationFailureHandler:30 - Failure on : c1@rpco.com
+08:03:17,784  INFO http-bio-8080-exec-10 CustomAuthenticationFailureHandler:34 - Forwarding to : /rp/logon/signin?error&message=Authentication%20Error
+08:03:17,859  INFO http-bio-8080-exec-10 GzLogonController:72 - Received request to signin - error
+08:05:09,784  INFO http-bio-8080-exec-2 GzLogonController:72 - Received request to signin - error
+08:05:11,813  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:05:12,298  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:05:12,301  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:05:12,391  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:05:12,391  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:05:12,391  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:05:17,364 ERROR http-bio-8080-exec-7 GzAccountDaoImpl:692 - Could not execute : UPDATE account SET distributeplayer=0,distributebanker=0,totalplayer=0,totalbanker=0,transactionMatchId=? - PreparedStatementCallback; bad SQL grammar [UPDATE account SET distributeplayer=0,distributebanker=0,totalplayer=0,totalbanker=0,transactionMatchId=?]; nested exception is org.postgresql.util.PSQLException: ERROR: column "transactionmatchid" of relation "account" does not exist
+  Position: 86
+08:05:17,366 ERROR http-bio-8080-exec-7 GzAgentController:373 - org.rp.home.persistence.GzPersistenceException: UPDATE account SET distributeplayer=0,distributebanker=0,totalplayer=0,totalbanker=0,transactionMatchId=? - PreparedStatementCallback; bad SQL grammar [UPDATE account SET distributeplayer=0,distributebanker=0,totalplayer=0,totalbanker=0,transactionMatchId=?]; nested exception is org.postgresql.util.PSQLException: ERROR: column "transactionmatchid" of relation "account" does not exist
+  Position: 86
+	at org.rp.account.persistence.GzAccountDaoImpl.clearTurnoversAndDistributions(GzAccountDaoImpl.java:693)
+	at org.rp.home.persistence.GzHomeDaoImpl.clearTurnoversAndDistributions(GzHomeDaoImpl.java:315)
+	at org.rp.web.agent.GzAgentController.clearAllTurnovers(GzAgentController.java:370)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:832)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:743)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:895)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.rp.config.CrossScriptingFilter.doFilter(CrossScriptingFilter.java:25)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:112)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:106)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.multipart.support.MultipartFilter.doFilterInternal(MultipartFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+08:06:59,668  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+08:07:01,533  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:07:01,936  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:07:01,936  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:07:02,021  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:07:02,022  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:07:02,022  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:08:53,315  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+08:08:55,106  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:08:55,489  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:08:55,489  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:08:55,573  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:08:55,573  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:08:55,573  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:09:27,098  INFO http-bio-8080-exec-1 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+08:09:27,109  INFO http-bio-8080-exec-1 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+08:09:27,114  INFO http-bio-8080-exec-1 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:09:27,114  INFO http-bio-8080-exec-1 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:09:27,114  INFO http-bio-8080-exec-1 CsvImporter:81 - Read 5 Recs
+08:09:27,115  INFO http-bio-8080-exec-1 CsvImporter:88 - %%% Importing transactions %%%
+08:09:27,115  INFO http-bio-8080-exec-1 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:09:27,116  INFO http-bio-8080-exec-1 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:09:27,119  INFO http-bio-8080-exec-1 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@41dc8b37 source: Thu Jun 22 00:00:00 MYT 2017
+08:09:27,168 ERROR http-bio-8080-exec-1 GzAccountDaoImpl:59 - Could not execute : PreparedStatementCallback; bad SQL grammar [INSERT INTO transaction (payer,payee,type,amount,invoiceid,timestamp,source,matchid) VALUES( ?, ?, ?, ?, ?, ?, ?, ?)]; nested exception is org.postgresql.util.PSQLException: ERROR: column "matchid" of relation "transaction" does not exist
+  Position: 77
+08:09:27,170 ERROR http-bio-8080-exec-1 GzBaseUserDaoImpl:198 - Could not execute : PreparedStatementCallback; uncategorized SQLException for SQL [SELECT id,email,password,nickname,code,enabled,icon,parentcode,contact,phone,role FROM baseUser WHERE email=?]; SQL state [25P02]; error code [0]; ERROR: current transaction is aborted, commands ignored until end of transaction block; nested exception is org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+08:09:27,174 ERROR http-bio-8080-exec-1 GzBaseUserDaoImpl:285 - Could not execute : PreparedStatementCallback; uncategorized SQLException for SQL [SELECT code FROM baseUser WHERE email = ?]; SQL state [25P02]; error code [0]; ERROR: current transaction is aborted, commands ignored until end of transaction block; nested exception is org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+08:09:27,180 ERROR http-bio-8080-exec-1 GzAgentController:359 - java.lang.RuntimeException: Could not execute : PreparedStatementCallback; uncategorized SQLException for SQL [SELECT code FROM baseUser WHERE email = ?]; SQL state [25P02]; error code [0]; ERROR: current transaction is aborted, commands ignored until end of transaction block; nested exception is org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+	at org.rp.services.GzServices.doPerformImport(GzServices.java:235)
+	at org.rp.services.GzServices$2.doInTransactionWithoutResult(GzServices.java:207)
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:34)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.rp.services.GzServices.performImport(GzServices.java:203)
+	at org.rp.services.GzServices$$FastClassBySpringCGLIB$$8632e4bb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:651)
+	at org.rp.services.GzServices$$EnhancerBySpringCGLIB$$50c29e52.performImport(<generated>)
+	at org.rp.web.agent.GzAgentController.importCsvs(GzAgentController.java:356)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:832)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:743)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:895)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.rp.config.CrossScriptingFilter.doFilter(CrossScriptingFilter.java:25)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:112)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:106)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.multipart.support.MultipartFilter.doFilterInternal(MultipartFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+08:11:13,804  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+08:11:15,647  INFO http-bio-8080-exec-5 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:11:16,099  INFO http-bio-8080-exec-5 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:11:16,100  INFO http-bio-8080-exec-5 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:11:16,220  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:11:16,221  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:11:16,221  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:11:20,609  INFO http-bio-8080-exec-4 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+08:11:20,614  INFO http-bio-8080-exec-4 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+08:11:20,618  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:11:20,618  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:11:20,619  INFO http-bio-8080-exec-4 CsvImporter:81 - Read 5 Recs
+08:11:20,619  INFO http-bio-8080-exec-4 CsvImporter:88 - %%% Importing transactions %%%
+08:11:20,620  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:11:20,622  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:11:20,625  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@5065b430 source: Thu Jun 22 00:00:00 MYT 2017
+08:11:20,638  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@6be967e2 source: Thu Jun 22 00:00:00 MYT 2017
+08:12:18,553  INFO http-bio-8080-exec-10 GzAccountDaoImpl:557 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+08:25:09,785  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+08:25:11,551  INFO http-bio-8080-exec-3 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:25:11,933  INFO http-bio-8080-exec-3 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:25:11,934  INFO http-bio-8080-exec-3 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:25:12,014  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:25:12,014  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:25:12,015  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:25:20,205  INFO http-bio-8080-exec-4 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+08:25:20,210  INFO http-bio-8080-exec-4 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+08:25:20,213  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:25:20,214  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:25:20,214  INFO http-bio-8080-exec-4 CsvImporter:81 - Read 5 Recs
+08:25:20,214  INFO http-bio-8080-exec-4 CsvImporter:88 - %%% Importing transactions %%%
+08:25:20,215  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:25:20,216  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:25:20,218  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@5c54922c source: Thu Jun 22 00:00:00 MYT 2017
+08:25:20,228  INFO http-bio-8080-exec-4 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@7b748005 source: Thu Jun 22 00:00:00 MYT 2017
+08:25:21,749  INFO http-bio-8080-exec-4 GzAccountDaoImpl:558 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+08:25:21,799 ERROR http-bio-8080-exec-4 GzAccountDaoImpl:280 - Could not execute : PreparedStatementCallback; bad SQL grammar [INSERT INTO xaction (payer,payee,type,amount,royalty,netamount,timestamp,status,invoicetype,matchid)VALUES( ?,?,?,?,?,?,?,?,?,? )]; nested exception is org.postgresql.util.PSQLException: ERROR: column "matchid" of relation "xaction" does not exist
+  Position: 93
+08:25:21,801 ERROR http-bio-8080-exec-4 GzAgentController:345 - org.rp.home.persistence.GzPersistenceException: Could not execute : PreparedStatementCallback; bad SQL grammar [INSERT INTO xaction (payer,payee,type,amount,royalty,netamount,timestamp,status,invoicetype,matchid)VALUES( ?,?,?,?,?,?,?,?,?,? )]; nested exception is org.postgresql.util.PSQLException: ERROR: column "matchid" of relation "xaction" does not exist
+  Position: 93
+	at org.rp.account.persistence.GzAccountDaoImpl.storeInvoice(GzAccountDaoImpl.java:281)
+	at org.rp.home.persistence.GzHomeDaoImpl.storeInvoice(GzHomeDaoImpl.java:234)
+	at org.rp.account.GzAccountMgr.createRoyaltyForPlayer(GzAccountMgr.java:87)
+	at org.rp.account.GzAccountMgr.createRoyalties(GzAccountMgr.java:70)
+	at org.rp.services.GzServices.closeOpenInvoices(GzServices.java:137)
+	at org.rp.services.GzServices$$FastClassBySpringCGLIB$$8632e4bb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:651)
+	at org.rp.services.GzServices$$EnhancerBySpringCGLIB$$50c29e52.closeOpenInvoices(<generated>)
+	at org.rp.web.agent.GzAgentController.updateInvoices(GzAgentController.java:342)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:832)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:743)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:895)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.rp.config.CrossScriptingFilter.doFilter(CrossScriptingFilter.java:25)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:112)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:106)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.multipart.support.MultipartFilter.doFilterInternal(MultipartFilter.java:118)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+08:26:28,984  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+08:26:30,664  INFO http-bio-8080-exec-12 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:26:31,013  INFO http-bio-8080-exec-12 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:26:31,014  INFO http-bio-8080-exec-12 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:26:31,094  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:26:31,095  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:26:31,095  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:26:34,726  INFO http-bio-8080-exec-12 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+08:26:34,730  INFO http-bio-8080-exec-12 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+08:26:34,734  INFO http-bio-8080-exec-12 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:26:34,735  INFO http-bio-8080-exec-12 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:26:34,735  INFO http-bio-8080-exec-12 CsvImporter:81 - Read 5 Recs
+08:26:34,735  INFO http-bio-8080-exec-12 CsvImporter:88 - %%% Importing transactions %%%
+08:26:34,736  INFO http-bio-8080-exec-12 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:26:34,737  INFO http-bio-8080-exec-12 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:26:34,740  INFO http-bio-8080-exec-12 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@411cb4dd source: Thu Jun 22 00:00:00 MYT 2017
+08:26:34,748  INFO http-bio-8080-exec-12 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@4b6a4935 source: Thu Jun 22 00:00:00 MYT 2017
+08:26:35,997  INFO http-bio-8080-exec-12 GzAccountDaoImpl:558 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+08:54:41,412  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+08:54:43,324  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+08:54:43,780  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+08:54:43,780  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+08:54:43,869  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+08:54:43,869  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+08:54:43,869  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+08:54:51,271  INFO http-bio-8080-exec-8 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+08:54:51,276  INFO http-bio-8080-exec-8 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+08:54:51,281  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:54:51,282  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:54:51,282  INFO http-bio-8080-exec-8 CsvImporter:81 - Read 5 Recs
+08:54:51,282  INFO http-bio-8080-exec-8 CsvImporter:88 - %%% Importing transactions %%%
+08:54:51,282  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+08:54:51,284  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+08:54:51,286  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@12a0a6a9 source: Thu Jun 22 00:00:00 MYT 2017
+08:54:51,298  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@3a4e95fb source: Thu Jun 22 00:00:00 MYT 2017
+08:54:52,970  INFO http-bio-8080-exec-6 GzAccountDaoImpl:558 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+09:00:02,536  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+09:00:03,899  INFO http-bio-8080-exec-10 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:00:03,904  INFO http-bio-8080-exec-10 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:00:03,904  INFO http-bio-8080-exec-10 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:00:03,992  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:00:03,992  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:00:03,993  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:06:23,121  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+09:06:28,350  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : a1@rpco.com
+09:06:28,928  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : a1@rpco.com found with role :ROLE_AGENT
+09:06:28,929  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : a1@rpco.com with authorities :[ROLE_AGENT]
+09:06:29,024  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:06:29,024  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : a1@rpco.com authorities : [ROLE_AGENT]
+09:06:29,024  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:06:42,774  INFO http-bio-8080-exec-10 GzAccountValues:30 - Creating account from : org.rp.web.account.GzAccountValues@4345d5fb
+09:06:42,774  INFO http-bio-8080-exec-10 GzAccountDaoImpl:641 - SELECT MAX(bankerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0a0p1'
+09:06:42,776  INFO http-bio-8080-exec-10 GzAccountDaoImpl:641 - SELECT MAX(playerRoyalty) FROM account JOIN  baseuser AS b ON b.id=account.baseuserid WHERE b.parentcode = 'c0s0m0a0p1'
+09:06:53,665  INFO http-bio-8080-exec-8 GzLogonController:47 - Received request to signin XXX
+09:06:55,222  INFO http-bio-8080-exec-3 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:06:55,227  INFO http-bio-8080-exec-3 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:06:55,228  INFO http-bio-8080-exec-3 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:06:55,329  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:06:55,329  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:06:55,330  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:07:02,191  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:07:02,192  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:07:02,193  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:07:02,193  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:07:02,194  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:07:02,195  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:07:02,201  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:07:02,202  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:07:02,202  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:07:02,203  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:07:02,204  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:07:02,204  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:07:07,728  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@4793186b
+09:07:07,728  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:07:07,729  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:14:15,974  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+09:14:17,948  INFO http-bio-8080-exec-5 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:14:18,426  INFO http-bio-8080-exec-5 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:14:18,427  INFO http-bio-8080-exec-5 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:14:18,507  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:14:18,508  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:14:18,508  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:14:24,236  INFO http-bio-8080-exec-8 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+09:14:24,250  INFO http-bio-8080-exec-8 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+09:14:24,263  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+09:14:24,264  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+09:14:24,266  INFO http-bio-8080-exec-8 CsvImporter:81 - Read 5 Recs
+09:14:24,266  INFO http-bio-8080-exec-8 CsvImporter:88 - %%% Importing transactions %%%
+09:14:24,266  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+09:14:24,268  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+09:14:24,270  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@81eb290 source: Thu Jun 22 00:00:00 MYT 2017
+09:14:24,280  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@96fe67f source: Thu Jun 22 00:00:00 MYT 2017
+09:14:28,196  INFO http-bio-8080-exec-8 GzAccountDaoImpl:558 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+09:14:56,166  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:14:56,167  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:14:56,168  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:14:56,168  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:14:56,169  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:14:56,170  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:14:56,174  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:14:56,175  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:14:56,176  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:14:56,176  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:14:56,177  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:14:56,178  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:15:15,016  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:15:15,017  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:15:15,018  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:15:15,019  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:15:15,019  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:15:15,020  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:15:15,022  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:15:15,022  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:15:15,023  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:15:15,024  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:15:15,024  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:15:15,025  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:17:41,155  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+09:17:43,012  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:17:43,481  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:17:43,481  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:17:43,564  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:17:43,564  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:17:43,564  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:17:47,114  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:17:47,115  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:17:47,116  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:17:47,116  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:17:47,117  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:17:47,118  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:17:47,123  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:17:47,123  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:17:47,124  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:17:47,125  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:17:47,126  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:17:47,127  INFO http-bio-8080-exec-6 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:17:53,688  INFO http-bio-8080-exec-6 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@3e5facca
+09:17:53,689  INFO http-bio-8080-exec-6 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:17:53,690  INFO http-bio-8080-exec-6 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:21:32,294  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+09:21:34,066  INFO http-bio-8080-exec-3 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:21:34,072  INFO http-bio-8080-exec-3 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:21:34,072  INFO http-bio-8080-exec-3 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:21:34,162  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:21:34,162  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:21:34,162  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:21:37,496  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:21:37,500  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:21:37,502  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:21:37,505  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:21:37,507  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:21:37,509  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:21:37,514  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:21:37,515  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:21:37,517  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:37,518  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:21:37,519  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:37,520  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:39,441  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:21:39,444  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:21:39,446  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:39,448  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:21:39,450  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:39,452  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:21:39,455  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:21:39,457  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:21:39,457  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:39,458  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:21:39,459  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:39,459  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:49,326  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:21:49,327  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:21:49,328  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:49,328  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:21:49,329  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:49,329  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:21:49,331  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:21:49,332  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:21:49,332  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:49,333  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:21:49,333  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:49,334  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:50,233  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:21:50,235  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:21:50,238  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:50,240  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:21:50,242  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:50,243  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:21:50,248  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+09:21:50,249  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+09:21:50,249  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+09:21:50,250  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+09:21:50,251  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+09:21:50,252  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+09:21:50,252  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+09:21:50,253  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+09:21:50,254  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+09:21:50,255  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+09:21:50,255  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+09:21:50,257  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+09:22:02,681  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:22:02,681  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:22:02,682  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:02,683  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:22:02,684  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:02,684  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:02,686  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:22:02,687  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:22:02,687  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:02,688  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:22:02,689  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:02,689  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:05,215  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:22:05,216  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:22:05,216  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:05,217  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:22:05,218  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:05,218  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:05,221  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+09:22:05,221  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+09:22:05,222  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+09:22:05,223  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+09:22:05,223  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+09:22:05,224  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+09:22:05,224  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+09:22:05,224  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+09:22:05,225  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+09:22:05,225  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+09:22:05,226  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+09:22:05,226  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+09:22:07,834  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:22:07,837  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:22:07,839  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:07,842  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:22:07,843  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:07,845  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:07,851  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:22:07,854  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:22:07,856  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:07,858  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:22:07,860  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:07,862  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:22:08,446  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:22:08,448  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:22:08,449  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:08,450  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:22:08,450  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:08,451  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:08,453  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:22:08,453  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:22:08,454  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:08,454  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:22:08,455  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:08,455  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:09,018  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:22:09,019  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:22:09,020  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:09,020  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:22:09,021  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:09,022  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:09,024  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:22:09,025  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:22:09,025  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:09,026  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:22:09,026  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:09,027  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:10,742  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@686996ef
+09:22:10,744  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:22:10,744  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:22:18,491  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:22:18,493  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:22:18,495  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:18,497  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:22:18,499  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:18,501  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:22:18,506  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:22:18,508  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:22:18,510  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:18,512  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:22:18,515  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:18,516  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:37,625  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:22:37,626  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:22:37,626  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:37,627  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:22:37,628  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:37,628  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:37,630  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:22:37,631  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:22:37,631  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:37,632  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:22:37,632  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:37,632  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:41,896  INFO http-bio-8080-exec-11 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@66712bd4
+09:22:41,896  INFO http-bio-8080-exec-11 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 4
+09:22:41,897  INFO http-bio-8080-exec-11 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 's1@rpco.com' OR payee='s1@rpco.com' ORDER BY ID DESC
+09:22:44,131  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:22:44,132  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:22:44,132  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:44,133  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:22:44,134  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:44,134  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:22:44,137  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:22:44,138  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:22:44,138  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:44,139  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:22:44,140  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:22:44,140  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:24:33,960  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+09:24:36,125  INFO http-bio-8080-exec-5 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:24:36,651  INFO http-bio-8080-exec-5 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:24:36,652  INFO http-bio-8080-exec-5 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:24:36,734  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:24:36,734  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:24:36,734  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:24:41,978  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:24:41,979  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:24:41,979  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:24:41,980  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:24:41,981  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:24:41,981  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:24:41,989  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:24:41,990  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:24:41,992  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:24:41,994  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:24:41,995  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:24:41,996  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:25:29,890  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@3fe67a35
+09:26:06,008  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:26:44,164  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:30:25,473  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+09:30:27,037  INFO http-bio-8080-exec-10 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:30:27,443  INFO http-bio-8080-exec-10 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:30:27,445  INFO http-bio-8080-exec-10 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:30:27,531  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:30:27,531  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:30:27,531  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:30:31,020  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:30:31,021  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:30:31,022  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:30:31,023  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:30:31,024  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:30:31,024  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:30:31,030  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:30:31,031  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:30:31,032  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:30:31,033  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:30:31,034  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:30:31,035  INFO http-bio-8080-exec-10 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:30:32,556  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@5ec7ff7e
+09:30:32,556  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:30:32,557  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:32:22,643  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:32:22,645  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:32:22,646  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:32:22,646  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:32:22,647  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:32:22,648  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:32:22,651  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:32:22,652  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:32:22,652  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:32:22,653  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:32:22,654  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:32:22,655  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:32:24,360  INFO http-bio-8080-exec-8 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@1eaf4164
+09:32:24,361  INFO http-bio-8080-exec-8 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:32:24,362  INFO http-bio-8080-exec-8 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:32:56,766  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+09:32:59,433  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:32:59,842  INFO http-bio-8080-exec-4 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:32:59,842  INFO http-bio-8080-exec-4 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:32:59,932  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:32:59,932  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:32:59,933  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:33:03,568  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:33:03,569  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:33:03,570  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:03,571  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:33:03,571  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:03,572  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:03,578  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:33:03,579  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:33:03,580  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:03,582  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:33:03,583  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:03,585  INFO http-bio-8080-exec-7 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:04,980  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@5ac1e07
+09:33:04,980  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:33:04,981  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:33:57,518  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:33:57,519  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:33:57,520  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:57,521  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:33:57,521  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:57,522  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:33:57,528  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:33:57,529  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:33:57,529  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:57,530  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:33:57,531  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:57,532  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:33:59,502  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@2e2d38a6
+09:33:59,503  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:33:59,503  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:34:36,496  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@3d5c9c24
+09:34:36,497  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:34:36,497  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:35:32,894  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@253162b5
+09:35:32,896  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:35:32,896  INFO http-bio-8080-exec-3 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:36:46,710  INFO http-bio-8080-exec-2 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@12e2465d
+09:36:46,711  INFO http-bio-8080-exec-2 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:36:46,712  INFO http-bio-8080-exec-2 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:42:54,812  INFO http-bio-8080-exec-8 GzLogonController:47 - Received request to signin XXX
+09:42:57,086  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:42:57,091  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:42:57,091  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:42:57,184  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:42:57,185  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:42:57,185  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:42:58,910  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:42:58,913  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:42:58,915  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:42:58,917  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:42:58,919  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:42:58,921  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:42:58,925  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:42:58,927  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:42:58,928  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:42:58,929  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:42:58,930  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:42:58,931  INFO http-bio-8080-exec-8 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:43:00,273  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@207c119b
+09:43:00,273  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:43:00,273  INFO http-bio-8080-exec-10 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:47:30,501  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@12f9542
+09:47:30,501  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:47:30,502  INFO http-bio-8080-exec-7 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:49:25,597  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@461068ef
+09:49:25,597  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:49:25,597  INFO http-bio-8080-exec-4 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:51:19,763  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+09:51:21,309  INFO http-bio-8080-exec-1 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+09:51:21,759  INFO http-bio-8080-exec-1 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+09:51:21,759  INFO http-bio-8080-exec-1 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+09:51:21,839  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+09:51:21,840  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+09:51:21,840  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+09:51:24,374  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:51:24,376  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:51:24,377  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:24,378  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:51:24,379  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:24,379  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:24,385  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:51:24,387  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:51:24,388  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:24,391  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:51:24,391  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:24,392  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:30,947  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@5a74b9bc
+09:51:30,948  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+09:51:30,948  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+09:51:37,864  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:51:37,867  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:51:37,869  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:37,870  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:51:37,872  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:37,874  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:51:37,882  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:51:37,884  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:51:37,885  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:37,887  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:51:37,889  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:37,890  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:41,767  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:51:41,768  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:51:41,768  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:41,769  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:51:41,769  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:41,770  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:51:41,772  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:51:41,773  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:51:41,773  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:51:41,774  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:51:41,774  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:51:41,775  INFO http-bio-8080-exec-1 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:51:52,581  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@1de6d656
+09:51:52,582  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 4
+09:51:52,582  INFO http-bio-8080-exec-1 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 's1@rpco.com' OR payee='s1@rpco.com' ORDER BY ID DESC
+09:52:30,740  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:52:30,742  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:52:30,744  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:30,747  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:52:30,749  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:30,751  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:30,756  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:52:30,758  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:52:30,760  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:30,762  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:52:30,764  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:30,766  INFO http-bio-8080-exec-12 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:33,193  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:52:33,195  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:52:33,197  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:33,200  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:52:33,203  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:33,205  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:33,211  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:52:33,212  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:52:33,213  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:33,214  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:52:33,215  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:33,217  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:34,347  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:52:34,347  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:52:34,348  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:34,348  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:52:34,349  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:34,350  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:34,352  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+09:52:34,353  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+09:52:34,353  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+09:52:34,354  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+09:52:34,355  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+09:52:34,355  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+09:52:34,356  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+09:52:34,356  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+09:52:34,357  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+09:52:34,357  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+09:52:34,358  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+09:52:34,358  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+09:52:40,248  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:52:40,250  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:52:40,252  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:40,253  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:52:40,253  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:40,254  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:40,257  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+09:52:40,257  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+09:52:40,258  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:40,259  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+09:52:40,259  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:40,260  INFO http-bio-8080-exec-11 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+09:52:41,196  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:52:41,197  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:52:41,198  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:41,198  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:52:41,199  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:41,200  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:41,202  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+09:52:41,202  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+09:52:41,203  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:41,204  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+09:52:41,205  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:41,205  INFO http-bio-8080-exec-4 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+09:52:41,803  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+09:52:41,804  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+09:52:41,805  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+09:52:41,805  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+09:52:41,806  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+09:52:41,806  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+09:52:41,808  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+09:52:41,809  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+09:52:41,810  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:41,810  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+09:52:41,811  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+09:52:41,812  INFO http-bio-8080-exec-3 GzAccountDaoImpl:371 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+10:15:01,043  INFO http-bio-8080-exec-8 GzLogonController:47 - Received request to signin XXX
+10:15:02,969  INFO http-bio-8080-exec-12 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:15:02,973  INFO http-bio-8080-exec-12 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:15:02,974  INFO http-bio-8080-exec-12 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:15:03,072  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:15:03,072  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:15:03,072  INFO http-bio-8080-exec-12 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:15:39,659  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+10:15:41,365  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:15:41,744  INFO http-bio-8080-exec-4 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:15:41,744  INFO http-bio-8080-exec-4 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:15:41,828  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:15:41,828  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:15:41,828  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:20:43,881  INFO http-bio-8080-exec-8 GzLogonController:47 - Received request to signin XXX
+10:20:45,797  INFO http-bio-8080-exec-1 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:20:45,801  INFO http-bio-8080-exec-1 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:20:45,802  INFO http-bio-8080-exec-1 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:20:45,898  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:20:45,898  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:20:45,899  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:27:55,010  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+10:27:56,650  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:27:57,043  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:27:57,043  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:27:57,151  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:27:57,152  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:27:57,152  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:28:02,471  INFO http-bio-8080-exec-8 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+10:28:02,476  INFO http-bio-8080-exec-8 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+10:28:02,480  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:28:02,480  INFO http-bio-8080-exec-8 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:28:02,480  INFO http-bio-8080-exec-8 CsvImporter:81 - Read 5 Recs
+10:28:02,481  INFO http-bio-8080-exec-8 CsvImporter:88 - %%% Importing transactions %%%
+10:28:02,481  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:28:02,482  INFO http-bio-8080-exec-8 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:28:02,484  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@2bb566cd source: Thu Jun 22 00:00:00 MYT 2017
+10:28:02,492  INFO http-bio-8080-exec-8 GzAccountMgr:26 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@5bfeb5da source: Thu Jun 22 00:00:00 MYT 2017
+10:28:04,378  INFO http-bio-8080-exec-7 GzAccountDaoImpl:559 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+10:36:09,998  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:36:11,996  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:36:12,000  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:36:12,000  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:36:12,097  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:36:12,097  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:36:12,097  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:39:37,054  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+10:39:38,840  INFO http-bio-8080-exec-3 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:39:39,243  INFO http-bio-8080-exec-3 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:39:39,244  INFO http-bio-8080-exec-3 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:39:39,327  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:39:39,327  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:39:39,327  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:44:12,619  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+10:44:14,472  INFO http-bio-8080-exec-2 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+10:44:14,882  INFO http-bio-8080-exec-2 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+10:44:14,883  INFO http-bio-8080-exec-2 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+10:44:14,969  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:44:14,969  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+10:44:14,970  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+10:44:26,203  INFO http-bio-8080-exec-2 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+10:44:26,207  INFO http-bio-8080-exec-2 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+10:44:26,211  INFO http-bio-8080-exec-2 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:44:26,211  INFO http-bio-8080-exec-2 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:44:26,211  INFO http-bio-8080-exec-2 CsvImporter:81 - Read 5 Recs
+10:44:26,212  INFO http-bio-8080-exec-2 CsvImporter:88 - %%% Importing transactions %%%
+10:44:26,212  INFO http-bio-8080-exec-2 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:44:26,213  INFO http-bio-8080-exec-2 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:44:26,215  INFO http-bio-8080-exec-2 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@31de0922 source: Thu Jun 22 00:00:00 MYT 2017
+10:44:26,223  INFO http-bio-8080-exec-2 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@43fd9d6c source: Thu Jun 22 00:00:00 MYT 2017
+10:44:32,491  INFO http-bio-8080-exec-9 GzAccountDaoImpl:559 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+10:44:56,094  INFO http-bio-8080-exec-4 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+10:44:56,100  INFO http-bio-8080-exec-4 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+10:44:56,101  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:44:56,101  INFO http-bio-8080-exec-4 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:44:56,102  INFO http-bio-8080-exec-4 CsvImporter:81 - Read 5 Recs
+10:44:56,102  INFO http-bio-8080-exec-4 CsvImporter:88 - %%% Importing transactions %%%
+10:44:56,102  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+10:44:56,103  INFO http-bio-8080-exec-4 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+10:44:56,105  INFO http-bio-8080-exec-4 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@6e03001e source: Thu Jun 22 00:00:00 MYT 2017
+10:44:56,109  INFO http-bio-8080-exec-4 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@5654d7f6 source: Thu Jun 22 00:00:00 MYT 2017
+10:44:58,559  INFO http-bio-8080-exec-4 GzAccountDaoImpl:559 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+11:24:11,066  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:24:12,895  INFO http-bio-8080-exec-5 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+11:24:13,365  INFO http-bio-8080-exec-5 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+11:24:13,367  INFO http-bio-8080-exec-5 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+11:24:13,453  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:24:13,453  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+11:24:13,453  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+11:26:15,376  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:26:16,942  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+11:26:17,439  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+11:26:17,440  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+11:26:17,524  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:26:17,525  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+11:26:17,525  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+11:27:00,551  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+11:27:07,402  INFO http-bio-8080-exec-2 CustomUserDetailsService:30 - loadUserByUsername email : a1@rpco.com
+11:27:07,405  INFO http-bio-8080-exec-2 CustomUserDetailsService:53 - User : a1@rpco.com found with role :ROLE_AGENT
+11:27:07,405  INFO http-bio-8080-exec-2 CustomUserDetailsService:60 - Using User : a1@rpco.com with authorities :[ROLE_AGENT]
+11:27:07,499  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:27:07,499  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : a1@rpco.com authorities : [ROLE_AGENT]
+11:27:07,499  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+11:27:37,615  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+11:27:45,185  INFO http-bio-8080-exec-3 CustomUserDetailsService:30 - loadUserByUsername email : m1@rpco.com
+11:27:45,189  INFO http-bio-8080-exec-3 CustomUserDetailsService:53 - User : m1@rpco.com found with role :ROLE_MA
+11:27:45,190  INFO http-bio-8080-exec-3 CustomUserDetailsService:60 - Using User : m1@rpco.com with authorities :[ROLE_MA]
+11:27:45,278  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:27:45,279  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : m1@rpco.com authorities : [ROLE_MA]
+11:27:45,279  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+11:28:31,106  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:28:31,107  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:28:31,108  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:31,108  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:28:31,109  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:31,110  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:31,115  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:28:31,115  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:28:31,116  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:28:31,116  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:28:31,117  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:28:31,118  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:28:35,999  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@24e9c48a
+11:28:35,999  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 8
+11:28:36,000  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'm1@rpco.com' OR payee='m1@rpco.com' ORDER BY ID DESC
+11:28:50,891  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:28:50,892  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:28:50,893  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:50,894  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:28:50,895  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:50,895  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:28:50,897  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:28:50,898  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:28:50,899  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:28:50,900  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:28:50,900  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:28:50,901  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:12,684  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:29:12,685  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:29:12,685  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:12,686  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:29:12,687  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:12,688  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:12,690  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:29:12,691  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:29:12,691  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:12,692  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:29:12,693  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:12,693  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:18,216  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@155cbbb6
+11:29:18,217  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 8
+11:29:18,217  INFO http-bio-8080-exec-5 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'm1@rpco.com' OR payee='m1@rpco.com' ORDER BY ID DESC
+11:29:21,400  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:29:21,401  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:29:21,402  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:21,402  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:29:21,403  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:21,404  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:29:21,406  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:29:21,407  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:29:21,408  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:21,408  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:29:21,409  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:29:21,410  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:19,220  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:30:19,222  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:30:19,223  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:19,223  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:30:19,224  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:19,225  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:19,226  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:30:19,227  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:30:19,228  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:19,228  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:30:19,229  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:19,229  INFO http-bio-8080-exec-5 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:24,057  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:30:24,059  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:30:24,060  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:24,061  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:30:24,062  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:24,064  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:24,067  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+11:30:24,068  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+11:30:24,069  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+11:30:24,070  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+11:30:24,072  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+11:30:24,073  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+11:30:24,074  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+11:30:24,074  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+11:30:24,075  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+11:30:24,076  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+11:30:24,076  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+11:30:24,077  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+11:30:36,228  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+11:30:36,229  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+11:30:36,229  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:36,230  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+11:30:36,231  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:36,232  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+11:30:36,236  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+11:30:36,236  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+11:30:36,237  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:36,238  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+11:30:36,238  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+11:30:36,239  INFO http-bio-8080-exec-2 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+11:31:46,048  INFO http-bio-8080-exec-1 GzAccountController:591 - emailXls for : 4746
+11:31:46,680  INFO http-bio-8080-exec-1 InvoiceAnalytic:98 - Sheet : /home/pmk/Tan/xls/Invoice #4746.xlsx created..
+11:31:46,681  INFO http-bio-8080-exec-1 Mail:122 - Message to : m1@rpco.com filtered..
+11:31:46,681  INFO http-bio-8080-exec-1 Mail:142 - Sending Filtered Message to : m1@rpco.com to cc: mariuso.pk@gmail.com
+11:31:46,682  INFO http-bio-8080-exec-1 GzServices:303 - Sucessfully sent xls path
+11:31:46,682  INFO http-bio-8080-exec-1 GzAccountController:602 - Xls workbook for invoice : 4746 successfully sent to : m1@rpco.com. Please check your inbox.
+11:31:47,059  INFO Thread-3 Mail:56 - creating message
+11:31:47,110  INFO Thread-3 Mail:78 - sending message to : mariuso.pk@gmail.com from : info@goldmine.online
+11:31:52,737  INFO Thread-3 Mail:80 - sended message

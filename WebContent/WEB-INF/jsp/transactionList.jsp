@@ -30,7 +30,7 @@
 <div style="width:100%; background-color:#000; color:#fff; font-size:16px;">
   Member bets for ${currAccountUser.role.desc} ${currAccountUser.code} ${currAccountUser.contact}  ${transactionListForm.role.desc} ${transactionListForm.code} - ${transactionListForm.email} trans: #${transactionListForm.invoice.id}
 		  Amount: <fmt:formatNumber value="${transactionListForm.invoice.netAmount}"  type="number" maxFractionDigits="2" minFractionDigits="2"/>
-		 Due Date: <fmt:formatDate value="${transactionListForm.invoice.dueDate}"
+		  Date: <fmt:formatDate value="${transactionListForm.invoice.timestamp}"
 			pattern="dd-MMM-yyyy"/>
 
 		</div>

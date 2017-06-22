@@ -31,8 +31,7 @@ ls
 <div style="width:100%; background-color:#000; color:#fff; font-size:16px; float:left;">
   Member Invoices for ${invoiceListForm.role.desc} ${invoiceListForm.code} - ${currAccountUser.contact} Invoice: #${invoiceListForm.invoice.id}
 		  Amount: <fmt:formatNumber value="${invoiceListForm.invoice.netAmount}" type="number" maxFractionDigits="2" minFractionDigits="2"/>
-		 Due Date: <fmt:formatDate value="${invoiceListForm.invoice.dueDate}"
-			pattern="dd-MMM-yyyy"/>
+		Issue Date: <fmt:formatDate value="${invoiceListForm.invoice.timestamp}" pattern="dd-MMM-yy"/>
       <div class="lozengeButton" style="float:right; width:70px; height:18px; line-height:18px; background-color:blue; font-size:12px; margin-right:0px;">
             <a href="processAccount?emailXls&invoiceId=${invoiceListForm.invoice.id}"" style="text-decoration:none;"
                 onclick="return confirm('An Excel Spreadsheet Workbook for this Invoice Breakdown will be forwarded to your email account: ${currBaseUser.email} ')">

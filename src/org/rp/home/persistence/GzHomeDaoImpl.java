@@ -310,6 +310,11 @@ public class GzHomeDaoImpl implements GzHome {
 		gzAccountDao.updateDistributions(account);
 	}
 	
+	public void clearTurnoversAndDistributions() throws GzPersistenceException
+	{
+		gzAccountDao.clearTurnoversAndDistributions();
+	}
+	
 	@Override
 	public void updateAccountBalance(GzAccount account, double amount) throws GzPersistenceException {
 		gzAccountDao.updateAccountBalance(account, amount);
@@ -381,6 +386,11 @@ public class GzHomeDaoImpl implements GzHome {
 
 	public void setGzAdminDao(GzAdminDao gzAdminDao) {
 		this.gzAdminDao = gzAdminDao;
+	}
+
+	@Override
+	public void updateTransactionInvoiceIds(UUID transactionMatchId) throws GzPersistenceException {
+		gzAccountDao.updateTransactionInvoiceIds(transactionMatchId);
 	}
 
 	

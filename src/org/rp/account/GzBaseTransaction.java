@@ -9,7 +9,7 @@ public class GzBaseTransaction implements Serializable{
 	private long id;
 	private String payer;
 	private String payee;
-	private Character type;
+	private char type;
 	protected double amount;
 	private Date timestamp;
 	
@@ -50,12 +50,6 @@ public class GzBaseTransaction implements Serializable{
 	public void setPayee(String payee) {
 		this.payee = payee;
 	}
-	public Character getType() {
-		return type;
-	}
-	public void setType(Character type) {
-		this.type = type;
-	}
 	public double getAmount() {
 		return amount;
 	}
@@ -67,6 +61,14 @@ public class GzBaseTransaction implements Serializable{
 	}
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
+	}
+
+	public char getType() {
+		return type;
+	}
+
+	public void setType(char type) {
+		this.type = type;
 	}
 	
 	

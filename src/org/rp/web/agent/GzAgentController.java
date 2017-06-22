@@ -363,6 +363,20 @@ public class GzAgentController {
 		return "redirect:backtoMemberHome?";
     }
 	
+	@RequestMapping(value = "/processAgent", params = "clearAllTurnovers", method = RequestMethod.GET)
+    public Object clearAllTurnovers(ModelMap model)
+    {
+		try {
+			gzServices.getGzHome().clearTurnoversAndDistributions();
+		} catch (Exception e) {
+			String stackDump = StackDump.toString(e);
+			log.error(stackDump);
+			return "redirect:backtoMemberHomeErr?errMsg=Clear All Turnovers Failed please contact support".replace(" ","%20");
+		}
+		
+		return "redirect:backtoMemberHome?";
+    }
+	
 	@Autowired
 	public void setServices(GzServices gzServices)
 	{

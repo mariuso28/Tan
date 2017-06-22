@@ -14,7 +14,7 @@ public class InvoiceSheet{
 
 	private GzRole role;
 	private Sheet sheet;
-	private static String[] titles = {"id","pay from","pay to","amount","comm","net amnt","issued","paid"};
+	private static String[] titles = {"id","pay from","pay to","amount","royalty","net amnt","issued","paid"};
 	private Row row;
     private Cell cell;
     private int rownum = 1;

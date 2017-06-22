@@ -75,14 +75,6 @@ public class CsvImportMgr {
 	
 	public void importFilesForFolder(final String folder,final String loaded) throws CsvImporterException {
 	    
-		String baseComp = gzServices.getProperties().getProperty("baseCompany", "c1@rpco.com");
-		try {
-			gzServices.getGzAccountMgr().initiazeTotals(baseComp);
-		} catch (GzPersistenceException e1) {
-			e1.printStackTrace();
-			throw new CsvImporterException(e1.getMessage());
-		}
-		
 		File dir = new File(folder);
 		currentFile = 0;
 		fileNum = dir.listFiles().length;
@@ -107,6 +99,7 @@ public class CsvImportMgr {
 	        }
 	    }
 		
+		String baseComp = gzServices.getProperties().getProperty("baseCompany", "c1@rpco.com");
 		try {
 			gzServices.getGzAccountMgr().setDistributions(baseComp);
 		} catch (GzPersistenceException e1) {

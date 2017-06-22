@@ -1,5 +1,7 @@
 package org.rp.account;
 
+import java.util.UUID;
+
 import org.apache.log4j.Logger;
 import org.rp.baseuser.GzBaseUser;
 
@@ -15,6 +17,7 @@ public class GzAccount
 	private double totalBanker;
 	private double distributePlayer;
 	private double distributeBanker;
+	private UUID transactionMatchId;
 	
 	public GzAccount()
 	{
@@ -108,6 +111,14 @@ public class GzAccount
 
 	public void setTotalBanker(double totalBanker) {
 		this.totalBanker = totalBanker;
+	}
+
+	public UUID getTransactionMatchId() {
+		return transactionMatchId;
+	}
+
+	public void setTransactionMatchId(UUID transactionMatchId) {
+		this.transactionMatchId = transactionMatchId;
 	}
 
 	

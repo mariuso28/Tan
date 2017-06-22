@@ -1,6 +1,7 @@
 package org.rp.account;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class GzTransaction extends GzBaseTransaction {
 	
@@ -9,16 +10,18 @@ public class GzTransaction extends GzBaseTransaction {
 	private long invoiceId;
 	public final static char PLAYERTURNOVER = 'P';
 	public final static char BANKERTURNOVER = 'B';
+	private UUID matchId;
 	
 	public GzTransaction()
 	{
 	}
 	
-	public GzTransaction(String payer,String payee,Character type,double amount,Date timestamp,String source)
+	public GzTransaction(String payer,String payee,Character type,double amount,Date timestamp,String source,UUID matchId)
 	{
 		super(payer,payee,type,amount,timestamp);
 		setType(type);
 		setSource(source);
+		setMatchId(matchId);
 	}
 	
 	public long getInvoiceId() {
@@ -35,6 +38,14 @@ public class GzTransaction extends GzBaseTransaction {
 
 	public void setSource(String source) {
 		this.source = source;
+	}
+
+	public UUID getMatchId() {
+		return matchId;
+	}
+
+	public void setMatchId(UUID matchId) {
+		this.matchId = matchId;
 	}
 
 	

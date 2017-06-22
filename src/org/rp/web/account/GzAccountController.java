@@ -190,7 +190,7 @@ public class GzAccountController {
 			return "redirect:../logon/access_denied";
 		}
 		
-		AccountDistributionForm accountDistributionForm = new AccountDistributionForm(currUser.getAccount());
+		AccountDistributionForm accountDistributionForm = new AccountDistributionForm(currAccountUser.getAccount());
 		
 		return new ModelAndView("accountDistributionEdit" , "accountDistributionForm", accountDistributionForm);
 	}

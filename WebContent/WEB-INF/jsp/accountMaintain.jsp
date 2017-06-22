@@ -287,11 +287,11 @@
       <table border="0" style="width:100%;" align="left" cellspacing="0">
   	  <colgroup>
     		<col span="1" style="width: 8%;">
-        <col span="1" style="width: 12%;">
-        <col span="1" style="width: 8%;">
-        <col span="1" style="width: 12%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 6%;">
+        <col span="1" style="width: 10%;">
     		<col span="1" style="width: 8%;">
-        <col span="1" style="width: 12%;">
+        <col span="1" style="width: 10%;">
         <col span="1" style="width: 20%;">
       	<col span="1" style="width: 10%;">
     		<col span="1" style="width: 10%;">
@@ -300,9 +300,9 @@
   	    <tr style="color:FFF; background-color:B5B5B5">
   		<td>Invoice</td>
   	  <td>Issue Date</td>
-  		<td>Due Date</td>
+      <td align="center">Type</td>
   		<td align="right">Amount</td>
-      <td align="right">Comm</td>
+      <td align="right">Royalty</td>
       <td align="right">Pay</td>
   		<c:choose>
   		<c:when test="${fn:length(accountDetailsForm.outstandingInvoices)>0}">
@@ -342,14 +342,14 @@
     		<td><a href="processAccount?invoiceDetails&invoiceId=${invoice.id}">#${invoice.id}</td>
     		<td><fmt:formatDate value="${invoice.timestamp}" pattern="dd-MMM-yy HH:mm"/></td>
     		<c:set var="linkColor" value="green" scope="page" />
+        <td align="center">${invoice.invoiceType}</td>
     		<c:choose>
     		<c:when test="${accountDetailsForm.overDueFlags[status.index]=='true'}">
     			<c:set var="linkColor" value="red" scope="page"/>
     		</c:when>
     		</c:choose>
-  		  <td><font color=${linkColor}><fmt:formatDate value="${invoice.dueDate}" pattern="dd-MMM-yy"/></td>
   		  <td align="right"><fmt:formatNumber value="${invoice.amount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-        <td align="right"><fmt:formatNumber value="${invoice.commission}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
+        <td align="right"><fmt:formatNumber value="${invoice.royalty}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
         <td align="right"><fmt:formatNumber value="${invoice.netAmount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
         <td align="center">${invoice.payee}</td>
   		  <td align="center">

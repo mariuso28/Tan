@@ -57,41 +57,20 @@
       	<tr>
       		<td align="center">#${tx.id}</td>
       		<td align="center"><fmt:formatDate value="${tx.timestamp}" pattern="dd-MMM-yy" /></td>
-
-          <c:if test="${tx.type=='I'.charAt(0)}">
-              <td align="center">Invoice</td>
-          </c:if>
-          <c:if test="${tx.type=='W'.charAt(0)}">
-              <td align="center">Withdrawl</td>
-          </c:if>
-          <c:if test="${tx.type=='D'.charAt(0)}">
-              <td align="center">Deposit</td>
-          </c:if>
-
-          <c:if test="${tx.type=='I'.charAt(0)">
-            <c:if test="${currUser.email == tx.payee}">
-                <td align="center">${tx.payer}</td>
-                <td align="center">Collect</td>
-            </c:if>
+            <td align="center">${tx.invoiceType}</td>
             <c:if test="${currUser.email == tx.payer}">
                 <td align="center">${tx.payee}</td>
                 <td align="center">Pay</td>
             </c:if>
-          </c:if>
+            <c:if test="${currUser.email == tx.payee}">
+              <td align="center">${tx.payer}</td>
+              <td align="center">Collect</td>
+            </c:if>
+              <td align="right"><fmt:formatNumber value="${tx.amount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
+            <td align="right"><fmt:formatNumber value="${tx.royalty}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
+            <td align="right"><fmt:formatNumber value="${tx.netAmount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
+            <td align="center"><fmt:formatDate value="${tx.paymentDate}" pattern="dd-MMM-yy" /></td>
 
-      		<td align="right"><fmt:formatNumber value="${tx.amount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-          <c:if test="${tx.type=='I'.charAt(0)">
-              <td align="right"><fmt:formatNumber value="${tx.royalty}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-              <td align="right"><fmt:formatNumber value="${tx.netAmount}"  type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-              <td align="center"><fmt:formatDate value="${tx.paymentDate}" pattern="dd-MMM-yy" /></td>
-          </c:if>
-
-          <c:if test="${tx.type!='I'.charAt(0)}">
-                <td>--</td>
-                <td>--</td>
-                <td>--</td>
-          </c:if>
-          
       	</tr>
       	</c:forEach>
 

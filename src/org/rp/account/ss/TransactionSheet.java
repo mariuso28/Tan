@@ -67,7 +67,7 @@ public class TransactionSheet{
         sheet.setColumnWidth(col++, 256*20);
         
         cell = row.createCell(col);
-        if (tx.getType().equals(GzTransaction.PLAYERTURNOVER))
+        if (tx.getType()==GzTransaction.PLAYERTURNOVER)
         	cell.setCellValue("Turnover");
         else
         	cell.setCellValue("Banker Turnover");

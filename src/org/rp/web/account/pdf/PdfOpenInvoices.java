@@ -38,7 +38,7 @@ public class PdfOpenInvoices {
 			
 			doc.add(new Paragraph(title));
 			doc.add(new Paragraph("Amount Due:"));
-			PdfPTable table = new PdfPTable(7);
+			PdfPTable table = new PdfPTable(6);
 			table.setWidthPercentage(100.0f);
 			table.setWidths(new float[] {1.0f, 1.0f, 3.0f, 2.0f, 1.0f, 2.0f});
 			table.setSpacingBefore(10);
@@ -71,10 +71,10 @@ public class PdfOpenInvoices {
 			SimpleDateFormat df1 = new SimpleDateFormat("dd-MM-yy");
 			
 			double totalAmountCu = 0.0;
-			double totalCommssionCu = 0.0;
+			double totalRoyaltyCu = 0.0;
 			double totalDueCu = 0.0;
 			double totalAmountCau = 0.0;
-			double totalCommssionCau = 0.0;
+			double totalRoyaltyCau = 0.0;
 			double totalDueCau = 0.0;
 			int cnt=0;
 			
@@ -102,44 +102,47 @@ public class PdfOpenInvoices {
 				if (invoice.getPayee().equals(currUser.getEmail()))
 				{
 					totalAmountCu += invoice.getAmount();
-					totalCommssionCu += invoice.getRoyalty();
+					totalRoyaltyCu += invoice.getRoyalty();
 					totalDueCu += invoice.getNetAmount();
 				}
 				else
 				{
 					totalAmountCau += invoice.getAmount();
-					totalCommssionCau += invoice.getRoyalty();
+					totalRoyaltyCau += invoice.getRoyalty();
 					totalDueCau += invoice.getNetAmount();
 				}
 			}
 			if (cnt>0)
 			{
-				cell.setPhrase(new Phrase("Total ",font));
-				table.addCell(cell);
-				table.addCell(new Phrase(" ",font));
-				table.addCell(new Phrase(" ",font));
-				cell.setPhrase(new Phrase(currUser.getEmail(),font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalAmountCu), font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalCommssionCu), font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalDueCu), font));
-				table.addCell(cell);
+				if (totalAmountCu>0)
+				{
+					cell.setPhrase(new Phrase("Total ",font));
+					table.addCell(cell);
+					table.addCell(new Phrase(" ",font));
+					cell.setPhrase(new Phrase(currUser.getEmail(),font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalAmountCu), font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalRoyaltyCu), font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalDueCu), font));
+					table.addCell(cell);
+				}
 				
-				cell.setPhrase(new Phrase("Total ",font));
-				table.addCell(cell);
-				table.addCell(new Phrase(" ",font));
-				table.addCell(new Phrase(" ",font));
-				cell.setPhrase(new Phrase(currAccountUser.getEmail(),font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalAmountCau), font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalCommssionCau), font));
-				table.addCell(cell);
-				cell.setPhrase(new Phrase(df.format(totalDueCau), font));
-				table.addCell(cell);
-				
+				if (totalAmountCau>0)
+				{
+					cell.setPhrase(new Phrase("Total ",font));
+					table.addCell(cell);
+					table.addCell(new Phrase(" ",font));
+					cell.setPhrase(new Phrase(currAccountUser.getEmail(),font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalAmountCau), font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalRoyaltyCau), font));
+					table.addCell(cell);
+					cell.setPhrase(new Phrase(df.format(totalDueCau), font));
+					table.addCell(cell);
+				}
 				doc.add(table);			
 			}
 			else 

@@ -36,16 +36,16 @@
 			<td>${member.role.shortCode}</td>
 			<td>${member.contact}</td>
 			<td>${member.email}</td>
-			<c:set var="linkColor" value="green" scope="page" />
-			<c:choose>
-			<c:when test="${member.account.balance < '0'}">
-					<c:set var="linkColor" value="red" scope="page"/>			</c:when>
-			</c:choose>
+			
 			<td align="right">
-					<font color=${linkColor} size="3">
-	        	<fmt:formatNumber value="${member.account.balance}" type="number" maxFractionDigits="2" minFractionDigits="2" />
-	    		</font>
+               				<fmt:formatNumber value="${member.account.playerRoyalty}"
+							type="number" maxFractionDigits="2" minFractionDigits="2" />
 			</td>
+			<td align="right">
+               				<fmt:formatNumber value="${member.account.bankerRoyalty}"
+							type="number" maxFractionDigits="2" minFractionDigits="2" />
+			</td>
+
 
 			<c:set var="oim" value="${currOIM[member.id]}" />
 			<c:choose>

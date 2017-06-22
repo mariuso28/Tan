@@ -39,8 +39,8 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 		final Timestamp t1 = new Timestamp(trans.getTimestamp().getTime());
 		try
 		{
-			getJdbcTemplate().update("INSERT INTO transaction (payer,payee,type,amount,invoiceid,timestamp,source) "
-					+ "VALUES( ?, ?, ?, ?, ?, ?, ?)"
+			getJdbcTemplate().update("INSERT INTO transaction (payer,payee,type,amount,invoiceid,timestamp,source,matchid) "
+					+ "VALUES( ?, ?, ?, ?, ?, ?, ?, ?)"
 					, new PreparedStatementSetter() {
 						public void setValues(PreparedStatement psStoreTransaction) throws SQLException {
 							psStoreTransaction.setString(1,trans.getPayer());
@@ -50,6 +50,7 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 							psStoreTransaction.setLong(5,trans.getInvoiceId());
 							psStoreTransaction.setTimestamp(6,t1);
 							psStoreTransaction.setString(7,trans.getSource());
+							psStoreTransaction.setObject(8,trans.getMatchId());
 						}
 					});
 		}
@@ -255,8 +256,8 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 		
 		try
 		{
-			getJdbcTemplate().update("INSERT INTO xaction (payer,payee,type,amount,royalty,netamount,timestamp,status)"
-					+ "VALUES( ?,?,?,?,?,?,?,? )"
+			getJdbcTemplate().update("INSERT INTO xaction (payer,payee,type,amount,royalty,netamount,timestamp,status,invoicetype,transactionmatchid,parentid)"
+					+ "VALUES( ?,?,?,?,?,?,?,?,?,?,? )"
 					, new PreparedStatementSetter() {
 						public void setValues(PreparedStatement psStoreInvoice) throws SQLException {
 							psStoreInvoice.setString(1,invoice.getPayer());
@@ -267,6 +268,9 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 							psStoreInvoice.setDouble(6,invoice.getNetAmount());
 							psStoreInvoice.setTimestamp(7,t1);
 							psStoreInvoice.setString(8,String.valueOf('O'));
+							psStoreInvoice.setString(9,Character.toString(invoice.getInvoiceType()));
+							psStoreInvoice.setObject(10,invoice.getMatchId());
+							psStoreInvoice.setLong(11,invoice.getParentId());
 						}
 					});
 			getXactionId(invoice);
@@ -339,22 +343,22 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 	{	
 		GzRollup rollup = new GzRollup(userId,code,role);
 		
-		String sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='" + userId + "' AND paymentId>0";
+		String sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='" + userId + "' AND paymentdate IS NOT null";
 		rollup.setPaidIn(getRollupValue(sql));
 		
-		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='" + userId + "' AND paymentId>0";
+		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='" + userId + "' AND paymentdate IS NOT null";
 		rollup.setPaidOut(getRollupValue(sql));
 	
-		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='" + userId + "' AND paymentId<=0";
+		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='" + userId + "' AND paymentdate IS null";
 		rollup.setOwed(getRollupValue(sql));
 		
-		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='" + userId + "' AND paymentId<=0";
+		sql = "SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='" + userId + "' AND paymentdate IS null";
 		rollup.setOwing(getRollupValue(sql));
 		
-		sql = "SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='" + userId + "' AND paymentId<=0";
+		sql = "SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='" + userId + "' AND paymentdate IS null";
 		rollup.setWithdrawl(getRollupValue(sql));
 		
-		sql = "SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='" + userId + "' AND paymentId<=0";
+		sql = "SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='" + userId + "' AND paymentdate IS null";
 		rollup.setDeposit(getRollupValue(sql));
 		
 		rollup.calcTotal();
@@ -672,5 +676,47 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 		return 0.0;
 	}
 	}
+
+	@Override
+	public void clearTurnoversAndDistributions() throws GzPersistenceException {
+		UUID transactionMatchId = UUID.randomUUID();
+		String sql = "UPDATE account SET distributeplayer=0,distributebanker=0,totalplayer=0,totalbanker=0,transactionMatchId=?";
+		try
+		{
+//			log.info(sql);
+			 getJdbcTemplate().update(sql, new PreparedStatementSetter() {
+				 public void setValues(PreparedStatement ps) throws SQLException {
+					 ps.setObject(1, transactionMatchId);
+				 }});
+		}
+		catch (Exception e)
+		{
+			log.error("Could not execute : " + sql + " - " + e.getMessage());
+			throw new GzPersistenceException(sql + " - " + e.getMessage());
+		}
+	}
 	
+	@Override
+	public void updateTransactionInvoiceIds(UUID transactionMatchId) throws GzPersistenceException
+	{
+		String sql = "select x.id as xid,t.id as tid from xaction  as x " +
+						"join transaction as t on t.payee = x.payee and t.matchid = x.transactionmatchid and t.type = x.invoicetype " +
+						"where matchid = '"+ transactionMatchId.toString() +"'";
+
+		try
+		{
+			log.trace(sql);
+			List<TransactionIdMap> tms = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(TransactionIdMap.class));
+			for (TransactionIdMap tm : tms)
+			{
+				sql = "update transaction set invoiceid = " + tm.getXid() + " where id = " + tm.getTid(); 
+				getJdbcTemplate().update(sql);
+			}
+		}
+		catch (Exception e)
+		{
+			log.error("Could not execute : " + sql + " - " + e.getMessage());
+			throw new GzPersistenceException(sql + " - " + e.getMessage());
+		}
+	}
 }

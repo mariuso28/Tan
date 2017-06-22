@@ -35,6 +35,7 @@ public interface GzHome
 	public void storeTransaction(GzTransaction transaction) throws GzPersistenceException;
 	public void updateAccount(GzAccount account) throws GzPersistenceException;
 	public void updateDistributions(GzAccount account) throws GzPersistenceException;
+	public void clearTurnoversAndDistributions() throws GzPersistenceException;
 	public void storeAgent(GzAgent agent) throws GzPersistenceException;
 	public void updateTransaction(GzTransaction trans) throws GzPersistenceException;
 	public GzTransactionRowMapperPaginated getGzTransactionRowMapperPaginated(int count) throws GzPersistenceException;
@@ -73,6 +74,7 @@ public interface GzHome
 	public Map<UUID, Double> getOutstandingInvoiceAmounts(GzBaseUser user) throws GzPersistenceException;
 	public double getDownStreamAccountBalance(GzBaseUser user, GzBaseUser parent) throws GzPersistenceException;
 	public void updateLeafInstance(GzBaseUser bu);
+	public void updateTransactionInvoiceIds(UUID transactionMatchId) throws GzPersistenceException;
 	
 	public void overrideDataSourceUrl(String url);
 

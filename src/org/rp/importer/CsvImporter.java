@@ -93,7 +93,7 @@ public class CsvImporter {
 				log.info(pr);
 				GzBaseUser player = gzServices.getGzHome().getBaseUserByEmail(pr.getEmail());
 				if (player==null)
-					player = createPlayer(pr,agentRec.getAgent());
+					player = createPlayer(pr,agentRec.getAgent(),40,40);
 				
 				if (player != null)
 					pr.setPlayer(player);
@@ -122,11 +122,11 @@ public class CsvImporter {
 				e.printStackTrace();
 			}
 			
-			break;					// USE FOR 1 TRANSACTION ONLY
+			// break;					// USE FOR 1 TRANSACTION ONLY
 		}
 	}
 
-	private GzBaseUser createPlayer(PlayerRec pr, GzAgent agent) {
+	private GzBaseUser createPlayer(PlayerRec pr, GzAgent agent,double playerRoyalty,double bankerRoyalty) {
 		log.info("Creating player : " + pr.getEmail() + " for : " + agent.getEmail());
 		
 		GzProfile profile = new GzProfile(pr.getContact(),pr.getEmail(),"8888888");
@@ -140,7 +140,11 @@ public class CsvImporter {
 		
 		try {
 			gzServices.getGzHome().storeBaseUser(newMember);
-			return  gzServices.getGzHome().getBaseUserByEmail(pr.getEmail());
+			GzBaseUser bu = gzServices.getGzHome().getBaseUserByEmail(pr.getEmail());
+			bu.getAccount().setPlayerRoyalty(playerRoyalty);
+			bu.getAccount().setBankerRoyalty(bankerRoyalty);
+			gzServices.getGzHome().updateAccount(bu.getAccount());
+			return bu;
 		} catch (GzPersistenceException e) {
 			e.printStackTrace();
 			log.error("Could not create : " + pr.getEmail() + " for : " + agent.getEmail() + " - " + e.getMessage());

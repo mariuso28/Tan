@@ -186,7 +186,8 @@
 		      		<td><strong><font color="#FFF" size="2">Type</font></strong></td>
 		      		<td><strong><font color="#FFF" size="2">Contact</font></strong></td>
 		      		<td><strong><font color="#FFF" size="2">Email(Logon Id)</font></strong></td>
-		      		<td align="right"><strong><font color="#FFF" size="2">Balance</font></strong></td>
+		      		<td align="right"><strong><font color="#FFF" size="2">Player Royalty (%)</font></strong></td>
+							<td align="right"><strong><font color="#FFF" size="2">Banker Royalty (%)</font></strong></td>
 		      		<td align="right"><strong><font color="#FFF" size="2">Outstanding</font></strong></td>
 					</tr>
 				    <c:choose>
@@ -248,6 +249,11 @@
 							</div>
 						</a>
 						<c:if test="${currUser.role.rank == 5}">
+							<a href="processAgent?clearAllTurnovers">
+								<div class="lozengeButton" style="background-color:orange;">
+								 Clear All Turnovers
+								</div>
+							</a>
 							<a href="processAgent?importCsvs">
 								<div class="lozengeButton" style="background-color:orange;">
 								 Import CSVs

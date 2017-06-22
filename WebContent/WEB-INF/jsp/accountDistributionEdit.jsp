@@ -156,7 +156,7 @@ function isNumber(s , checkFloat, checkNegative) {
         <td width="70%">Total Player Turnover:</td>
     		<td width="30%">
     		<font color="red" size="3">
-                   		<fmt:formatNumber value="${currUser.account.totalPlayer}"
+                   		<fmt:formatNumber value="${currAccountUser.account.totalPlayer}"
     							 type="number" maxFractionDigits="2" minFractionDigits="2" />
         </font>
     		</td>
@@ -172,7 +172,7 @@ function isNumber(s , checkFloat, checkNegative) {
           <td width="70%">Total Banker Turnover:</td>
       		<td width="30%">
       		<font color="red" size="3">
-                     		<fmt:formatNumber value="${currUser.account.totalBanker}"
+                     		<fmt:formatNumber value="${currAccountUser.account.totalBanker}"
       							 type="number" maxFractionDigits="2" minFractionDigits="2" />
           </font>
       		</td>
