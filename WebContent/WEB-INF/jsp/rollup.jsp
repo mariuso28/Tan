@@ -43,6 +43,7 @@
               	    <colgroup>
               		      <col span="1" style="width: 10%;">
                      		<col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
               		      <col span="1" style="width: 18%;">
               		      <col span="1" style="width: 18%;">
               		      <col span="1" style="width: 12%;">
@@ -52,6 +53,7 @@
               	    <tr style="color:purple; background-color:#555;">
                   		<td align="center"><strong><font color="#FFF" style="bold" size="2">Invoice</font></strong></td>
                   		<td align="center"><strong><font color="#FFF" style="bold" size="2">Issue Date</font></strong></td>
+                      <td align="center"><strong><font color="#FFF" style="bold" size="2">Type</font></strong></td>
                   	  <td align="center"><strong><font color="#FFF" style="bold" size="2">Collect</font></strong></td>
                   		<td align="center"><strong><font color="#FFF" style="bold" size="2">Pay</font></strong></td>
                   		<td align="right"><strong><font color="#FFF" style="bold" size="2">Amount</font></strong></td>
@@ -72,6 +74,7 @@
                 	    <tr style="color:purple; background-color:#ccc;">
                     		<c:set var="cnt" value="${status.index}" />
                     		<td align="center">#${invoice.id}</td>
+                        <td align="center">${invoice.invoiceType}</td>
                     		<td align="center"><fmt:formatDate value="${invoice.timestamp}" pattern="dd-MMM-yy"/></td>
                         <td align="center">${invoice.payer}</td>
                         <td align="center">${invoice.payee}</td>
@@ -103,8 +106,6 @@
                 <col span="1" style="width: 9%;">
                 <col span="1" style="width: 9%;">
                 <col span="1" style="width: 9%;">
-                <col span="1" style="width: 9%;">
-                <col span="1" style="width: 9%;">
                 <col span="1" style="width: 6%;">
             </colgroup>
           	<tr style="color:purple; background-color:#555;">
@@ -112,9 +113,7 @@
           		<td><strong><font color="#FFF" style="bold" size="2">Type</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Paid In</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Pay Out</font></strong></td>
-          		<td align="right"><strong><font color="#FFF" style="bold" size="2">Deposits</font></strong></td>
-          		<td align="right"><strong><font color="#FFF" style="bold" size="2">Withdrawls</font></strong></td>
-          		<td align="right"><strong><font color="#FFF" style="bold" size="2">Owed</font></strong></td>
+          	   <td align="right"><strong><font color="#FFF" style="bold" size="2">Owed</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Owing</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Net Owed</font></strong></td>
               <td>&nbsp;</td>
@@ -124,8 +123,6 @@
           		<td>${rollupForm.rollup.role}</td>
           		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.paidIn}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.paidOut}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-          		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.deposit}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-          		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.withdrawl}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           	  <td align="right"><fmt:formatNumber value="${rollupForm.rollup.owed}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.owing}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollupForm.rollup.totalOwed}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
@@ -152,8 +149,6 @@
                 <col span="1" style="width: 9%;">
                 <col span="1" style="width: 9%;">
                 <col span="1" style="width: 9%;">
-                <col span="1" style="width: 9%;">
-                <col span="1" style="width: 9%;">
                 <col span="1" style="width: 6%;">
             </colgroup>
           	<tr style="color:purple; background-color:#555;">
@@ -161,8 +156,6 @@
           		<td><strong><font color="#FFF" style="bold" size="2">Type</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Paid In</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Pay Out</font></strong></td>
-          		<td align="right"><strong><font color="#FFF" style="bold" size="2">Deposits</font></strong></td>
-          		<td align="right"><strong><font color="#FFF" style="bold" size="2">Withdrawls</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Owed</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Owing</font></strong></td>
           		<td align="right"><strong><font color="#FFF" style="bold" size="2">Net Owed</font></strong></td>
@@ -181,8 +174,6 @@
           		<td>${rollup.role}</td>
           		<td align="right"><fmt:formatNumber value="${rollup.paidIn}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollup.paidOut}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-          		<td align="right"><fmt:formatNumber value="${rollup.deposit}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
-          		<td align="right"><fmt:formatNumber value="${rollup.withdrawl}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollup.owed}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollup.owing}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>
           		<td align="right"><fmt:formatNumber value="${rollup.totalOwed}" type="number" maxFractionDigits="2" minFractionDigits="2" /></td>

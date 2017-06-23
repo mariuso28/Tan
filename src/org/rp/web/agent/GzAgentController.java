@@ -350,7 +350,7 @@ public class GzAgentController {
     }
 	
 	@RequestMapping(value = "/processAgent", params = "importCsvs", method = RequestMethod.GET)
-    public Object importCsvs(ModelMap model)
+    public Object importCsvs(ModelMap model,HttpServletRequest request)
     {
 		try {
 			gzServices.performImport();

@@ -179,6 +179,14 @@ public class GzAccountController {
 		GzBaseUser currUser = (GzBaseUser) session.getAttribute("sCurrUser");				
 		log.trace("got session attribute : currUser : " +  currUser );
 		
+		try {
+			// refresh
+			currUser = gzServices.getGzHome().getBaseUserByCode(currUser.getCode());
+		} catch (GzPersistenceException e) {
+			log.error(StackDump.toString(e));
+			return "redirect:/rp/agnt/backtoMemberHomeErr?errMsg=Distributions could not be updated - contact support".replace(" ","%20");
+		}
+		
 		GzBaseUser currAccountUser = currUser;		// same user/owner
 		log.trace("got session attribute : currUser : " +  currUser );
 		model.addAttribute("currUser",currUser);
@@ -221,17 +229,16 @@ public class GzAccountController {
 			return new ModelAndView("accountDistributionEdit" , "accountDistributionForm", accountDistributionForm);
 		}
 		
-		GzMemberForm memberForm = new GzMemberForm();
 		try {
 			gzServices.getGzHome().updateDistributions(currAccountUser.getAccount());
 		} catch (GzPersistenceException e) {
 			log.error(StackDump.toString(e));
-			memberForm.setErrMsg(ErrorMsgReport.createMessage("Distributions could not be updated - contact support"));
+			return "redirect:/rp/agnt/backtoMemberHomeErr?errMsg=Distributions could not be updated - contact support".replace(" ","%20");
 		}
 		gzServices.getGzHome().getDownstreamForParent(currUser);
 		model.addAttribute("currUser",currUser);
 		
-		return new ModelAndView("memberHome", "memberForm", memberForm );
+		return "redirect:/rp/agnt/backtoMemberHome";
 	}
 	
 	

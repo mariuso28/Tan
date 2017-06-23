@@ -83,7 +83,7 @@ public class CsvImportMgr {
 	            log.info("Importing :" +  fileEntry.getAbsolutePath());
 	            
 	            AgentRec agentRec = createAgentRec(fileEntry.getName());
-	            CsvImporter csv = new CsvImporter(fileEntry.getAbsolutePath(),gzServices,agentRec.getDate().toString());
+	            CsvImporter csv = new CsvImporter(fileEntry.getAbsolutePath(),gzServices,fileEntry.getName());
 	    		try {
 	    			log.info("$$$ Importing recs from : " + fileEntry.getAbsolutePath() + "  file#: " + currentFile + " of: " + fileNum);
 	    			csv.readRecs(agentRec);
