@@ -13,9 +13,14 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 		<context:annotation-config />
 		<bean class="org.rp.config.SecurityConfiguration" />
+		<bean class="org.rp.config.OAuth2AuthorizationServerConfig" />
+		<bean class="org.rp.config.OAuth2ResourceServerConfig" />
 		<bean class="org.rp.config.service.CustomUserDetailsService" />
 		<bean class="org.rp.config.service.CustomAuthenticationSuccessHandler" />
 		<bean class="org.rp.config.service.CustomAuthenticationFailureHandler" />
+		
+
+		
 
 		<import resource="rp-mail.xml"/>
 

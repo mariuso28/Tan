@@ -74,11 +74,24 @@ public class GzAgentController {
 		}
 		model.addAttribute("currUser",agent);
 		HashMap<String, GzBaseUser> expandedMembers = new HashMap<String, GzBaseUser>();
+		
+		expandMembers(expandedMembers,agent);
+		
 		model.addAttribute("currExpandedMembers", expandedMembers);
 	
 		return "redirect:backtoMemberHome";
     }
 	
+	private void expandMembers(HashMap<String, GzBaseUser> expandedMembers, GzBaseUser baseUser) {
+		expandedMembers.put(baseUser.getCode(),baseUser);
+		if (baseUser.getRole().equals(GzRole.ROLE_PLAY))
+			return;
+		
+		gzServices.getGzHome().getDownstreamForParent(baseUser);
+		for (GzBaseUser bu : baseUser.getMembers())
+			expandMembers(expandedMembers,bu);
+	}
+
 	// backtoMemberHome&errMes=
 	@RequestMapping(value = "/backtoMemberHomeErr", method = RequestMethod.GET)
 	public ModelAndView backtoMemberHomeErr(String errMsg,ModelMap model,HttpServletRequest request)
@@ -104,8 +117,8 @@ public class GzAgentController {
 		HttpSession session = request.getSession(false);
 		session.setAttribute("sCurrUser",currUser);
 		
-		HashMap<String, GzBaseUser> expandedMembers = new HashMap<String, GzBaseUser>();
-		model.addAttribute("currExpandedMembers", expandedMembers);
+	//	HashMap<String, GzBaseUser> expandedMembers = new HashMap<String, GzBaseUser>();
+	//	model.addAttribute("currExpandedMembers", expandedMembers);
 
 		setUpOutstandingInvoiceMap(currUser,model);
 		

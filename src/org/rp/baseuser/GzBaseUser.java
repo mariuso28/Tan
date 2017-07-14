@@ -220,5 +220,5 @@ public class GzBaseUser
 	public void setLeafInstance(long leafInstance) {
 		this.leafInstance = leafInstance;
 	}
-	
+
 }

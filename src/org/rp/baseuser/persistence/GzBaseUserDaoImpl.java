@@ -182,7 +182,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	{	
 		try
 		{
-			final String sql = "SELECT id,email,password,nickname,code,enabled,icon,parentcode,contact,phone,role FROM baseUser WHERE email=?";
+			final String sql = "SELECT * FROM baseUser WHERE email=?";
 			List<GzBaseUser> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
 				        public void setValues(PreparedStatement preparedStatement) throws SQLException {
 				          preparedStatement.setString(1, email);
@@ -209,7 +209,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 			@SuppressWarnings("rawtypes")
 			Class clazz = role.getCorrespondingClass();
 			
-			final String sql = "SELECT id,email,password,nickname,code,enabled,icon,parentcode,contact,phone,role FROM baseUser WHERE code=?";
+			final String sql = "SELECT * FROM baseUser WHERE code=?";
 			List<GzBaseUser> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
 				        public void setValues(PreparedStatement preparedStatement) throws SQLException {
 				          preparedStatement.setString(1, code);
@@ -301,13 +301,13 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	{
 		user.setMembers(new ArrayList<GzBaseUser>());
 		
-		if (user.getClass().equals(GzAdmin.class))					// admin only has companies
+		if (user.getClass().equals(GzAdmin.class))					// admin only has smas
 		{
 			GzAdmin admin = (GzAdmin) user;
-			admin.setComps(getCompsForParent(user));
+			admin.setSmas(getSmasForParent(user));
 			return;
 		}
-		
+		/*
 		if (user.getClass().equals(GzComp.class))
 		{
 			GzComp comp = (GzComp) user;
@@ -328,6 +328,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 			zma.setPlayers(getParticipantsForParent(user));
 			return;
 		}
+		*/
 		
 		if (user.getClass().equals(GzSMA.class))
 		{
@@ -356,6 +357,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		log.error("getMembersForUser : illegal class for user :" + user.getClass());
 	}
 	
+	@SuppressWarnings("unused")
 	private List<GzComp> getCompsForParent(GzBaseUser parent) throws GzPersistenceException
 	{
 		List<GzBaseUser> users = getUsersForParent(parent,GzComp.class,GzRole.ROLE_COMP);
@@ -368,6 +370,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		return comps;
 	}
 	
+	@SuppressWarnings("unused")
 	private List<GzZMA> getZmasForParent(GzBaseUser parent) throws GzPersistenceException
 	{
 		List<GzBaseUser> users = getUsersForParent(parent,GzZMA.class,GzRole.ROLE_ZMA); 
@@ -453,6 +456,64 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		
 	}
 
+	@Override
+	public List<GzBaseUser> getUpstreaMembers(final GzRole role) {
+
+		List<GzBaseUser> members = new ArrayList<GzBaseUser>();
+		if (role.getRank()==6)
+			return members;
+		if (role.getRank()==5)
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_ADMIN));
+			return members;
+		}
+		if (role.getRank()==4)  // ZMA
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_COMP));
+			return members;
+		}
+		if (role.getRank()<=3)	// SMA
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_COMP));
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_ZMA));
+		}
+		if (role.getRank()<=2)	// MA
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_SMA));
+		}
+		if (role.getRank()<=1)	// Agent
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_MA));
+		}
+		if (role.getRank()<=0)	// Player
+		{
+			members.addAll(getUpstreaMembers(GzAdmin.class,GzRole.ROLE_AGENT));
+		}
+		return members;
+	}
+
+	private List<GzBaseUser> getUpstreaMembers(@SuppressWarnings("rawtypes") Class userClass,final GzRole role) throws GzPersistenceException {
+
+		try
+		{
+			@SuppressWarnings("rawtypes")
+			Class clazz = role.getCorrespondingClass();
+			final String sql = "SELECT * FROM baseUser WHERE role = ? and enabled=true";
+			List<GzBaseUser> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
+				        public void setValues(PreparedStatement ps) throws SQLException {
+				        	ps.setString(1,role.name());
+				        }
+				      }, new GzBaseUserRowMapper1(clazz));
+			return bus;
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Could not execute : " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}
+	}
+
+	
 	private void populateUser(GzBaseUser user) throws GzPersistenceException {
 		user.setAccount(getAccount(user));
 		user.setAuthorities(getAuthorities(user));

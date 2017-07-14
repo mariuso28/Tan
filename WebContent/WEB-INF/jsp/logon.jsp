@@ -69,7 +69,7 @@ function submitForgotPassword()
     					<tr>
     						<td><font style="color:#aaa; font-size:14px; font-weight:700;">Email Address:</font></td>
               	<td><input id="emailDefault" class="inTable form-control" type="text"
-    							name="email" value="c1@rpco.com" style="height:24px;"/></td>
+    							name="email" value="rpadmin@test.com" style="height:24px;"/></td>
     					</tr>
               <tr>
                 <td>&nbsp;</td>

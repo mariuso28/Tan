@@ -1,10 +1,14 @@
 package org.rp.config;
 
+import javax.sql.DataSource;
+
 import org.rp.config.service.CustomAuthenticationFailureHandler;
 import org.rp.config.service.CustomAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +18,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
@@ -26,6 +34,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 	@Autowired
 	private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+	@Autowired
+	private DataSource dataSource;
 	
 	@Bean(name="filterMultipartResolver")
 	public CommonsMultipartResolver createMultipartResolver() {
@@ -35,6 +45,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		return resolver;
 	}
 
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
+	}
+	
+    @Primary
+    public DefaultTokenServices tokenServices() {
+        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+        defaultTokenServices.setTokenStore(tokenStore());
+        defaultTokenServices.setSupportRefreshToken(true);
+        return defaultTokenServices;
+    }
+
+	@Bean
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
+    }
+	
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth)
 			throws Exception {
@@ -93,6 +122,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		web.ignoring().antMatchers("/rp/logon/storeImage");
 	}
 
+	@Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+	
+	
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();

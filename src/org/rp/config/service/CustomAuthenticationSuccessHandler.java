@@ -33,7 +33,7 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
 		
 		String authorities = user.getAuthorities().toString();
 		if ( authorities.contains("ROLE_ADMIN"))
-			setDefaultTargetUrl("/rp/admin/logon?user&email=" + user.getUsername());
+			setDefaultTargetUrl("/rp/adm/logon?user&email=" + user.getUsername());
 		else
 		if (authorities.contains("ROLE_COMP") || authorities.contains("ROLE_ZMA") 
 				|| authorities.contains("ROLE_SMA") || authorities.contains("ROLE_MA") 

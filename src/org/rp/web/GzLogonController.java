@@ -42,7 +42,7 @@ public class GzLogonController {
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
-	public ModelAndView signin(ModelMap model) {
+	public ModelAndView signin() {
 		
 		log.info("Received request to signin XXX");
 			
@@ -51,8 +51,9 @@ public class GzLogonController {
 		logon.put("infoMsg", "");
 		logon.put("email", "brian@test.com");
 		
-		return new ModelAndView("logon","logon", logon);
+		return new ModelAndView("logon","logon",logon);
 	}
+	
 	
 	public ModelAndView signin(ModelMap model,String email,String infoMsg,String errMsg) {
 		

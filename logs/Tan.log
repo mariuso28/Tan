@@ -3784,3 +3784,648 @@ Kind regards - RedPacket Gaming Support Team.
 11:49:28,627  INFO Thread-3 Mail:56 - creating message
 11:49:28,680  INFO Thread-3 Mail:78 - sending message to : mariuso.pk@gmail.com from : info@goldmine.online
 11:49:35,088  INFO Thread-3 Mail:80 - sended message
+12:01:08,447  INFO http-bio-8080-exec-7 GzLogonController:47 - Received request to signin XXX
+12:01:19,614  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+12:01:20,973  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+12:01:20,974  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+12:01:21,062  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:01:21,062  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+12:01:21,063  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+12:01:38,489  INFO http-bio-8080-exec-7 CsvImportMgr:83 - Importing :/home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv
+12:01:38,494  INFO http-bio-8080-exec-7 CsvImportMgr:88 - $$$ Importing recs from : /home/pmk/Tan/import/a1@rpco.com-2017-06-22.csv  file#: 0 of: 1
+12:01:38,513  INFO http-bio-8080-exec-7 CsvImporter:72 - PlayerRec [email=null, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+12:01:38,514  INFO http-bio-8080-exec-7 CsvImporter:72 - PlayerRec [email=null, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+12:01:38,514  INFO http-bio-8080-exec-7 CsvImporter:81 - Read 5 Recs
+12:01:38,514  INFO http-bio-8080-exec-7 CsvImporter:88 - %%% Importing transactions %%%
+12:01:38,515  INFO http-bio-8080-exec-7 CsvImporter:93 - PlayerRec [email=benny@rpco.com, contact=benny, bankerTurnover=1500.0, turnover=7000.0, rollingBet=804.0, fees=94.2]
+12:01:38,516  INFO http-bio-8080-exec-7 CsvImporter:93 - PlayerRec [email=koko@rpco.com, contact=koko, bankerTurnover=0.0, turnover=1500.0, rollingBet=2905.0, fees=7583.4]
+12:01:38,518  INFO http-bio-8080-exec-7 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@7ecf75aa source: a1@rpco.com-2017-06-22.csv
+12:01:38,622  INFO http-bio-8080-exec-7 GzAccountMgr:29 - Creating transaction turnovers for : org.rp.baseuser.GzBaseUser@29e92ad0 source: a1@rpco.com-2017-06-22.csv
+12:02:35,130  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+12:02:35,131  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+12:02:35,131  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:35,132  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+12:02:35,133  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:35,133  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:35,209  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+12:02:35,211  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+12:02:35,213  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:35,216  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+12:02:35,218  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:35,220  INFO http-bio-8080-exec-8 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:38,484  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+12:02:38,486  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+12:02:38,488  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:38,491  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+12:02:38,493  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:38,496  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:38,503  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+12:02:38,504  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+12:02:38,506  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:38,507  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+12:02:38,509  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:38,510  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:40,062  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+12:02:40,063  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+12:02:40,064  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:40,065  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+12:02:40,066  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:40,066  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:40,069  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+12:02:40,069  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+12:02:40,070  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:40,071  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+12:02:40,071  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:40,072  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:41,784  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+12:02:41,785  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+12:02:41,786  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:41,786  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+12:02:41,787  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:41,788  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:41,790  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+12:02:41,790  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+12:02:41,791  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+12:02:41,792  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+12:02:41,792  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+12:02:41,793  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+12:02:41,794  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+12:02:41,795  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+12:02:41,797  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+12:02:41,798  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+12:02:41,799  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+12:02:41,800  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+12:02:52,435  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+12:02:52,436  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+12:02:52,437  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:52,437  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+12:02:52,438  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:52,438  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:52,440  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+12:02:52,441  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+12:02:52,441  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:52,442  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+12:02:52,442  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:52,443  INFO http-bio-8080-exec-3 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+12:02:53,363  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+12:02:53,365  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+12:02:53,366  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:53,368  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+12:02:53,370  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:53,371  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:53,373  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+12:02:53,373  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+12:02:53,374  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:53,375  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+12:02:53,376  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:53,378  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+12:02:54,155  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+12:02:54,156  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+12:02:54,157  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:54,157  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+12:02:54,158  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:54,159  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+12:02:54,161  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+12:02:54,161  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+12:02:54,162  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:54,163  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+12:02:54,164  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+12:02:54,164  INFO http-bio-8080-exec-4 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+12:04:43,251  INFO http-bio-8080-exec-2 GzAccountDaoImpl:559 - UPDATE xaction SET status='C' WHERE type ='I' and status='O'
+11:17:06,386  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+11:17:16,623  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : drpknox@hotmail.com
+11:17:17,108 ERROR http-bio-8080-exec-4 CustomUserDetailsService:50 - User : drpknox@hotmail.com not found
+11:17:17,193  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : drpknox@hotmail.com
+11:17:17,194 ERROR http-bio-8080-exec-4 CustomUserDetailsService:50 - User : drpknox@hotmail.com not found
+11:17:17,195  INFO http-bio-8080-exec-4 CustomAuthenticationFailureHandler:30 - Failure on : drpknox@hotmail.com
+11:17:17,196  INFO http-bio-8080-exec-4 CustomAuthenticationFailureHandler:34 - Forwarding to : /rp/logon/signin?error&message=Authentication%20Error
+11:17:17,261  INFO http-bio-8080-exec-4 GzLogonController:72 - Received request to signin - error
+11:17:21,079  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+11:17:21,192  INFO http-bio-8080-exec-4 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+11:17:21,196  INFO http-bio-8080-exec-4 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+11:17:21,305  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:17:21,305  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+11:17:21,305  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+12:02:15,742  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+12:02:54,279  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:06:30,876  INFO http-bio-8080-exec-10 GzLogonController:47 - Received request to signin XXX
+12:07:22,531  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+12:08:31,820  INFO http-bio-8080-exec-10 GzLogonController:47 - Received request to signin XXX
+12:08:34,161  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+12:11:21,456  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:13:51,067  INFO http-bio-8080-exec-10 GzLogonController:47 - Received request to signin XXX
+12:42:23,902  INFO http-bio-8080-exec-3 AuthRestController:43 - authorize : co1@test.com
+12:42:24,499  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : co1@test.com
+12:42:24,523 ERROR http-bio-8080-exec-4 CustomUserDetailsService:50 - User : co1@test.com not found
+12:42:24,611  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : co1@test.com
+12:42:24,612 ERROR http-bio-8080-exec-4 CustomUserDetailsService:50 - User : co1@test.com not found
+12:42:24,655  INFO http-bio-8080-exec-3 AuthRestController:71 - authorize fail
+12:43:18,207  INFO http-bio-8080-exec-6 AuthRestController:43 - authorize : c1@rpco.com
+12:43:18,214  INFO http-bio-8080-exec-7 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+12:43:18,220  INFO http-bio-8080-exec-7 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+12:43:18,220  INFO http-bio-8080-exec-7 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+12:43:18,514  INFO http-bio-8080-exec-6 AuthRestController:58 - authorize success
+12:43:35,481  INFO http-bio-8080-exec-10 AuthRestController:43 - authorize : $('#emailDefault').value()
+12:43:35,489  INFO http-bio-8080-exec-1 CustomUserDetailsService:30 - loadUserByUsername email : $('#emailDefault').value()
+12:43:35,489 ERROR http-bio-8080-exec-1 CustomUserDetailsService:36 - Email $('#emaildefault').value() Invalid
+12:43:35,574  INFO http-bio-8080-exec-1 CustomUserDetailsService:30 - loadUserByUsername email : $('#emailDefault').value()
+12:43:35,575 ERROR http-bio-8080-exec-1 CustomUserDetailsService:36 - Email $('#emaildefault').value() Invalid
+12:43:35,579  INFO http-bio-8080-exec-10 AuthRestController:71 - authorize fail
+12:45:13,021  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:45:34,134  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+12:50:29,553  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+12:50:32,443  INFO http-bio-8080-exec-3 AuthRestController:43 - authorize : c1@rpco.com
+12:50:32,458  INFO http-bio-8080-exec-9 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+12:50:32,462  INFO http-bio-8080-exec-9 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+12:50:32,463  INFO http-bio-8080-exec-9 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+12:50:32,593  INFO http-bio-8080-exec-3 AuthRestController:58 - authorize success
+12:53:10,831  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+12:53:51,143  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+12:56:18,674  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+12:57:22,446  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+12:59:32,692  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+13:00:24,390  INFO http-bio-8080-exec-10 GzLogonController:47 - Received request to signin XXX
+13:00:51,145  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+13:00:53,332  INFO http-bio-8080-exec-5 AuthRestController:43 - authorize : c1@rpco.com
+13:00:53,337  INFO http-bio-8080-exec-2 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+13:00:53,339  INFO http-bio-8080-exec-2 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+13:00:53,339  INFO http-bio-8080-exec-2 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+13:00:53,464  INFO http-bio-8080-exec-5 AuthRestController:58 - authorize success
+13:43:31,636  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+13:43:33,395  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+13:43:33,800  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+13:43:33,801  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+13:43:33,905  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:43:33,906  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+13:43:33,907  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:02:49,791  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+14:02:51,280  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:02:51,285  INFO http-bio-8080-exec-4 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:02:51,285  INFO http-bio-8080-exec-4 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:02:51,374  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:02:51,375  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:02:51,375  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:02:52,699  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+14:02:52,700  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+14:02:52,701  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:52,702  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+14:02:52,703  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:52,703  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:52,709  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:02:52,710  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:02:52,711  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:52,712  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:02:52,713  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:52,713  INFO http-bio-8080-exec-9 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:54,980  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:35 - Created : org.rp.account.persistence.GzXactionRowMapperPaginated@85d9671
+14:02:54,980  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:69 - Getting page : 1 startIndex : 0 endIndex: 2
+14:02:54,982  INFO http-bio-8080-exec-9 GzXactionRowMapperPaginated:78 - select * FROM xaction WHERE payer = 'c1@rpco.com' OR payee='c1@rpco.com' ORDER BY ID DESC
+14:02:57,731  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+14:02:57,732  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+14:02:57,732  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:57,733  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+14:02:57,734  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:57,735  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+14:02:57,737  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:02:57,738  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:02:57,738  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:57,739  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:02:57,740  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:57,740  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:59,605  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:02:59,606  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:02:59,607  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:59,607  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:02:59,608  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:59,609  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+14:02:59,611  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+14:02:59,612  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+14:02:59,612  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+14:02:59,613  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+14:02:59,614  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+14:02:59,614  INFO http-bio-8080-exec-7 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:00,736  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+14:03:00,737  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+14:03:00,738  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:00,739  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+14:03:00,740  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:00,740  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:00,742  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+14:03:00,743  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+14:03:00,744  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:00,744  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+14:03:00,745  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:00,745  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:03,280  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+14:03:03,281  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+14:03:03,282  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:03,283  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+14:03:03,283  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:03,284  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:03,286  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='benny@rpco.com' AND paymentdate IS NOT null
+14:03:03,286  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='benny@rpco.com' AND paymentdate IS NOT null
+14:03:03,287  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='benny@rpco.com' AND paymentdate IS null
+14:03:03,287  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='benny@rpco.com' AND paymentdate IS null
+14:03:03,288  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='benny@rpco.com' AND paymentdate IS null
+14:03:03,288  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='benny@rpco.com' AND paymentdate IS null
+14:03:03,289  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='koko@rpco.com' AND paymentdate IS NOT null
+14:03:03,289  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='koko@rpco.com' AND paymentdate IS NOT null
+14:03:03,290  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='koko@rpco.com' AND paymentdate IS null
+14:03:03,290  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='koko@rpco.com' AND paymentdate IS null
+14:03:03,291  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='koko@rpco.com' AND paymentdate IS null
+14:03:03,291  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='koko@rpco.com' AND paymentdate IS null
+14:03:05,703  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+14:03:05,704  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+14:03:05,705  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:05,705  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+14:03:05,706  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:05,707  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:05,709  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='a1@rpco.com' AND paymentdate IS NOT null
+14:03:05,710  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='a1@rpco.com' AND paymentdate IS NOT null
+14:03:05,710  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:05,711  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='a1@rpco.com' AND paymentdate IS null
+14:03:05,712  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:05,713  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='a1@rpco.com' AND paymentdate IS null
+14:03:06,666  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:03:06,668  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:03:06,670  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:03:06,672  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:03:06,674  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:03:06,677  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+14:03:06,682  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='m1@rpco.com' AND paymentdate IS NOT null
+14:03:06,683  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='m1@rpco.com' AND paymentdate IS NOT null
+14:03:06,685  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:06,687  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='m1@rpco.com' AND paymentdate IS null
+14:03:06,688  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:06,691  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='m1@rpco.com' AND paymentdate IS null
+14:03:07,353  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+14:03:07,354  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+14:03:07,355  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+14:03:07,355  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+14:03:07,356  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+14:03:07,356  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+14:03:07,358  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:03:07,359  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:03:07,360  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:03:07,360  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:03:07,361  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:03:07,361  INFO http-bio-8080-exec-6 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+14:36:04,564  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+14:36:06,524  INFO http-bio-8080-exec-8 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:36:06,943  INFO http-bio-8080-exec-8 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:36:06,945  INFO http-bio-8080-exec-8 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:36:07,030  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:36:07,030  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:36:07,031  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:39:52,767  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+14:39:54,205  INFO http-bio-8080-exec-2 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:39:54,560  INFO http-bio-8080-exec-2 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:39:54,560  INFO http-bio-8080-exec-2 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:39:54,641  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:39:54,641  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:39:54,642  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:41:39,220  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+14:41:41,005  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:41:41,408  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:41:41,408  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:41:41,508  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:41:41,509  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:41:41,509  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:41:41,594 ERROR http-bio-8080-exec-6 GzBaseUserDaoImpl:356 - getMembersForUser : illegal class for user :class org.rp.baseuser.GzBaseUser
+14:41:41,595 ERROR http-bio-8080-exec-6 GzBaseUserDaoImpl:356 - getMembersForUser : illegal class for user :class org.rp.baseuser.GzBaseUser
+14:43:30,684  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+14:43:32,003  INFO http-bio-8080-exec-2 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:43:32,386  INFO http-bio-8080-exec-2 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:43:32,387  INFO http-bio-8080-exec-2 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:43:32,470  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:43:32,471  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:43:32,471  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:44:02,985  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:44:04,554  INFO http-bio-8080-exec-4 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:44:04,948  INFO http-bio-8080-exec-4 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:44:04,950  INFO http-bio-8080-exec-4 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:44:05,033  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:44:05,033  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:44:05,033  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:47:14,271  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:47:15,677  INFO http-bio-8080-exec-6 CustomUserDetailsService:30 - loadUserByUsername email : c1@rpco.com
+14:47:16,097  INFO http-bio-8080-exec-6 CustomUserDetailsService:53 - User : c1@rpco.com found with role :ROLE_COMP
+14:47:16,098  INFO http-bio-8080-exec-6 CustomUserDetailsService:60 - Using User : c1@rpco.com with authorities :[ROLE_COMP]
+14:47:16,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:47:16,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : c1@rpco.com authorities : [ROLE_COMP]
+14:47:16,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/agnt/processAgent?goMemberHome
+14:48:35,125  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='c1@rpco.com' AND paymentdate IS NOT null
+14:48:35,126  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='c1@rpco.com' AND paymentdate IS NOT null
+14:48:35,128  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='c1@rpco.com' AND paymentdate IS null
+14:48:35,129  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='c1@rpco.com' AND paymentdate IS null
+14:48:35,129  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='c1@rpco.com' AND paymentdate IS null
+14:48:35,131  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='c1@rpco.com' AND paymentdate IS null
+14:48:35,139  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND payee='s1@rpco.com' AND paymentdate IS NOT null
+14:48:35,140  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I'  AND payer='s1@rpco.com' AND paymentdate IS NOT null
+14:48:35,141  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payee='s1@rpco.com' AND paymentdate IS null
+14:48:35,142  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(netamount) FROM xaction WHERE TYPE='I' AND STATUS='C' AND payer='s1@rpco.com' AND paymentdate IS null
+14:48:35,144  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='W' AND payee='s1@rpco.com' AND paymentdate IS null
+14:48:35,145  INFO http-bio-8080-exec-10 GzAccountDaoImpl:372 - getRollupValue : SELECT SUM(amount) FROM xaction WHERE TYPE='D' AND payee='s1@rpco.com' AND paymentdate IS null
+10:39:38,912  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:39:47,802  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : drpknox@hotmail.com
+10:39:48,188 ERROR http-bio-8080-exec-5 CustomUserDetailsService:41 - User : drpknox@hotmail.com not found
+10:39:48,268  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : drpknox@hotmail.com
+10:39:48,270 ERROR http-bio-8080-exec-5 CustomUserDetailsService:41 - User : drpknox@hotmail.com not found
+10:39:48,273  INFO http-bio-8080-exec-5 CustomAuthenticationFailureHandler:30 - Failure on : drpknox@hotmail.com
+10:39:48,273  INFO http-bio-8080-exec-5 CustomAuthenticationFailureHandler:34 - Forwarding to : /rp/logon/signin?error&message=Authentication%20Error
+10:39:48,350  INFO http-bio-8080-exec-5 GzLogonController:73 - Received request to signin - error
+10:41:40,712  INFO http-bio-8080-exec-3 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+10:41:40,725  INFO http-bio-8080-exec-3 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+10:41:40,726  INFO http-bio-8080-exec-3 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+10:41:40,817  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:41:40,818  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+10:41:40,818  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+10:41:40,848  INFO http-bio-8080-exec-3 GzAdminController:37 - Received request to logon
+10:42:58,071  INFO http-bio-8080-exec-1 GzAdminController:37 - Received request to logon
+11:01:27,594  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:01:31,080  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:01:31,498  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:01:31,499  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:01:31,586  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:01:31,586  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:01:31,587  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:01:31,815  INFO http-bio-8080-exec-5 GzAdminController:37 - Received request to logon
+11:02:08,826  INFO http-bio-8080-exec-1 GzLogonController:47 - Received request to signin XXX
+11:02:10,653  INFO http-bio-8080-exec-1 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:02:10,662  INFO http-bio-8080-exec-1 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:02:10,663  INFO http-bio-8080-exec-1 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:02:10,755  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:02:10,756  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:02:10,756  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:02:10,774  INFO http-bio-8080-exec-1 GzAdminController:37 - Received request to logon
+11:04:01,004  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+11:04:02,914  INFO http-bio-8080-exec-3 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:04:03,280  INFO http-bio-8080-exec-3 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:04:03,280  INFO http-bio-8080-exec-3 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:04:03,362  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:04:03,362  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:04:03,363  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:04:03,433  INFO http-bio-8080-exec-3 GzAdminController:37 - Received request to logon
+11:08:26,389  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+11:08:28,631  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:08:29,083  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:08:29,084  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:08:29,182  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:08:29,182  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:08:29,182  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:08:29,265  INFO http-bio-8080-exec-5 GzAdminController:37 - Received request to logon
+11:11:27,728  INFO http-bio-8080-exec-6 GzAdminController:37 - Received request to logon
+11:11:35,007  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+11:11:36,467  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:11:36,473  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:11:36,474  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:11:36,567  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:11:36,568  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:11:36,568  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:11:36,582  INFO http-bio-8080-exec-4 GzAdminController:37 - Received request to logon
+11:12:06,940  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+11:12:14,489  INFO http-bio-8080-exec-6 GzLogonController:47 - Received request to signin XXX
+11:12:16,426  INFO http-bio-8080-exec-3 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:12:16,431  INFO http-bio-8080-exec-3 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:12:16,431  INFO http-bio-8080-exec-3 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:12:16,526  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:12:16,526  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:12:16,526  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:12:16,539  INFO http-bio-8080-exec-3 GzAdminController:37 - Received request to logon
+11:13:15,073  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+11:13:16,894  INFO http-bio-8080-exec-10 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:13:16,898  INFO http-bio-8080-exec-10 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:13:16,899  INFO http-bio-8080-exec-10 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:13:16,995  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:13:16,995  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:13:16,996  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:13:17,011  INFO http-bio-8080-exec-10 GzAdminController:37 - Received request to logon
+11:16:50,196  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+11:16:51,687  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:16:52,145  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:16:52,146  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:16:52,229  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:16:52,229  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:16:52,230  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:16:52,302  INFO http-bio-8080-exec-4 GzAdminController:37 - Received request to logon
+11:25:21,720  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+11:25:22,978  INFO http-bio-8080-exec-7 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:25:22,985  INFO http-bio-8080-exec-7 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:25:22,985  INFO http-bio-8080-exec-7 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:25:23,068  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:25:23,068  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:25:23,068  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:25:23,084  INFO http-bio-8080-exec-7 GzAdminController:37 - Received request to logon
+11:58:45,332  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:58:46,904  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+11:58:47,336  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+11:58:47,338  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+11:58:47,426  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:58:47,426  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+11:58:47,426  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+11:58:47,524  INFO http-bio-8080-exec-5 GzAdminController:38 - Received request to logon
+12:02:31,601  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:02:33,478  INFO http-bio-8080-exec-8 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+12:02:33,936  INFO http-bio-8080-exec-8 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+12:02:33,937  INFO http-bio-8080-exec-8 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+12:02:34,028  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:02:34,028  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+12:02:34,028  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+12:02:34,166  INFO http-bio-8080-exec-8 GzAdminController:38 - Received request to logon
+12:10:32,011  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:10:33,521  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+12:10:33,907  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+12:10:33,907  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+12:10:33,991  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:10:33,991  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+12:10:33,991  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+12:10:34,071  INFO http-bio-8080-exec-4 GzAdminController:38 - Received request to logon
+12:11:41,428  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:11:43,170  INFO http-bio-8080-exec-10 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+12:11:43,595  INFO http-bio-8080-exec-10 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+12:11:43,596  INFO http-bio-8080-exec-10 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+12:11:43,724  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:11:43,724  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+12:11:43,725  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+12:11:43,840  INFO http-bio-8080-exec-10 GzAdminController:38 - Received request to logon
+12:11:49,140  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_MA, password=88888888, vPassword=, weChatName=, superiorCode=member.code]
+12:15:14,260  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:15:16,286  INFO http-bio-8080-exec-10 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+12:15:16,718  INFO http-bio-8080-exec-10 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+12:15:16,718  INFO http-bio-8080-exec-10 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+12:15:16,811  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:15:16,812  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+12:15:16,812  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+12:15:16,904  INFO http-bio-8080-exec-10 GzAdminController:38 - Received request to logon
+12:15:22,688  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_MA, password=88888888, vPassword=, weChatName=, superiorCode=member.code]
+12:15:32,483  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_MA, password=88888888, vPassword=, weChatName=, superiorCode=member.code]
+12:15:36,574  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_PLAY, password=88888888, vPassword=, weChatName=, superiorCode=member.code]
+12:15:55,487  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_PLAY, password=88888888, vPassword=, weChatName=, superiorCode=member.code]
+12:15:59,714  INFO http-bio-8080-exec-10 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_MA, password=88888888, vPassword=, weChatName=, superiorCode=c0]
+12:16:56,375  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+12:16:58,017  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+12:16:58,404  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+12:16:58,405  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+12:16:58,489  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+12:16:58,489  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+12:16:58,490  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+12:16:58,599  INFO http-bio-8080-exec-5 GzAdminController:38 - Received request to logon
+12:17:04,696  INFO http-bio-8080-exec-3 GzAdminController:109 - changeMemberRank: GzMemberCommand [username=rpadmin@test.com, memberRank=ROLE_MA, password=88888888, vPassword=, weChatName=, superiorCode=x0]
+13:32:20,416  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:32:22,297  INFO http-bio-8080-exec-7 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:32:22,674  INFO http-bio-8080-exec-7 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:32:22,676  INFO http-bio-8080-exec-7 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:32:22,757  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:32:22,758  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:32:22,758  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:32:22,835  INFO http-bio-8080-exec-7 GzAdminController:39 - Received request to logon
+13:33:41,216  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:33:43,156  INFO http-bio-8080-exec-8 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:33:43,552  INFO http-bio-8080-exec-8 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:33:43,553  INFO http-bio-8080-exec-8 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:33:43,638  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:33:43,638  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:33:43,638  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:33:43,752  INFO http-bio-8080-exec-6 GzAdminController:39 - Received request to logon
+13:39:05,663  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+13:39:07,335  INFO http-bio-8080-exec-10 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:39:07,773  INFO http-bio-8080-exec-10 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:39:07,775  INFO http-bio-8080-exec-10 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:39:07,860  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:39:07,861  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:39:07,861  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:39:07,967  INFO http-bio-8080-exec-10 GzAdminController:39 - Received request to logon
+13:42:48,115  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:42:50,121  INFO http-bio-8080-exec-8 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:42:50,502  INFO http-bio-8080-exec-8 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:42:50,502  INFO http-bio-8080-exec-8 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:42:50,584  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:42:50,584  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:42:50,584  INFO http-bio-8080-exec-8 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:42:50,651  INFO http-bio-8080-exec-8 GzAdminController:39 - Received request to logon
+13:43:12,147  INFO http-bio-8080-exec-8 GzAdminController:131 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+13:46:44,928  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:46:46,913  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:46:47,346  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:46:47,346  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:46:47,432  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:46:47,432  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:46:47,432  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:46:47,525  INFO http-bio-8080-exec-5 GzAdminController:39 - Received request to logon
+13:47:08,303  INFO http-bio-8080-exec-5 GzAdminController:131 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+13:47:08,309  INFO http-bio-8080-exec-5 GzBaseUserDaoImpl:141 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+13:47:08,469  INFO http-bio-8080-exec-5 GzBaseUserDaoImpl:143 - Got next leaf instance : null
+13:47:08,729 ERROR http-bio-8080-exec-5 GzBaseUserDaoImpl:71 - Could not execute : PreparedStatementCallback; SQL [INSERT INTO baseuser (id,email,contact,phone,nickname,code,parentcode,role,icon,enabled,password,leafinstance,fullcontact) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)]; The column index is out of range: 13, number of columns: 12.; nested exception is org.postgresql.util.PSQLException: The column index is out of range: 13, number of columns: 12.
+13:48:17,848  INFO http-bio-8080-exec-7 GzAdminController:131 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+13:48:17,855  INFO http-bio-8080-exec-7 GzBaseUserDaoImpl:141 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+13:48:17,856  INFO http-bio-8080-exec-7 GzBaseUserDaoImpl:143 - Got next leaf instance : null
+13:48:17,857 ERROR http-bio-8080-exec-7 GzBaseUserDaoImpl:71 - Could not execute : PreparedStatementCallback; SQL [INSERT INTO baseuser (id,email,contact,phone,nickname,code,parentcode,role,icon,enabled,password,leafinstance,fullcontact) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)]; The column index is out of range: 13, number of columns: 12.; nested exception is org.postgresql.util.PSQLException: The column index is out of range: 13, number of columns: 12.
+13:51:24,099  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:51:25,553  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:51:26,019  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:51:26,019  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:51:26,107  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:51:26,107  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:51:26,107  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:51:26,190  INFO http-bio-8080-exec-4 GzAdminController:39 - Received request to logon
+13:51:45,800  INFO http-bio-8080-exec-2 GzAdminController:131 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+13:51:45,808  INFO http-bio-8080-exec-2 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+13:51:45,809  INFO http-bio-8080-exec-2 GzBaseUserDaoImpl:142 - Got next leaf instance : null
+13:51:45,953 ERROR http-bio-8080-exec-2 GzBaseUserDaoImpl:70 - Could not execute : PreparedStatementCallback; SQL [INSERT INTO baseuser (id,email,contact,phone,nickname,code,parentcode,role,icon,enabled,password,leafinstance) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)]; ERROR: null value in column "password" violates not-null constraint
+  Detail: Failing row contains (cf5a036a-fbae-4944-9c0e-2de51e48640f, sma1, null, null, s0, t, null, x0, ROLE_SMA, sma1-wechat, null, f, 0, null).; nested exception is org.postgresql.util.PSQLException: ERROR: null value in column "password" violates not-null constraint
+  Detail: Failing row contains (cf5a036a-fbae-4944-9c0e-2de51e48640f, sma1, null, null, s0, t, null, x0, ROLE_SMA, sma1-wechat, null, f, 0, null).
+13:53:39,808  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:53:41,497  INFO http-bio-8080-exec-10 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:53:41,893  INFO http-bio-8080-exec-10 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:53:41,893  INFO http-bio-8080-exec-10 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:53:41,977  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:53:41,978  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:53:41,978  INFO http-bio-8080-exec-10 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:53:42,056  INFO http-bio-8080-exec-10 GzAdminController:41 - Received request to logon
+13:53:57,281  INFO http-bio-8080-exec-10 GzAdminController:133 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+13:53:57,373  INFO http-bio-8080-exec-10 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+13:53:57,374  INFO http-bio-8080-exec-10 GzBaseUserDaoImpl:142 - Got next leaf instance : null
+13:55:03,711  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+13:55:07,097  INFO http-bio-8080-exec-7 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:55:07,536  INFO http-bio-8080-exec-7 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:55:07,536  INFO http-bio-8080-exec-7 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:55:07,618  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:55:07,619  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:55:07,619  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:55:07,732  INFO http-bio-8080-exec-7 GzAdminController:41 - Received request to logon
+13:56:28,052  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+13:56:29,784  INFO http-bio-8080-exec-9 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+13:56:30,193  INFO http-bio-8080-exec-9 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+13:56:30,195  INFO http-bio-8080-exec-9 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+13:56:30,274  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+13:56:30,275  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+13:56:30,275  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+13:56:30,360  INFO http-bio-8080-exec-9 GzAdminController:41 - Received request to logon
+13:56:46,917  INFO http-bio-8080-exec-9 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+14:03:56,679  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:03:58,267  INFO http-bio-8080-exec-6 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+14:03:58,678  INFO http-bio-8080-exec-6 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+14:03:58,678  INFO http-bio-8080-exec-6 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+14:03:58,772  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:03:58,772  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+14:03:58,773  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+14:03:58,870  INFO http-bio-8080-exec-6 GzAdminController:41 - Received request to logon
+14:04:17,006  INFO http-bio-8080-exec-6 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+14:05:02,694  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+14:05:04,531  INFO http-bio-8080-exec-1 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+14:05:04,991  INFO http-bio-8080-exec-1 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+14:05:04,991  INFO http-bio-8080-exec-1 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+14:05:05,085  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:05:05,085  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+14:05:05,085  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+14:05:05,179  INFO http-bio-8080-exec-1 GzAdminController:41 - Received request to logon
+14:05:22,007  INFO http-bio-8080-exec-7 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=888888888, vPassword=888888888, weChatName=sma1-wechat, superiorCode=x0]
+14:08:26,227  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+14:08:28,309  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+14:08:28,697  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+14:08:28,697  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+14:08:28,787  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:08:28,788  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+14:08:28,788  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+14:08:28,867  INFO http-bio-8080-exec-4 GzAdminController:41 - Received request to logon
+14:08:44,027  INFO http-bio-8080-exec-4 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+14:09:01,930  INFO http-bio-8080-exec-6 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma2, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+14:09:02,026  INFO http-bio-8080-exec-6 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+14:09:02,027  INFO http-bio-8080-exec-6 GzBaseUserDaoImpl:142 - Got next leaf instance : 0
+14:09:02,028  INFO http-bio-8080-exec-6 GzBaseUserDaoImpl:154 - Using leaf instance : 1
+14:11:11,831  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+14:11:46,923  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:11:48,690  INFO http-bio-8080-exec-6 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+14:11:49,093  INFO http-bio-8080-exec-6 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+14:11:49,095  INFO http-bio-8080-exec-6 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+14:11:49,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:11:49,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+14:11:49,185  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+14:11:49,319  INFO http-bio-8080-exec-6 GzAdminController:41 - Received request to logon
+14:12:16,822  INFO http-bio-8080-exec-8 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma3, memberRank=ROLE_SMA, password=888888888, vPassword=888888888, weChatName=sma1-wechat, superiorCode=x0]
+14:13:26,116  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:25:55,277  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+14:25:56,623  INFO http-bio-8080-exec-6 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+14:25:57,037  INFO http-bio-8080-exec-6 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+14:25:57,039  INFO http-bio-8080-exec-6 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+14:25:57,124  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+14:25:57,125  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+14:25:57,125  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+14:25:57,212  INFO http-bio-8080-exec-6 GzAdminController:41 - Received request to logon
+14:26:15,513  INFO http-bio-8080-exec-6 GzAdminController:134 - memberRegister: GzMemberCommand [username=sma3, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=sma1-wechat, superiorCode=x0]
+14:26:47,616  INFO http-bio-8080-exec-1 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=ma1, memberRank=ROLE_MA, password=88888888, vPassword=88888888, weChatName=ma1-wechat, superiorCode=x0]
+14:27:04,585  INFO http-bio-8080-exec-1 GzAdminController:134 - memberRegister: GzMemberCommand [username=ma1, memberRank=ROLE_MA, password=88888888, vPassword=88888888, weChatName=ma1-wechat, superiorCode=s1]
+14:27:04,672  INFO http-bio-8080-exec-1 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+14:27:04,674  INFO http-bio-8080-exec-1 GzBaseUserDaoImpl:142 - Got next leaf instance : null
+14:27:45,884  INFO http-bio-8080-exec-9 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=a1, memberRank=ROLE_AGENT, password=88888888, vPassword=88888888, weChatName=a1-wechat, superiorCode=x0]
+14:27:52,080  INFO http-bio-8080-exec-5 GzAdminController:134 - memberRegister: GzMemberCommand [username=a1, memberRank=ROLE_AGENT, password=88888888, vPassword=88888888, weChatName=a1-wechat, superiorCode=s1m0]
+14:28:00,601  INFO http-bio-8080-exec-5 GzAdminController:134 - memberRegister: GzMemberCommand [username=agent1, memberRank=ROLE_AGENT, password=88888888, vPassword=88888888, weChatName=a1-wechat, superiorCode=s1m0]
+14:28:00,691  INFO http-bio-8080-exec-5 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+14:28:00,692  INFO http-bio-8080-exec-5 GzBaseUserDaoImpl:142 - Got next leaf instance : null
+14:28:24,287  INFO http-bio-8080-exec-10 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=player1, memberRank=ROLE_PLAY, password=88888888, vPassword=88888888, weChatName=p1-wechat, superiorCode=x0]
+14:28:31,195  INFO http-bio-8080-exec-1 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=player1, memberRank=ROLE_SMA, password=88888888, vPassword=88888888, weChatName=p1-wechat, superiorCode=s1m0a0]
+14:28:34,905  INFO http-bio-8080-exec-1 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=player1, memberRank=ROLE_AGENT, password=88888888, vPassword=88888888, weChatName=p1-wechat, superiorCode=x0]
+14:28:42,710  INFO http-bio-8080-exec-1 GzAdminController:115 - changeMemberRank: GzMemberCommand [username=player1, memberRank=ROLE_PLAY, password=88888888, vPassword=88888888, weChatName=p1-wechat, superiorCode=s1]
+14:28:46,885  INFO http-bio-8080-exec-1 GzAdminController:134 - memberRegister: GzMemberCommand [username=player1, memberRank=ROLE_PLAY, password=88888888, vPassword=88888888, weChatName=p1-wechat, superiorCode=s1m0a0]
+14:28:46,971  INFO http-bio-8080-exec-1 GzBaseUserDaoImpl:140 - SELECT MAX(leafinstance) FROM baseuser WHERE role = ? AND PARENTCODE=?
+14:28:46,972  INFO http-bio-8080-exec-1 GzBaseUserDaoImpl:142 - Got next leaf instance : null

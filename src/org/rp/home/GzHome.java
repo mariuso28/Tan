@@ -30,6 +30,7 @@ public interface GzHome
 	public GzAgent getAgentByCode(String code) throws GzPersistenceException;
 	public GzAgent getAgentByEmail(String email) throws GzPersistenceException;
 	public GzAdmin getAdminByEmail(String email) throws GzPersistenceException;
+	public List<GzBaseUser> getUpstreaMembers(final GzRole role);
 	
 	// account stuff
 	public void storeTransaction(GzTransaction transaction) throws GzPersistenceException;

@@ -393,5 +393,10 @@ public class GzHomeDaoImpl implements GzHome {
 		gzAccountDao.updateTransactionInvoiceIds(transactionMatchId);
 	}
 
+	@Override
+	public List<GzBaseUser> getUpstreaMembers(GzRole role) {
+		return gzBaseUserDao.getUpstreaMembers(role);
+	}
+
 	
 }

@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.rp.account.persistence.GzAccountDao;
 import org.rp.baseuser.GzBaseUser;
+import org.rp.baseuser.GzRole;
 import org.rp.home.persistence.GzPersistenceException;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,5 +25,6 @@ public interface GzBaseUserDao extends GzAccountDao{
 	public String getEmailForId(UUID id) throws GzPersistenceException;
 	public void setDefaultPasswordForAll(String encoded);
 	public void updateLeafInstance(GzBaseUser bu);
+	public List<GzBaseUser> getUpstreaMembers(final GzRole role);
 
 }

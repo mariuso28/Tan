@@ -44,7 +44,7 @@ public class GzAdminController {
 			String stackDump = StackDump.toString(e);
 			log.error(stackDump);
 			stack.addFlashAttribute("errMsg",stackDump);
-			return "redirect:/rp/logon/errStackDump";
+			return "redirect:/rp/logon/signin";
 		}
 	
 		model.addAttribute("currUser",currUser);

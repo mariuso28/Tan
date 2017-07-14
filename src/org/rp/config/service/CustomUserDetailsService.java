@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.rp.baseuser.GzBaseUser;
 import org.rp.home.persistence.GzPersistenceException;
 import org.rp.services.GzServices;
-import org.rp.util.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,14 +27,6 @@ public class CustomUserDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		log.info("loadUserByUsername email : " + email);
-		
-		email = email.toLowerCase();
-		EmailValidator ev = new EmailValidator();
-		if (!ev.validate(email))
-		{
-			log.error("Email " + email + " Invalid");
-			throw new UsernameNotFoundException("Invalid email: " + email);
-		}
 		
 		GzBaseUser baseUser;
 		try {
