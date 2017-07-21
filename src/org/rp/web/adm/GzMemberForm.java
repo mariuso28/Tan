@@ -4,29 +4,34 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.rp.baseuser.GzBaseUser;
-
 public class GzMemberForm implements Serializable {
 
 	private static final long serialVersionUID = -9110917883160354671L;
 	private GzMemberCommand command;
 	private GzMemberCommand inCompleteCommand;
-	private List<GzBaseUser> upstreamMembers = new ArrayList<GzBaseUser>();
+	private List<GzMemberSummary> upstreamMembers = new ArrayList<GzMemberSummary>();
+	private List<GzMemberSummary> flatMembers = new ArrayList<GzMemberSummary>();
+	private List<GzMemberSummary> possibleSuperiors = new ArrayList<GzMemberSummary>();
+	private List<GzMemberSummary> uplineMembers;
+	private List<GzMemberSummary> chooseMembers;
 	private boolean adminOnly;
 	private String errMsg;
 	private String infoMsg;
+	private GzMemberSummary memberSummary;
 	
 	public GzMemberForm()
 	{
 	}
 
-	public List<GzBaseUser> getUpstreamMembers() {
+	public List<GzMemberSummary> getUpstreamMembers() {
 		return upstreamMembers;
 	}
 
-	public void setUpstreamMembers(List<GzBaseUser> upstreamMembers) {
+
+	public void setUpstreamMembers(List<GzMemberSummary> upstreamMembers) {
 		this.upstreamMembers = upstreamMembers;
 	}
+
 
 	public GzMemberCommand getCommand() {
 		return command;
@@ -66,6 +71,46 @@ public class GzMemberForm implements Serializable {
 
 	public void setAdminOnly(boolean adminOnly) {
 		this.adminOnly = adminOnly;
+	}
+
+	public GzMemberSummary getMemberSummary() {
+		return memberSummary;
+	}
+
+	public void setMemberSummary(GzMemberSummary memberSummary) {
+		this.memberSummary = memberSummary;
+	}
+
+	public List<GzMemberSummary> getFlatMembers() {
+		return flatMembers;
+	}
+
+	public void setFlatMembers(List<GzMemberSummary> flatMembers) {
+		this.flatMembers = flatMembers;
+	}
+
+	public List<GzMemberSummary> getPossibleSuperiors() {
+		return possibleSuperiors;
+	}
+
+	public void setPossibleSuperiors(List<GzMemberSummary> possibleSuperiors) {
+		this.possibleSuperiors = possibleSuperiors;
+	}
+
+	public List<GzMemberSummary> getUplineMembers() {
+		return uplineMembers;
+	}
+
+	public void setUplineMembers(List<GzMemberSummary> uplineMembers) {
+		this.uplineMembers = uplineMembers;
+	}
+
+	public List<GzMemberSummary> getChooseMembers() {
+		return chooseMembers;
+	}
+
+	public void setChooseMembers(List<GzMemberSummary> chooseMembers) {
+		this.chooseMembers = chooseMembers;
 	}
 
 	

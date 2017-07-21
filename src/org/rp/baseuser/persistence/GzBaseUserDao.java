@@ -26,5 +26,9 @@ public interface GzBaseUserDao extends GzAccountDao{
 	public void setDefaultPasswordForAll(String encoded);
 	public void updateLeafInstance(GzBaseUser bu);
 	public List<GzBaseUser> getUpstreaMembers(final GzRole role);
+	public void reassignMemberRole(GzBaseUser baseUser, GzRole newRole);
+	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException;
+	public void updateBaseUserParentCode(String code, String parentCode);
+	public List<GzBaseUserStub> search(String term,String type);
 
 }

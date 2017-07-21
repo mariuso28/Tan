@@ -1,6 +1,8 @@
 package org.rp.web.adm;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.rp.admin.GzAdmin;
 import org.rp.agent.GzAgent;
 import org.rp.baseuser.GzBaseUser;
 import org.rp.baseuser.GzRole;
+import org.rp.baseuser.persistence.GzBaseUserStub;
 import org.rp.home.persistence.GzPersistenceException;
 import org.rp.services.GzServices;
 import org.rp.web.admin.GzAdminController;
@@ -62,7 +65,7 @@ public class GzAdmController {
 	
 		private Object goAdminHome(String errMsg,String infoMsg,ModelMap model){
 			
-			GzMemberForm admForm = new GzMemberForm();
+			GzMemberForm admForm = createMemberForm(GzRole.ROLE_SMA,model);
 			admForm.setInfoMsg(infoMsg);
 			return new ModelAndView("admHome","admForm", admForm);
 		}
@@ -78,23 +81,46 @@ public class GzAdmController {
 		private GzMemberForm createMemberForm(GzRole newMemberRole,ModelMap model)
 		{
 			GzMemberForm memberForm = new GzMemberForm();
+			GzBaseUser user = (GzBaseUser) model.get("currUser");
+			
+			memberForm.setMemberSummary(populateMemberSummary(user,null,memberForm.getFlatMembers()));
+			memberForm.setChooseMembers(memberForm.getFlatMembers());
+			memberForm.setUplineMembers(memberForm.getFlatMembers());
 			memberForm.setInCompleteCommand(new GzMemberCommand());
 			if (newMemberRole.equals(GzRole.ROLE_SMA))
 			{
-				GzAdmin admin = (GzAdmin) model.get("currUser");
-				memberForm.getUpstreamMembers().add(admin);
-				gzServices.getGzHome().getDownstreamForParent(admin);
-				if (admin.getMembers().isEmpty())
+				memberForm.getUpstreamMembers().add(new GzMemberSummary(user));
+				if (user.getMembers().isEmpty())
 					memberForm.setAdminOnly(true);
+				memberForm.getPossibleSuperiors().add(new GzMemberSummary(user));
 			}
 			else
-				memberForm.getUpstreamMembers().addAll(gzServices.getGzHome().getUpstreaMembers(newMemberRole));		
-			
+			{
+				for (GzBaseUser bu : gzServices.getGzHome().getUpstreaMembers(newMemberRole))
+					memberForm.getUpstreamMembers().add(new GzMemberSummary(bu));
+			}
 			memberForm.getInCompleteCommand().setMemberRank(newMemberRole.getShortCode().toUpperCase());
-			memberForm.getInCompleteCommand().setSuperiorCode(memberForm.getUpstreamMembers().get(0).getContact());
+			memberForm.getInCompleteCommand().setMemberToChangeCode(user.getMembers().get(0).getEmail());
+			memberForm.getInCompleteCommand().setMemberToChangeUpline(user.getMembers().get(0).getEmail());
+			memberForm.getInCompleteCommand().setSuperiorCode(memberForm.getUpstreamMembers().get(0).getWeChatName());
 			return memberForm;
 		}
 		
+		private GzMemberSummary populateMemberSummary(GzBaseUser user, GzMemberSummary parent, List<GzMemberSummary> flatMembers) {
+			GzMemberSummary ms = new GzMemberSummary(user);
+			ms.setParent(parent);
+			
+			if (!user.getRole().equals(GzRole.ROLE_ADMIN))
+				flatMembers.add(ms);
+			if (user.getRole().equals(GzRole.ROLE_PLAY))
+				return ms;
+			
+			gzServices.getGzHome().getDownstreamForParent(user);
+			for (GzBaseUser bu : user.getMembers())
+				ms.getMembers().add(populateMemberSummary(bu,ms,flatMembers));
+			return ms;
+		}
+
 		private ModelAndView backToSignin(ModelMap model,String errMsg) {
 			
 			log.info("Received request to signin");
@@ -113,7 +139,7 @@ public class GzAdmController {
 			GzMemberCommand command = memberForm.getCommand();
 			
 			log.info("changeMemberRank: " + command);
-			GzRole newRole = GzRole.valueOf(command.getMemberRank());
+			GzRole newRole = GzRole.getRoleForShortCode(command.getMemberRank());
 			
 			memberForm = createMemberForm(newRole,model);
 			memberForm.setInCompleteCommand(command);
@@ -132,8 +158,8 @@ public class GzAdmController {
 		{
 			GzMemberCommand command = memberForm.getCommand();	
 			log.info("memberRegister: " + command);
-			GzRole role = GzRole.valueOf(command.getMemberRank());
-			GzBaseUser superior = gzServices.getGzHome().getBaseUserByCode(command.getSuperiorCode());
+			GzRole role = GzRole.getRoleForShortCode(command.getMemberRank());
+			GzBaseUser superior = gzServices.getGzHome().getBaseUserByEmail(command.getSuperiorCode());
 			
 			GzMemberVerify verify = new GzMemberVerify();
 			String errMsg = verify.verify(command, gzServices.getGzHome(),superior);
@@ -177,5 +203,212 @@ public class GzAdmController {
 			}
 			
 			return goAdminHome("","Member : " +  command.getUsername() + " successfully registered",model);
+		}
+		
+		@RequestMapping(value = "/placementMember", method = RequestMethod.GET)
+		public ModelAndView placementMember(ModelMap model)
+		{
+			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="changeMemberUpline", method = RequestMethod.POST)
+		public ModelAndView changeMemberUpline(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("changeMemberUpline: " + command);
+			GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeUpline());
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			
+			setPossibleSupers(member.getRole(),memberForm,"","");
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="filterSuperiorsWeChat", method = RequestMethod.POST)
+		public ModelAndView filterSuperiorsWeChat(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("filterSuperiorsWeChat: " + command);
+			GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeUpline());
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			
+			setPossibleSupers(member.getRole(),memberForm,"contact",command.getSearch2());
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="filterSuperiorsUserName", method = RequestMethod.POST)
+		public ModelAndView filterSuperiorsUserName(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("filterSuperiorsWeChat: " + command);
+			GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeUpline());
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			
+			setPossibleSupers(member.getRole(),memberForm,"email",command.getSearch2());
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		private void setPossibleSupers(GzRole role,GzMemberForm memberForm,String type,String term)
+		{
+			if (!role.equals(GzRole.ROLE_SMA))
+			{	
+				List<GzBaseUserStub> possibleSupers = gzServices.getGzHome().getUpstreamPossibleParents(role,type,term);
+				memberForm.getPossibleSuperiors().clear();
+				for (GzBaseUserStub bu : possibleSupers)
+					memberForm.getPossibleSuperiors().add(new GzMemberSummary(bu));
+			}
+		}
+		
+		@RequestMapping(value="/processAdm", params="changeMemberLevel", method = RequestMethod.POST)
+		public ModelAndView changeMemberLevel(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("changeMemberLevel: " + command);
+			GzRole role = GzRole.getRoleForShortCode(command.getMemberRank());
+			GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeCode());
+			
+			if (!role.equals(member.getRole()))
+				gzServices.getGzHome().reassignMemberRole(member,role);
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="submitMemberUpline", method = RequestMethod.POST)
+		public Object submitMemberUpline(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();	
+			log.info("submitMemberUpline: " + command);
+			GzBaseUser superior = gzServices.getGzHome().getBaseUserByEmail(command.getSuperiorCode());
+			GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeUpline());
+			
+			if (!member.getParentCode().equals(superior.getCode()))
+			{
+				gzServices.getGzHome().updateBaseUserParentCode(member.getCode(),superior.getCode());
+			}
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchWeChat1", method = RequestMethod.POST)
+		public ModelAndView searchWeChat1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("contact",command.getSearch1());
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeUpline(mss.get(0).getUserName());
+				memberForm.setUplineMembers(mss);
+				setPossibleSupers(GzRole.getRoleForShortCode(mss.get(0).getRank()),memberForm,"","");
+			}
+			else
+				memberForm.setErrMsg("No weChat names like this term exist");
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		
+		@RequestMapping(value="/processAdm", params="searchWeChat", method = RequestMethod.POST)
+		public ModelAndView searchWeChat(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("contact",command.getSearch());
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
+				memberForm.setChooseMembers(mss);
+			}
+			else
+				memberForm.setErrMsg("No weChat names like this term exist");
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchUserName1", method = RequestMethod.POST)
+		public ModelAndView searchUserName1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("email",command.getSearch1());
+			memberForm.setFlatMembers(mss);
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeUpline(mss.get(0).getUserName());
+				memberForm.setUplineMembers(mss);
+				setPossibleSupers(GzRole.getRoleForShortCode(mss.get(0).getRank()),memberForm,"","");
+			}
+			else
+				memberForm.setErrMsg("No User names like this term exist");
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchUserName", method = RequestMethod.POST)
+		public ModelAndView searchUserName(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("email",command.getSearch());
+			memberForm.setFlatMembers(mss);
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
+				memberForm.setChooseMembers(mss);
+			}
+			else
+				memberForm.setErrMsg("No User names like this term exist");
+			
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		private List<GzMemberSummary> searchMembers(String type, String term) {
+			List<GzBaseUserStub> bus = gzServices.getGzHome().search(term, type);
+			List<GzMemberSummary> mss = new ArrayList<GzMemberSummary>();
+			for (GzBaseUserStub bu : bus)
+			{
+				mss.add(new GzMemberSummary(bu));
+			}
+			return mss;
+		}
+
+		@RequestMapping(value="/processAdm", params="memberTree", method = RequestMethod.POST)
+		public ModelAndView memberTree(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("changeMemberRank: " + command);
+			GzRole newRole = GzRole.valueOf(command.getMemberRank());
+			
+			memberForm = createMemberForm(newRole,model);
+			memberForm.setInCompleteCommand(command);
+			
+			return new ModelAndView("admMemberTree","memberForm", memberForm);
 		}
 }

@@ -152,6 +152,25 @@ public enum GzRole implements Serializable{
 			
 			return new ArrayList<GzRole>();
 		}
+		
+		public static GzRole getRoleForShortCode(String shortCode)
+		{
+			if (shortCode.equalsIgnoreCase("Admin"))
+				return GzRole.ROLE_ADMIN;
+			if (shortCode.equalsIgnoreCase("Company"))
+				return GzRole.ROLE_COMP;
+			if (shortCode.equalsIgnoreCase("ZMA"))
+				return GzRole.ROLE_ZMA;
+			if (shortCode.equalsIgnoreCase("SMA"))
+				return GzRole.ROLE_SMA;
+			if (shortCode.equalsIgnoreCase("MA"))
+				return GzRole.ROLE_MA;
+			if (shortCode.equalsIgnoreCase("Agent"))
+				return GzRole.ROLE_AGENT;
+			if (shortCode.toLowerCase().startsWith("play"))
+				return GzRole.ROLE_PLAY;
+			return null;
+		}
 
 		public void setCode(Character code) {
 			this.code = code;

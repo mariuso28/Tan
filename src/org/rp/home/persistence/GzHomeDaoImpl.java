@@ -25,6 +25,7 @@ import org.rp.agent.persistence.GzAgentDao;
 import org.rp.baseuser.GzBaseUser;
 import org.rp.baseuser.GzRole;
 import org.rp.baseuser.persistence.GzBaseUserDao;
+import org.rp.baseuser.persistence.GzBaseUserStub;
 import org.rp.home.GzHome;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.multipart.MultipartFile;
@@ -202,6 +203,18 @@ public class GzHomeDaoImpl implements GzHome {
 		gzBaseUserDao.getDownstreamForParent(currUser);
 	}
 
+	@Override
+	public void reassignMemberRole(GzBaseUser baseUser, GzRole newRole)
+	{
+		gzBaseUserDao.reassignMemberRole(baseUser, newRole);
+	}
+	
+	@Override
+	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException
+	{
+		return gzBaseUserDao.getUpstreamPossibleParents(role,type,term);
+	}
+	
 	@Override
 	public GzInvoice getOpenInvoice(String payer, String payee) throws GzPersistenceException {
 		return gzAccountDao.getOpenInvoice(payer,payee);
@@ -396,6 +409,17 @@ public class GzHomeDaoImpl implements GzHome {
 	@Override
 	public List<GzBaseUser> getUpstreaMembers(GzRole role) {
 		return gzBaseUserDao.getUpstreaMembers(role);
+	}
+
+	@Override
+	public void updateBaseUserParentCode(String code, String parentCode) {
+		gzBaseUserDao.updateBaseUserParentCode(code,parentCode);
+	}
+
+	@Override
+	public List<GzBaseUserStub> search(String term,String type) {
+	
+		return gzBaseUserDao.search(term,type);
 	}
 
 	

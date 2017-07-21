@@ -14,6 +14,7 @@ import org.rp.admin.GzAdmin;
 import org.rp.agent.GzAgent;
 import org.rp.baseuser.GzBaseUser;
 import org.rp.baseuser.GzRole;
+import org.rp.baseuser.persistence.GzBaseUserStub;
 import org.rp.home.persistence.GzPersistenceException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,6 +32,11 @@ public interface GzHome
 	public GzAgent getAgentByEmail(String email) throws GzPersistenceException;
 	public GzAdmin getAdminByEmail(String email) throws GzPersistenceException;
 	public List<GzBaseUser> getUpstreaMembers(final GzRole role);
+	public void reassignMemberRole(GzBaseUser baseUser, GzRole newRole);
+	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException;
+	public void updateBaseUserParentCode(String code, String code2);
+	public List<GzBaseUserStub> search(String term,String type);
+
 	
 	// account stuff
 	public void storeTransaction(GzTransaction transaction) throws GzPersistenceException;
@@ -81,6 +87,7 @@ public interface GzHome
 
 	public List<String> getColumns(String table) throws GzPersistenceException;
 
+	
 	
 	
 }

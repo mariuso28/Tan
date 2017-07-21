@@ -23,6 +23,7 @@ import org.rp.home.persistence.GzPersistenceException;
 import org.rp.util.GetNextNumberNo4s;
 import org.rp.util.StackDump;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,94 @@ import org.springframework.web.multipart.MultipartFile;
 public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao {
 	
 	private static Logger log = Logger.getLogger(GzBaseUserDaoImpl.class);
+	
+	@Override
+	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException
+	{
+		try
+		{
+			if (!type.isEmpty() && !term.isEmpty())
+			{
+				if (type.equals("contact"))
+					return getUpstreamPossibleParentsByContact(role,term);
+				if (type.equals("email"))
+					return getUpstreamPossibleParentsByEmail(role,term);
+			}
+			
+			String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+					" join role as r on r.role = bu.role" +
+					" where level < (select level from role where role = ?) and level<>1";
+			List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
+		        public void setValues(PreparedStatement preparedStatement) throws SQLException {
+		          preparedStatement.setString(1, role.name());
+		        }
+		      }, BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+			return bus;
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Could not execute : " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}
+	}
+	
+	private List<GzBaseUserStub> getUpstreamPossibleParentsByEmail(GzRole role,String term) throws GzPersistenceException
+	{
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+					" join role as r on r.role = bu.role" +
+					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.email) like '%"+ term.toLowerCase() + "%'";
+		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		return bus;
+	}
+	
+	private List<GzBaseUserStub> getUpstreamPossibleParentsByContact(GzRole role,String term) throws GzPersistenceException
+	{
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+					" join role as r on r.role = bu.role" +
+					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.contact) like '%"+ term.toLowerCase() + "%'";
+		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		return bus;
+	}
+	
+	@Override
+	public void reassignMemberRole(GzBaseUser baseUser, GzRole newRole)
+	{
+		baseUser.setRole(newRole);
+		try
+		{
+			getJdbcTemplate().update("UPDATE baseuser SET role = ? WHERE email = ?"
+					, new PreparedStatementSetter() {
+						public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setString(1, baseUser.getRole().name());
+						ps.setString(2, baseUser.getEmail().toLowerCase());
+			      }
+			    });
+			getJdbcTemplate().update("DELETE FROM authority WHERE baseuserid=?", new PreparedStatementSetter() {
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setObject(1, baseUser.getId());
+				}
+			});
+			baseUser.setAuthorities(baseUser.getRole().getAllRoles());
+			for (final GzRole role : baseUser.getAuthorities())
+			{
+				getJdbcTemplate().update("INSERT INTO authority (baseuserid,role) VALUES (?,?)"
+			        , new PreparedStatementSetter() {
+						public void setValues(PreparedStatement ps) throws SQLException {
+							ps.setObject(1, baseUser.getId());
+							ps.setString(2,role.name());
+			      }
+			    });
+			}
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Could not execute : " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}	
+	}
 	
 	@Override
 	public void storeBaseUser(final GzBaseUser baseUser) throws GzPersistenceException {
@@ -713,4 +802,74 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		}
 	}
 
+	@Override
+	public void updateBaseUserParentCode(String code, String parentCode) {
+		String sql = "UPDATE baseuser SET parentcode='" + parentCode + "' WHERE code = '" + code + "'";
+		try
+		{
+			log.info(sql);
+			getJdbcTemplate().update(sql);
+		}
+		catch (Exception e)
+		{
+			log.error("Could not execute : " + sql + " - " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}
+	}
+
+	@Override
+	public List<GzBaseUserStub> search(String term,String type) {
+		try
+		{
+			if (type.equals("email"))
+				return searchByEmail(term);
+			if (type.equals("contact"))
+				return searchByContact(term);
+			return new ArrayList<GzBaseUserStub>();
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Could not execute : " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}
+	}
+
+	private List<GzBaseUserStub> searchByContact(String term)
+	{
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+				" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+				" where lower(bu.contact)=?";
+		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
+	        public void setValues(PreparedStatement preparedStatement) throws SQLException {
+	          preparedStatement.setString(1, term.toLowerCase());
+	        }
+	      }, BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		if (!bus.isEmpty())
+			return bus;
+		sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+				" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+				" where lower(bu.contact) like '%"+ term.toLowerCase() + "%'";
+		bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		return bus;
+	}
+	
+	private List<GzBaseUserStub> searchByEmail(String term)
+	{
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+					" where lower(bu.email)=?";
+		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
+	        public void setValues(PreparedStatement preparedStatement) throws SQLException {
+	          preparedStatement.setString(1, term.toLowerCase());
+	        }
+	      }, BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		if (!bus.isEmpty())
+			return bus;
+		sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+				" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
+				" where lower(bu.email) like '%"+ term.toLowerCase() + "%'";
+		log.info(sql);
+		bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
+		return bus;
+	}
 }

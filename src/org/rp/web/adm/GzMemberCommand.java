@@ -10,8 +10,13 @@ public class GzMemberCommand implements Serializable {
 	private String password;
 	private String vPassword;
 	private String weChatName;
+	private String memberToChangeCode;
+	private String memberToChangeUpline;
 	private String superiorCode;
-
+	private String search;
+	private String search1;
+	private String search2;
+	
 	public GzMemberCommand()
 	{
 	}
@@ -64,10 +69,52 @@ public class GzMemberCommand implements Serializable {
 		this.weChatName = weChatName;
 	}
 
+	public String getMemberToChangeCode() {
+		return memberToChangeCode;
+	}
+
+	public void setMemberToChangeCode(String memberToChangeCode) {
+		this.memberToChangeCode = memberToChangeCode;
+	}
+
+	public String getMemberToChangeUpline() {
+		return memberToChangeUpline;
+	}
+
+	public void setMemberToChangeUpline(String memberToChangeUpline) {
+		this.memberToChangeUpline = memberToChangeUpline;
+	}
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	
+	public String getSearch1() {
+		return search1;
+	}
+
+	public void setSearch1(String search1) {
+		this.search1 = search1;
+	}
+
+	public String getSearch2() {
+		return search2;
+	}
+
+	public void setSearch2(String search2) {
+		this.search2 = search2;
+	}
+
 	@Override
 	public String toString() {
 		return "GzMemberCommand [username=" + username + ", memberRank=" + memberRank + ", password=" + password
-				+ ", vPassword=" + vPassword + ", weChatName=" + weChatName + ", superiorCode=" + superiorCode + "]";
+				+ ", vPassword=" + vPassword + ", weChatName=" + weChatName + ", memberToChangeCode="
+				+ memberToChangeCode + ", memberToChangeUpline=" + memberToChangeUpline + ", superiorCode="
+				+ superiorCode + ", search=" + search + ", search1=" + search1 + ", search2=" + search2 + "]";
 	}
 
 	

@@ -60,11 +60,11 @@ function changeMemberRank()
         <td width="30%"><font color="#33ff36" size="2">Member Rank:</font></td>
         <td width="70%">
          <form:select path="command.memberRank" style='width:20em' onchange="changeMemberRank();">
-              <option value="ROLE_SMA" ${memberForm.inCompleteCommand.memberRank eq 'ROLE_SMA' ? 'selected' : ''}>SMA</option>
+              <option value="SMA" ${memberForm.inCompleteCommand.memberRank eq 'SMA' ? 'selected' : ''}>SMA</option>
               <c:if test="${memberForm.adminOnly == false}">
-                <option value="ROLE_MA" ${memberForm.inCompleteCommand.memberRank eq 'ROLE_MA' ? 'selected' : ''}>MA</option>
-                <option value="ROLE_AGENT" ${memberForm.inCompleteCommand.memberRank eq 'ROLE_AGENT' ? 'selected' : ''}>AGENT</option>
-                <option value="ROLE_PLAY" ${memberForm.inCompleteCommand.memberRank eq 'ROLE_PLAY' ? 'selected' : ''}>PLAYER</option>
+                <option value="MA" ${memberForm.inCompleteCommand.memberRank eq 'MA' ? 'selected' : ''}>MA</option>
+                <option value="AGENT" ${memberForm.inCompleteCommand.memberRank eq 'AGENT' ? 'selected' : ''}>AGENT</option>
+                <option value="PLAY" ${memberForm.inCompleteCommand.memberRank eq 'PLAY' ? 'selected' : ''}>PLAYER</option>
               </c:if>
           </form:select>
        </td>
@@ -74,7 +74,8 @@ function changeMemberRank()
       <td width="70%">
           <form:select path="command.superiorCode"  style='width:20em'>
             <c:forEach items="${memberForm.upstreamMembers}" var="member" >
-               <option value="${member.code}"  ${memberForm.inCompleteCommand.superiorCode eq member.code ? 'selected' : ''}>${member.contact}</option>
+               <option value="${member.userName}"  ${memberForm.inCompleteCommand.superiorCode eq member.userName ? 'selected' : ''}>
+                        ${member.weChatName}</option>
             </c:forEach>
            </form:select>
       </td>
