@@ -15,7 +15,6 @@ import org.rp.home.persistence.GzPersistenceException;
 public interface GzAccountDao {
 
 	public void updateAccount(GzAccount account) throws GzPersistenceException;
-	public void updateDistributions(GzAccount account) throws GzPersistenceException;
 	public void updateAccountBalance(GzAccount account,double amount) throws GzPersistenceException;
 	public void storeAccount(UUID baseUserId) throws GzPersistenceException;
 	public GzAccount getAccount(GzBaseUser baseUser) throws GzPersistenceException;

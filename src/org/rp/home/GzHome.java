@@ -41,7 +41,6 @@ public interface GzHome
 	// account stuff
 	public void storeTransaction(GzTransaction transaction) throws GzPersistenceException;
 	public void updateAccount(GzAccount account) throws GzPersistenceException;
-	public void updateDistributions(GzAccount account) throws GzPersistenceException;
 	public void clearTurnoversAndDistributions() throws GzPersistenceException;
 	public void storeAgent(GzAgent agent) throws GzPersistenceException;
 	public void updateTransaction(GzTransaction trans) throws GzPersistenceException;

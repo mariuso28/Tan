@@ -1,10 +1,6 @@
 package org.rp.account;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.apache.log4j.Logger;
-import org.rp.agent.GzAgent;
 import org.rp.baseuser.GzBaseUser;
 import org.rp.baseuser.GzRole;
 import org.rp.home.GzHome;
@@ -20,7 +16,7 @@ public class GzAccountMgr {
 	public GzAccountMgr()
 	{
 	}
-	
+	/*
 	public void createTransactionsForTurnovers(GzBaseUser player,double turnover,double bankerTurnover,String source) throws GzPersistenceException
 	{
 		if (turnover==0 && bankerTurnover==0)
@@ -143,6 +139,7 @@ public class GzAccountMgr {
 		return invoice;
 	}
 	*/
+	@SuppressWarnings("unused")
 	private GzBaseUser getMemberChain(GzBaseUser bu) throws GzPersistenceException
 	{
 		GzBaseUser parent = bu;

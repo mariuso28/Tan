@@ -115,9 +115,10 @@ public class CsvImporter {
 				continue;
 			
 			try {
+				@SuppressWarnings("unused")
 				GzBaseUser player = gzServices.getGzHome().getBaseUserByEmail(pr.getPlayer().getEmail());
 		//		gzServices.getGzHome().getParentForUser(player);
-				gzServices.getGzAccountMgr().createTransactionsForTurnovers(player, pr.getTurnover(), pr.getBankerTurnover(), source);
+//				gzServices.getGzAccountMgr().createTransactionsForTurnovers(player, pr.getTurnover(), pr.getBankerTurnover(), source);
 			} catch (GzPersistenceException e) {
 				e.printStackTrace();
 			}
@@ -141,9 +142,6 @@ public class CsvImporter {
 		try {
 			gzServices.getGzHome().storeBaseUser(newMember);
 			GzBaseUser bu = gzServices.getGzHome().getBaseUserByEmail(pr.getEmail());
-			bu.getAccount().setPlayerRoyalty(playerRoyalty);
-			bu.getAccount().setBankerRoyalty(bankerRoyalty);
-			gzServices.getGzHome().updateAccount(bu.getAccount());
 			return bu;
 		} catch (GzPersistenceException e) {
 			e.printStackTrace();
@@ -155,7 +153,7 @@ public class CsvImporter {
 	private PlayerRec createImportRec(String[] line) throws Exception{
 	
 		return new PlayerRec(line[0],Double.parseDouble(line['H'-'A']),Double.parseDouble(line['K'-'A']),
-								Double.parseDouble(line['O'-'A']),Double.parseDouble(line['P'-'A']));
+								Double.parseDouble(line['O'-'A']),Double.parseDouble(line['P'-'A']),Double.parseDouble(line['U'-'A']));
 	}
 	
 	public GzBaseUser getAgent() {

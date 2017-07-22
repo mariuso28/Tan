@@ -4964,3 +4964,140 @@ Kind regards - RedPacket Gaming Support Team.
 15:18:50,660  INFO http-bio-8080-exec-6 GzBaseUserDaoImpl:871 - select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole from baseuser as bu join baseuser as pu on bu.parentcode = pu.code where lower(bu.email) like '%player%'
 15:19:00,031  INFO http-bio-8080-exec-6 GzAdminController:237 - filterSuperiorsWeChat: GzMemberCommand [username=null, memberRank=SMA, password=null, vPassword=null, weChatName=null, memberToChangeCode=sma1, memberToChangeUpline=player1, superiorCode=sma2, search=, search1=player, search2=sma]
 15:19:06,481  INFO http-bio-8080-exec-6 GzAdminController:237 - filterSuperiorsWeChat: GzMemberCommand [username=null, memberRank=SMA, password=null, vPassword=null, weChatName=null, memberToChangeCode=sma1, memberToChangeUpline=player1, superiorCode=sma2, search=, search1=player, search2=]
+15:44:48,073  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+15:44:49,824  INFO http-bio-8080-exec-2 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+15:44:50,260  INFO http-bio-8080-exec-2 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+15:44:50,262  INFO http-bio-8080-exec-2 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+15:44:50,343  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+15:44:50,344  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+15:44:50,344  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+15:44:50,428  INFO http-bio-8080-exec-2 GzAdminController:44 - Received request to logon
+15:44:59,733  INFO http-bio-8080-exec-7 GzAdminController:141 - changeMemberRank: GzMemberCommand [username=, memberRank=PLAY, password=, vPassword=, weChatName=, memberToChangeCode=null, memberToChangeUpline=null, superiorCode=rpadmin@test.com, search=null, search1=null, search2=null]
+15:45:40,656  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+15:45:42,124  INFO http-bio-8080-exec-2 CustomUserDetailsService:29 - loadUserByUsername email : rpadmin@test.com
+15:45:42,126  INFO http-bio-8080-exec-2 CustomUserDetailsService:44 - User : rpadmin@test.com found with role :ROLE_ADMIN
+15:45:42,126  INFO http-bio-8080-exec-2 CustomUserDetailsService:51 - Using User : rpadmin@test.com with authorities :[ROLE_ADMIN]
+15:45:42,215  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+15:45:42,215  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : rpadmin@test.com authorities : [ROLE_ADMIN]
+15:45:42,215  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=rpadmin@test.com
+15:45:42,233  INFO http-bio-8080-exec-2 GzAdminController:44 - Received request to logon
+10:00:49,657  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:00:52,989  INFO http-bio-8080-exec-6 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:00:53,369  INFO http-bio-8080-exec-6 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+10:00:53,370  INFO http-bio-8080-exec-6 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+10:00:53,455  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:00:53,456  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+10:00:53,456  INFO http-bio-8080-exec-6 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+10:00:53,527  INFO http-bio-8080-exec-6 GzAdminController:44 - Received request to logon
+10:03:17,507  INFO http-bio-8080-exec-3 GzAdminController:44 - Received request to logon
+10:03:39,790  INFO http-bio-8080-exec-3 GzAdminController:44 - Received request to logon
+10:04:44,663  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:04:46,428  INFO http-bio-8080-exec-2 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:04:46,828  INFO http-bio-8080-exec-2 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+10:04:46,830  INFO http-bio-8080-exec-2 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+10:04:46,930  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:04:46,930  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+10:04:46,931  INFO http-bio-8080-exec-2 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+10:04:47,053  INFO http-bio-8080-exec-2 GzAdminController:44 - Received request to logon
+10:05:56,467  INFO http-bio-8080-exec-1 GzAdminController:44 - Received request to logon
+10:22:34,294  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:23:38,915  INFO http-bio-8080-exec-5 GzLogonController:47 - Received request to signin XXX
+10:24:04,146  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+10:25:32,529  INFO http-bio-8080-exec-2 GzLogonController:47 - Received request to signin XXX
+10:25:34,708  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:25:35,122  INFO http-bio-8080-exec-4 CustomAuthenticationFailureHandler:30 - Failure on : admin
+10:25:35,123  INFO http-bio-8080-exec-4 CustomAuthenticationFailureHandler:34 - Forwarding to : /rp/logon/signin?error&message=Authentication%20Error
+10:25:35,199  INFO http-bio-8080-exec-4 GzLogonController:73 - Received request to signin - error
+10:25:38,457  INFO http-bio-8080-exec-1 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:25:38,469  INFO http-bio-8080-exec-1 CustomAuthenticationFailureHandler:30 - Failure on : admin
+10:25:38,470  INFO http-bio-8080-exec-1 CustomAuthenticationFailureHandler:34 - Forwarding to : /rp/logon/signin?error&message=Authentication%20Error
+10:25:38,492  INFO http-bio-8080-exec-9 GzLogonController:73 - Received request to signin - error
+10:27:13,257  INFO http-bio-8080-exec-2 GzLogonController:73 - Received request to signin - error
+10:27:15,579  INFO http-bio-8080-exec-7 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:27:15,960  INFO http-bio-8080-exec-7 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+10:27:15,961  INFO http-bio-8080-exec-7 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+10:27:16,051  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:27:16,052  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+10:27:16,052  INFO http-bio-8080-exec-7 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+10:27:16,059  INFO http-bio-8080-exec-7 GzAdminController:44 - Received request to logon
+10:27:41,353  INFO http-bio-8080-exec-9 GzLogonController:47 - Received request to signin XXX
+10:27:52,329  INFO http-bio-8080-exec-9 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:27:52,338  INFO http-bio-8080-exec-9 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+10:27:52,339  INFO http-bio-8080-exec-9 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+10:27:52,426  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:27:52,427  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+10:27:52,427  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+10:27:52,432  INFO http-bio-8080-exec-4 GzAdminController:44 - Received request to logon
+10:29:12,372  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+10:29:13,904  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : admin
+10:29:14,328  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+10:29:14,330  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+10:29:14,415  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+10:29:14,415  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+10:29:14,415  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+10:29:14,500  INFO http-bio-8080-exec-4 GzAdminController:44 - Received request to logon
+10:29:49,180  INFO http-bio-8080-exec-2 GzAdminController:44 - Received request to logon
+10:30:29,770  INFO http-bio-8080-exec-10 GzAdminController:44 - Received request to logon
+11:06:10,918  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:06:16,789  INFO http-bio-8080-exec-4 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:06:17,144  INFO http-bio-8080-exec-4 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:06:17,145  INFO http-bio-8080-exec-4 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:06:17,224  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:06:17,225  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:06:17,225  INFO http-bio-8080-exec-4 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:06:17,292  INFO http-bio-8080-exec-4 GzAdminController:44 - Received request to logon
+11:06:19,686  INFO http-bio-8080-exec-4 GzAdmMemberController:28 - in accountDetails
+11:07:06,781  INFO http-bio-8080-exec-3 GzLogonController:47 - Received request to signin XXX
+11:07:08,168  INFO http-bio-8080-exec-3 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:07:08,176  INFO http-bio-8080-exec-3 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:07:08,177  INFO http-bio-8080-exec-3 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:07:08,268  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:07:08,268  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:07:08,268  INFO http-bio-8080-exec-3 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:07:08,282  INFO http-bio-8080-exec-3 GzAdminController:44 - Received request to logon
+11:07:11,240  INFO http-bio-8080-exec-3 GzAdmMemberController:28 - in accountDetails
+11:07:45,631  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:07:47,599  INFO http-bio-8080-exec-13 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:07:48,011  INFO http-bio-8080-exec-13 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:07:48,013  INFO http-bio-8080-exec-13 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:07:48,105  INFO http-bio-8080-exec-13 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:07:48,106  INFO http-bio-8080-exec-13 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:07:48,106  INFO http-bio-8080-exec-13 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:07:48,189  INFO http-bio-8080-exec-13 GzAdminController:44 - Received request to logon
+11:07:50,499  INFO http-bio-8080-exec-13 GzAdmMemberController:28 - in accountDetails
+11:08:22,686  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:08:23,981  INFO http-bio-8080-exec-5 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:08:24,393  INFO http-bio-8080-exec-5 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:08:24,395  INFO http-bio-8080-exec-5 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:08:24,482  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:08:24,482  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:08:24,482  INFO http-bio-8080-exec-5 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:08:24,595  INFO http-bio-8080-exec-5 GzAdminController:44 - Received request to logon
+11:08:28,370  INFO http-bio-8080-exec-5 GzAdmMemberController:28 - in accountDetails
+11:08:39,253  INFO http-bio-8080-exec-1 GzAdmMemberController:28 - in accountDetails
+11:24:26,425  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:24:28,419  INFO http-bio-8080-exec-9 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:24:28,791  INFO http-bio-8080-exec-9 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:24:28,793  INFO http-bio-8080-exec-9 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:24:28,873  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:24:28,873  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:24:28,873  INFO http-bio-8080-exec-9 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:24:28,948  INFO http-bio-8080-exec-8 GzAdminController:44 - Received request to logon
+11:24:31,667  INFO http-bio-8080-exec-8 GzAdmMemberController:33 - in accountDetails
+11:27:00,954  INFO http-bio-8080-exec-4 GzLogonController:47 - Received request to signin XXX
+11:27:03,463  INFO http-bio-8080-exec-1 CustomUserDetailsService:29 - loadUserByUsername email : admin
+11:27:03,848  INFO http-bio-8080-exec-1 CustomUserDetailsService:44 - User : admin found with role :ROLE_ADMIN
+11:27:03,850  INFO http-bio-8080-exec-1 CustomUserDetailsService:51 - Using User : admin with authorities :[ROLE_ADMIN]
+11:27:03,930  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:27 - In onAuthenticationSuccess
+11:27:03,930  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:29 - got user : admin authorities : [ROLE_ADMIN]
+11:27:03,931  INFO http-bio-8080-exec-1 CustomAuthenticationSuccessHandler:54 - Sending to : /rp/adm/logon?user&email=admin
+11:27:04,000  INFO http-bio-8080-exec-1 GzAdminController:44 - Received request to logon
+11:27:05,790  INFO http-bio-8080-exec-7 GzAdmMemberController:33 - in accountDetails
+11:27:12,826  INFO http-bio-8080-exec-7 GzAdmMemberController:50 - updating password
+11:27:12,827  INFO http-bio-8080-exec-7 GzAdmMemberController:57 - error updating password : Password/Verify Password mismatch - please fix
+11:29:07,579  INFO http-bio-8080-exec-2 GzAdmMemberController:50 - updating password
+11:29:07,583  INFO http-bio-8080-exec-2 GzAdmMemberController:57 - error updating password : Password/Verify Password mismatch - please fix
+11:29:56,152  INFO http-bio-8080-exec-6 GzAdmMemberController:50 - updating password
+11:29:56,153  INFO http-bio-8080-exec-6 GzAdmMemberController:57 - error updating password : Password/Verify Password mismatch - please fix
+11:31:39,687  INFO http-bio-8080-exec-5 GzAdmMemberController:50 - updating password
+11:31:39,688  INFO http-bio-8080-exec-5 GzAdmMemberController:57 - error updating password : Password should be 8 chars or more - please fix

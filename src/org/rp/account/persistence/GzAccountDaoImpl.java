@@ -86,12 +86,10 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 		// BALANCE DONE INDEPENDENTLY
 		try
 		{
-			getJdbcTemplate().update("UPDATE account set playerroyalty=?,bankerroyalty=? WHERE baseuserid=?"
+			getJdbcTemplate().update("UPDATE account set commission=? WHERE baseuserid=?"
 					, new PreparedStatementSetter() {
 						public void setValues(PreparedStatement psUpdateAccount) throws SQLException {
-							psUpdateAccount.setDouble(1,account.getPlayerRoyalty());
-							psUpdateAccount.setDouble(2,account.getBankerRoyalty());
-							psUpdateAccount.setObject(3,account.getBaseUser().getId());
+							psUpdateAccount.setDouble(1,account.getCommission());
 						}
 					});
 		}
@@ -101,30 +99,6 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 			throw new GzPersistenceException("Could not execute : " + e.getMessage());
 		}	
 	}
-	
-	@Override
-	public void updateDistributions(final GzAccount account) throws GzPersistenceException {
-		
-		try
-		{
-			getJdbcTemplate().update("UPDATE account set distributeplayer=?,distributebanker=?,totalplayer=?,totalbanker=? WHERE baseuserid=?"
-					, new PreparedStatementSetter() {
-						public void setValues(PreparedStatement psUpdateAccount) throws SQLException {
-							psUpdateAccount.setDouble(1,account.getDistributePlayer());
-							psUpdateAccount.setDouble(2,account.getDistributeBanker());
-							psUpdateAccount.setDouble(3,account.getTotalPlayer());
-							psUpdateAccount.setDouble(4,account.getTotalBanker());
-							psUpdateAccount.setObject(5,account.getBaseUser().getId());
-						}
-					});
-		}
-		catch (DataAccessException e)
-		{
-			log.error("Could not execute : " + e.getMessage());
-			throw new GzPersistenceException("Could not execute : " + e.getMessage());
-		}	
-	}
-	
 	
 	@Override
 	public void updateAccountBalance(final GzAccount account, final double amount) throws GzPersistenceException {

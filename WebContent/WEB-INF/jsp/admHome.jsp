@@ -37,7 +37,7 @@ font: 20px Arial, sans-serif;
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-<form:form method="post" id="myForm" action="exec" modelAttribute="admForm">
+<form:form method="post" id="myForm" action="exec" modelAttribute="admMemberForm">
 
 <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 
@@ -49,16 +49,25 @@ font: 20px Arial, sans-serif;
 <table border="0" cellpadding="3" cellspacing="0" width="300">
 <tbody align="left" style="font-family:verdana; color:purple; background-color:LightCyan">
 <tr>
-  <td><a href="../adm/registerMember">Register Member</a></td>
+  <td><a href="../adm/registerMember">Admin - Register Member</a></td>
 </tr>
 <tr>
-  <td><a href="../adm/placementMember">Placement Setting</a></td>
+  <td><a href="../adm/memberTree">Group Management - Structure Tree</a></td>
 </tr>
 <tr>
-  <td><a href="../adm/memberTree">Member Tree</a></td>
+  <td><a href="../adm/placementMember">Group Management - Placement Setting</a></td>
 </tr>
 <tr>
-  <td><a href="../adm/modifyProfile">Modify Profile</a></td>
+  <td><a href="../adm/commissionSetting">Group Management - Commission Setting</a></td>
+</tr>
+<tr>
+  <td><a href="../admMember/accountDetails">General - Account Details</a></td>
+</tr>
+<tr>
+  <td><a href="../adm/reportCompany">Report - Company</a></td>
+</tr>
+<tr>
+  <td><a href="../adm/reportAdmin">Report - Admin</a></td>
 </tr>
 </tbody>
 </table>

@@ -98,14 +98,6 @@ public class CsvImportMgr {
 	    		}
 	        }
 	    }
-		
-		String baseComp = gzServices.getProperties().getProperty("baseCompany", "c1@rpco.com");
-		try {
-			gzServices.getGzAccountMgr().setDistributions(baseComp);
-		} catch (GzPersistenceException e1) {
-			e1.printStackTrace();
-			throw new CsvImporterException(e1.getMessage());
-		}
 	}
 	
 	public GzServices getGzServices() {

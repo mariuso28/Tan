@@ -13,15 +13,17 @@ public class PlayerRec{
 	private double turnover;
 	private double rollingBet;
 	private double fees;
+	private double winLose;
 	private GzBaseUser player;
 	
-	public PlayerRec(String contact,double turnover,double rollingBet,double bankerTurnover,double fees)
+	public PlayerRec(String contact,double turnover,double rollingBet,double bankerTurnover,double fees,double winLose)
 	{
 		setContact(contact);
 		setBankerTurnover(bankerTurnover);
 		setTurnover(turnover);
 		setRollingBet(rollingBet);
 		setFees(fees);
+		setWinLose(winLose);
 	}
 	
 	public void massageContactCreateEmail(String suffix) throws CsvImporterException
@@ -115,5 +117,13 @@ public class PlayerRec{
 
 	public void setPlayer(GzBaseUser player) {
 		this.player = player;
+	}
+
+	public double getWinLose() {
+		return winLose;
+	}
+
+	public void setWinLose(double winLose) {
+		this.winLose = winLose;
 	}
 }

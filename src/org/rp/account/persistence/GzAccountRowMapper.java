@@ -2,7 +2,6 @@ package org.rp.account.persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 import org.rp.account.GzAccount;
 import org.springframework.jdbc.core.RowMapper;
@@ -31,15 +30,7 @@ public class GzAccountRowMapper implements RowMapper<GzAccount>{
 	public static void setValues(ResultSet rs,GzAccount account) throws SQLException {
 		
 		account.setBalance(rs.getDouble("balance"));
-		account.setPlayerRoyalty(rs.getDouble("playerroyalty"));
-		account.setBankerRoyalty(rs.getDouble("bankerroyalty"));
-		account.setDistributePlayer(rs.getDouble("distributeplayer"));
-		account.setDistributeBanker(rs.getDouble("distributebanker"));
-		account.setTotalPlayer(rs.getDouble("totalplayer"));
-		account.setTotalBanker(rs.getDouble("totalbanker"));
-		String tmi = rs.getString("transactionmatchid");
-		if (tmi!=null)
-			account.setTransactionMatchId(UUID.fromString(tmi));
+		account.setCommission(rs.getDouble("commission"));
 	}
 
 }

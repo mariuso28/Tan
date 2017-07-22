@@ -318,11 +318,6 @@ public class GzHomeDaoImpl implements GzHome {
 		gzAccountDao.updateAccount(account);
 	}
 
-	@Override
-	public void updateDistributions(GzAccount account) throws GzPersistenceException {
-		gzAccountDao.updateDistributions(account);
-	}
-	
 	public void clearTurnoversAndDistributions() throws GzPersistenceException
 	{
 		gzAccountDao.clearTurnoversAndDistributions();

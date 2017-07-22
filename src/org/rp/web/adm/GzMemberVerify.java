@@ -5,7 +5,7 @@ import org.rp.home.GzHome;
 
 public class GzMemberVerify {
 
-	GzMemberVerify()
+	public GzMemberVerify()
 	{
 	}
 	
@@ -25,7 +25,7 @@ public class GzMemberVerify {
 		return msg;
 	}
 
-	private String verifyPassword(String password,String vPassword) {
+	public String verifyPassword(String password,String vPassword) {
 		if (!vPassword.equals(password))
 		{
 			return "Password/Verify Password mismatch - please fix";

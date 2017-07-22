@@ -131,8 +131,8 @@ public class GzServices
 	{
 		try {
 			updateInvoiceSem.acquire();
-			String baseComp = getProperties().getProperty("baseCompany", "c1@rpco.com");
-			gzAccountMgr.createRoyalties(baseComp);
+//			String baseComp = getProperties().getProperty("baseCompany", "c1@rpco.com");
+//			gzAccountMgr.createRoyalties(baseComp);
 			gzHome.closeOpenInvoices();
 			updateInvoiceSem.release();
 			

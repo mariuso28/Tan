@@ -147,8 +147,14 @@ public class GzAdmController {
 			return new ModelAndView("admMemberRegister","memberForm", memberForm);
 		}
 		
+		@RequestMapping(value="/backToAdm", method = RequestMethod.GET)
+		public Object backToAdm(ModelMap model)
+		{
+			return goAdminHome("","",model);
+		}
+		
 		@RequestMapping(value="/processAdm", params="memberCancel", method = RequestMethod.POST)
-		public Object memberRegister(ModelMap model)
+		public Object memberCancel(ModelMap model)
 		{
 			return goAdminHome("","",model);
 		}
