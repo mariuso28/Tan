@@ -216,6 +216,12 @@ public class GzHomeDaoImpl implements GzHome {
 	}
 	
 	@Override
+	public boolean contactExists(String contact)
+	{
+		return gzBaseUserDao.contactExists(contact);
+	}
+	
+	@Override
 	public GzInvoice getOpenInvoice(String payer, String payee) throws GzPersistenceException {
 		return gzAccountDao.getOpenInvoice(payer,payee);
 	}

@@ -14,6 +14,7 @@ public class GzMemberSummary {
 	private String rank;
 	private GzMemberSummary parent;
 	private List<GzMemberSummary> members = new ArrayList<GzMemberSummary>();
+	private boolean enabled;
 	
 	public GzMemberSummary() {
 	}
@@ -25,6 +26,7 @@ public class GzMemberSummary {
 		setRank(bu.getRole().getShortCode());
 		if (bu.getParent()!=null)
 			setParent(new GzMemberSummary(bu.getParent()));
+		setEnabled(bu.isEnabled());
 	}
 
 	public GzMemberSummary(GzBaseUserStub bu) {
@@ -36,6 +38,7 @@ public class GzMemberSummary {
 		parent.setUserName(bu.getParentemail());
 		parent.setRank(GzRole.valueOf(bu.getParentrole()).getShortCode());
 		setParent(parent);
+		setEnabled(bu.isEnabled());
 	}
 
 	public String getWeChatName() {
@@ -77,5 +80,13 @@ public class GzMemberSummary {
 	public void setMembers(List<GzMemberSummary> members) {
 		this.members = members;
 	}
-	
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 }

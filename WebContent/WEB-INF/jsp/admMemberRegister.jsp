@@ -94,8 +94,7 @@ function changeMemberRank()
     </tr>
     </tbody>
     </table>
-    </form:form>
   </div>
-
+</form:form>
 </body>
 </html>

@@ -51,7 +51,6 @@ public class GzAdmMemberController {
 		GzBaseUser currUser = (GzBaseUser) model.get("currUser");
 		GzMemberVerify verify = new GzMemberVerify();
 		String errMsg = verify.verifyPassword(admMemberForm.getPassword(),admMemberForm.getvPassword());
-		admMemberForm = new AdmMemberForm();
 		if (!errMsg.isEmpty())
 		{
 			log.info("error updating password : " + errMsg);

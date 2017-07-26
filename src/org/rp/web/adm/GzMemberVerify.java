@@ -19,7 +19,7 @@ public class GzMemberVerify {
 		msg = verifyPassword(command.getPassword(),command.getvPassword());
 		if (!msg.isEmpty())
 			return msg;
-		msg = verifyWeChat(command.getWeChatName(),superior);
+		msg = verifyWeChat(command.getWeChatName(),superior,home);
 		if (!msg.isEmpty())
 			return msg;
 		return msg;
@@ -37,10 +37,14 @@ public class GzMemberVerify {
 		return "";
 	}
 
-	private String verifyWeChat(String weChatName, GzBaseUser superior) {
+	private String verifyWeChat(String weChatName, GzBaseUser superior, GzHome home) {
+		/*
 		for (GzBaseUser bu : superior.getMembers())
 			if (bu.getContact().equals(weChatName))
 				return "Member with WeChat name : " + weChatName + " - exists for superior : " + superior.getContact();
+				*/
+		if (home.contactExists(weChatName))
+			return "Member with WeChat name : " + weChatName + " - exists on system.";
 		return "";
 	}
 

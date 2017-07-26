@@ -6,11 +6,29 @@
 
 
 <c:forEach items="${members}" var="sms" >
-		<tr><td>${tab}</td><td>${sms.weChatName}</td></tr>
-		<c:if test="${fn:length(sms.members)>0}">
-				<c:set var="sm" value="${sms}" scope="request"/>
-				<c:set var="tab" value="${tab+1}" scope="request"/>
+	<div class="cn">
+		<div class="innerb">
+			<button id="${sms.weChatName}button" class="buttonCollapse" type="button" data-toggle="collapse" data-target="#${sms.weChatName}">
+				</button>
+			</div>
+			<div class="inner">
+				${sms.weChatName}
+			</div>
+	</div>
+		<div style="margin-left:20px" id="${sms.weChatName}" class="collapse">
+			<c:if test="${fn:length(sms.members)>0}">
+					<c:set var="sm" value="${sms}" scope="request"/>
 					<jsp:include page="memberDisplay.jsp"/>
-				<c:set var="tab" value="${tab-1}" scope="request"/>
-		</c:if>
+			</c:if>
+			</div>
+			<script>
+			$('#${sms.weChatName}').on('hidden.bs.collapse', function () {
+				$('#${sms.weChatName}button').removeClass("buttonExpand");
+				$('#${sms.weChatName}button').addClass("buttonCollapse");
+			})
+			$('#${sms.weChatName}').on('shown.bs.collapse', function () {
+				$('#${sms.weChatName}button').removeClass("buttonCollapse");
+				$('#${sms.weChatName}button').addClass("buttonExpand");
+			})
+			</script>
 </c:forEach>

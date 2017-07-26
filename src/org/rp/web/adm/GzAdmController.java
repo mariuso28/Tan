@@ -60,10 +60,10 @@ public class GzAdmController {
 			log.trace("Setting session attribute : sCurrUser : " +  currUser );
 			session.setAttribute("sCurrUser", currUser);	
 			
-			return goAdminHome("","",model);
+			return goAdmHome("","",model);
 		}
 	
-		private Object goAdminHome(String errMsg,String infoMsg,ModelMap model){
+		private Object goAdmHome(String errMsg,String infoMsg,ModelMap model){
 			
 			GzMemberForm admForm = createMemberForm(GzRole.ROLE_SMA,model);
 			admForm.setInfoMsg(infoMsg);
@@ -76,6 +76,49 @@ public class GzAdmController {
 			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
 			
 			return new ModelAndView("admMemberRegister","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value = "/manageMember", method = RequestMethod.GET)
+		public ModelAndView manageMember(ModelMap model)
+		{
+			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			
+			return new ModelAndView("admMemberManage","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value = "/activateMember", method = RequestMethod.GET)
+		public ModelAndView activateMember(ModelMap model)
+		{
+			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			return setActivated(memberForm);
+		}
+		
+		private ModelAndView setActivated(GzMemberForm memberForm) {
+			try
+			{
+				GzBaseUser bu = gzServices.getGzHome().getBaseUserByEmail(memberForm.getInCompleteCommand().getMemberToChangeCode());
+				if (bu == null)
+				{
+					throw new GzPersistenceException("Member does not exist");
+				}
+				memberForm.getInCompleteCommand().setEnabled(bu.isEnabled());
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				memberForm.setErrMsg("Error activating member - contact support.");
+				return new ModelAndView("admMemberRegister","memberForm", memberForm);
+			}
+			return new ModelAndView("admMemberActivate","memberForm", memberForm);
+		}
+
+		@RequestMapping(value = "/processAdm", params="changeMemberActive", method = RequestMethod.POST)
+		public ModelAndView changeMemberActive(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			return setActivated(memberForm);
 		}
 		
 		private GzMemberForm createMemberForm(GzRole newMemberRole,ModelMap model)
@@ -101,6 +144,7 @@ public class GzAdmController {
 			}
 			memberForm.getInCompleteCommand().setMemberRank(newMemberRole.getShortCode().toUpperCase());
 			memberForm.getInCompleteCommand().setMemberToChangeCode(user.getMembers().get(0).getEmail());
+			memberForm.getInCompleteCommand().setEnabled(user.getMembers().get(0).isEnabled());
 			memberForm.getInCompleteCommand().setMemberToChangeUpline(user.getMembers().get(0).getEmail());
 			memberForm.getInCompleteCommand().setSuperiorCode(memberForm.getUpstreamMembers().get(0).getWeChatName());
 			return memberForm;
@@ -134,7 +178,7 @@ public class GzAdmController {
 		}
 		
 		@RequestMapping(value="/processAdm", params="changeMemberRank", method = RequestMethod.POST)
-		public ModelAndView changeMemberRank(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		public ModelAndView changeMemberRank(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
 		{
 			GzMemberCommand command = memberForm.getCommand();
 			
@@ -147,16 +191,59 @@ public class GzAdmController {
 			return new ModelAndView("admMemberRegister","memberForm", memberForm);
 		}
 		
+		@RequestMapping(value="/processAdm", params="activateMember", method = RequestMethod.POST)
+		public ModelAndView activateMember(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("activateMember: " + command);
+			return acivate(true,model,command);
+		}
+		
+		@RequestMapping(value="/processAdm", params="deactivateMember", method = RequestMethod.POST)
+		public ModelAndView deactivateMember(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();
+			
+			log.info("deactivateMember: " + command);
+			return acivate(false,model,command);
+		}
+		
+		private ModelAndView acivate(boolean activate,ModelMap model,GzMemberCommand command)
+		{
+			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInCompleteCommand(command);
+			try
+			{
+				GzBaseUser bu = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeCode());
+				if (bu == null)
+				{
+					throw new GzPersistenceException("Member does not exist");
+				}
+				bu.setEnabled(activate);
+				gzServices.getGzHome().updateBaseUserProfile(bu);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				memberForm.setErrMsg("Error activating/deactivating member - contact support.");
+				return new ModelAndView("admMemberRegister","memberForm", memberForm);
+			}
+			memberForm.getInCompleteCommand().setEnabled(activate);
+			memberForm.setInfoMsg("Member : " + command.getMemberToChangeCode() + " - Successfully " + (activate ? "activated." : " deactivated."));
+			return new ModelAndView("admMemberActivate","memberForm", memberForm);
+		}
+		
 		@RequestMapping(value="/backToAdm", method = RequestMethod.GET)
 		public Object backToAdm(ModelMap model)
 		{
-			return goAdminHome("","",model);
+			return goAdmHome("","",model);
 		}
 		
 		@RequestMapping(value="/processAdm", params="memberCancel", method = RequestMethod.POST)
 		public Object memberCancel(ModelMap model)
 		{
-			return goAdminHome("","",model);
+			return goAdmHome("","",model);
 		}
 		
 		@RequestMapping(value="/processAdm", params="memberRegister", method = RequestMethod.POST)
@@ -208,7 +295,89 @@ public class GzAdmController {
 				return new ModelAndView("admMemberRegister","memberForm", memberForm);
 			}
 			
-			return goAdminHome("","Member : " +  command.getUsername() + " successfully registered",model);
+			return goAdmHome("","Member : " +  command.getUsername() + " successfully registered",model);
+		}
+		
+		@RequestMapping(value="/processAdm", params="memberChangePw", method = RequestMethod.POST)
+		public ModelAndView memberChangePw(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			GzMemberCommand command = memberForm.getCommand();	
+			if (command.getPassword().length()<8)
+			{
+				memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+				memberForm.setErrMsg("Member password must be >= 8 chars");
+				return new ModelAndView("admMemberManage","memberForm", memberForm);
+			}
+			return memberChange(memberForm,model,"Password");
+		}
+		
+		@RequestMapping(value="/processAdm", params="memberChangeUsername", method = RequestMethod.POST)
+		public ModelAndView memberChangeUsername(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			return memberChange(memberForm,model,"User Name");
+		}
+	
+		@RequestMapping(value="/processAdm", params="memberChangeWeChat", method = RequestMethod.POST)
+		public ModelAndView memberChangeWeChat(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			return memberChange(memberForm,model,"WeChat Name");
+		}
+		
+		private ModelAndView memberChange(GzMemberForm memberForm,ModelMap model,String field)
+		{
+			GzMemberCommand command = memberForm.getCommand();	
+			log.info("memberChange: " + command);
+			try
+			{
+				GzBaseUser member = gzServices.getGzHome().getBaseUserByEmail(command.getMemberToChangeCode());
+				if (member == null)
+				{
+					memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+					memberForm.setErrMsg("Member : " + command.getMemberToChangeCode() + " doesn't exist. Please retry.");
+					return new ModelAndView("admMemberManage","memberForm", memberForm);
+				}
+				if (field.equals("Password"))
+				{
+					PasswordEncoder encoder = new BCryptPasswordEncoder();
+					member.setPassword(encoder.encode(command.getPassword()));
+					gzServices.getGzHome().updateBaseUserProfile(member);
+				}
+				if (field.equals("User Name") && !command.getUsername().equals(member.getEmail()))
+				{
+					GzBaseUser exists = gzServices.getGzHome().getBaseUserByEmail(command.getUsername());
+					if (exists!=null)
+					{
+						memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+						memberForm.setErrMsg("Member : " + command.getUsername() + " already exists");
+						return new ModelAndView("admMemberManage","memberForm", memberForm);
+					}	
+					member.setEmail(command.getUsername());
+					gzServices.getGzHome().updateBaseUserProfile(member);
+				}
+				if (field.equals("WeChat Name") && !command.getWeChatName().equals(member.getContact()))
+				{
+					if (gzServices.getGzHome().contactExists(command.getWeChatName()))
+					{
+						memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+						memberForm.setErrMsg("Member with WeChat name : " + command.getWeChatName() + " already exists");
+						return new ModelAndView("admMemberManage","memberForm", memberForm);
+					}	
+					member.setContact(command.getWeChatName());
+					gzServices.getGzHome().updateBaseUserProfile(member);
+				}
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+				memberForm.setInCompleteCommand(command);
+				memberForm.setErrMsg("Error managing member - contact support.");
+				return new ModelAndView("admMemberManage","memberForm", memberForm);
+			}
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			memberForm.setInfoMsg(field + " successfully updated.");
+			return new ModelAndView("admMemberManage","memberForm", memberForm);
 		}
 		
 		@RequestMapping(value = "/placementMember", method = RequestMethod.GET)
@@ -313,8 +482,89 @@ public class GzAdmController {
 			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
 		}
 		
+		@RequestMapping(value="/processAdm", params="searchWeChat", method = RequestMethod.POST)
+		public ModelAndView searchWeChat(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchWeChatP(memberForm,model);
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchWeChat2", method = RequestMethod.POST)
+		public ModelAndView searchWeChat2(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchWeChatP(memberForm,model);
+			return new ModelAndView("admMemberManage","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchWeChat3", method = RequestMethod.POST)
+		public ModelAndView searchWeChat3(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchWeChatP(memberForm,model);
+			return setActivated(memberForm);
+		}
+		
+		private GzMemberForm searchWeChatP(GzMemberForm memberForm,ModelMap model)
+		{
+			log.info("Searching wechat name");
+			
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("contact",command.getSearch());
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
+				memberForm.setChooseMembers(mss);
+			}
+			else
+				memberForm.setErrMsg("No weChat names like this term exist");
+			
+			return memberForm;
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchUserName", method = RequestMethod.POST)
+		public ModelAndView searchUserName(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchUserNameP(memberForm,model);
+			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchUserName2", method = RequestMethod.POST)
+		public ModelAndView searchUserName2(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchUserNameP(memberForm,model);
+			return new ModelAndView("admMemberManage","memberForm", memberForm);
+		}
+		
+		@RequestMapping(value="/processAdm", params="searchUserName3", method = RequestMethod.POST)
+		public ModelAndView searchUserName3(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			memberForm = searchUserNameP(memberForm,model);
+			return setActivated(memberForm);
+		}
+		
+		private GzMemberForm searchUserNameP(GzMemberForm memberForm,ModelMap model)
+		{
+			log.info("Seraching username");
+			GzMemberCommand command = memberForm.getCommand();
+			
+			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			List<GzMemberSummary> mss = searchMembers("email",command.getSearch());
+			memberForm.setInCompleteCommand(command);
+			if (!mss.isEmpty())
+			{
+				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
+				memberForm.setChooseMembers(mss);
+			}
+			else
+				memberForm.setErrMsg("No User names like this term exist");
+			
+			return memberForm;
+		}
+		
 		@RequestMapping(value="/processAdm", params="searchWeChat1", method = RequestMethod.POST)
-		public ModelAndView searchWeChat1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		public ModelAndView searchWeChat1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
 		{
 			GzMemberCommand command = memberForm.getCommand();
 			
@@ -333,60 +583,19 @@ public class GzAdmController {
 			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
 		}
 		
-		
-		@RequestMapping(value="/processAdm", params="searchWeChat", method = RequestMethod.POST)
-		public ModelAndView searchWeChat(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
-		{
-			GzMemberCommand command = memberForm.getCommand();
-			
-			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
-			List<GzMemberSummary> mss = searchMembers("contact",command.getSearch());
-			memberForm.setInCompleteCommand(command);
-			if (!mss.isEmpty())
-			{
-				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
-				memberForm.setChooseMembers(mss);
-			}
-			else
-				memberForm.setErrMsg("No weChat names like this term exist");
-			
-			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
-		}
-		
 		@RequestMapping(value="/processAdm", params="searchUserName1", method = RequestMethod.POST)
-		public ModelAndView searchUserName1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		public ModelAndView searchUserName1(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
 		{
 			GzMemberCommand command = memberForm.getCommand();
 			
 			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
 			List<GzMemberSummary> mss = searchMembers("email",command.getSearch1());
-			memberForm.setFlatMembers(mss);
 			memberForm.setInCompleteCommand(command);
 			if (!mss.isEmpty())
 			{
 				memberForm.getInCompleteCommand().setMemberToChangeUpline(mss.get(0).getUserName());
 				memberForm.setUplineMembers(mss);
 				setPossibleSupers(GzRole.getRoleForShortCode(mss.get(0).getRank()),memberForm,"","");
-			}
-			else
-				memberForm.setErrMsg("No User names like this term exist");
-			
-			return new ModelAndView("admMemberChangeLevel","memberForm", memberForm);
-		}
-		
-		@RequestMapping(value="/processAdm", params="searchUserName", method = RequestMethod.POST)
-		public ModelAndView searchUserName(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
-		{
-			GzMemberCommand command = memberForm.getCommand();
-			
-			memberForm = createMemberForm(GzRole.ROLE_SMA,model);
-			List<GzMemberSummary> mss = searchMembers("email",command.getSearch());
-			memberForm.setFlatMembers(mss);
-			memberForm.setInCompleteCommand(command);
-			if (!mss.isEmpty())
-			{
-				memberForm.getInCompleteCommand().setMemberToChangeCode(mss.get(0).getUserName());
-				memberForm.setChooseMembers(mss);
 			}
 			else
 				memberForm.setErrMsg("No User names like this term exist");
@@ -405,7 +614,7 @@ public class GzAdmController {
 		}
 
 		@RequestMapping(value="/processAdm", params="memberTree", method = RequestMethod.POST)
-		public ModelAndView memberTree(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model,String role)
+		public ModelAndView memberTree(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
 		{
 			GzMemberCommand command = memberForm.getCommand();
 			

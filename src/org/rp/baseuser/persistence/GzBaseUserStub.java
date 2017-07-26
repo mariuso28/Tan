@@ -8,6 +8,7 @@ public class GzBaseUserStub {
 	private String parentemail;
 	private String parentcontact;
 	private String parentrole;
+	private boolean enabled;
 	
 	public GzBaseUserStub()
 	{
@@ -59,6 +60,14 @@ public class GzBaseUserStub {
 
 	public void setParentrole(String parentrole) {
 		this.parentrole = parentrole;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	

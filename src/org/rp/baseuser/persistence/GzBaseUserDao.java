@@ -30,5 +30,6 @@ public interface GzBaseUserDao extends GzAccountDao{
 	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException;
 	public void updateBaseUserParentCode(String code, String parentCode);
 	public List<GzBaseUserStub> search(String term,String type);
+	public boolean contactExists(String contact);
 
 }

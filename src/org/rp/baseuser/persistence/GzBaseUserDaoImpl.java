@@ -48,7 +48,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 					return getUpstreamPossibleParentsByEmail(role,term);
 			}
 			
-			String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+			String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
 					" join role as r on r.role = bu.role" +
 					" where level < (select level from role where role = ?) and level<>1";
@@ -68,7 +68,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	
 	private List<GzBaseUserStub> getUpstreamPossibleParentsByEmail(GzRole role,String term) throws GzPersistenceException
 	{
-		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
 					" join role as r on r.role = bu.role" +
 					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.email) like '%"+ term.toLowerCase() + "%'";
@@ -78,7 +78,7 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	
 	private List<GzBaseUserStub> getUpstreamPossibleParentsByContact(GzRole role,String term) throws GzPersistenceException
 	{
-		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
 					" join role as r on r.role = bu.role" +
 					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.contact) like '%"+ term.toLowerCase() + "%'";
@@ -166,16 +166,17 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		
 		try
 		{
-			getJdbcTemplate().update("UPDATE baseuser SET contact=?,phone=?,nickname=?,icon =?,enabled=?,password=? WHERE id=?"
+			getJdbcTemplate().update("UPDATE baseuser SET email=?,contact=?,phone=?,nickname=?,icon =?,enabled=?,password=? WHERE id=?"
 			        , new PreparedStatementSetter() {
 						public void setValues(PreparedStatement ps) throws SQLException {
-						ps.setString(1, baseUser.getContact());
-						ps.setString(2, baseUser.getPhone());
-						ps.setString(3, baseUser.getNickname());
-						ps.setString(4, baseUser.getIcon());
-						ps.setBoolean(5, baseUser.isEnabled());
-						ps.setString(6, baseUser.getPassword());
-						ps.setObject(7, baseUser.getId());
+						ps.setString(1, baseUser.getEmail());
+						ps.setString(2, baseUser.getContact());
+						ps.setString(3, baseUser.getPhone());
+						ps.setString(4, baseUser.getNickname());
+						ps.setString(5, baseUser.getIcon());
+						ps.setBoolean(6, baseUser.isEnabled());
+						ps.setString(7, baseUser.getPassword());
+						ps.setObject(8, baseUser.getId());
 			      }
 			    });
 		}
@@ -316,6 +317,22 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 		}
 	}
 
+	@Override
+	public boolean contactExists(String contact)
+	{
+		try
+		{
+			final String sql = "SELECT count(*) FROM baseUser WHERE contact=?";
+			int num = getJdbcTemplate().queryForObject(sql,new Object[] { contact }, Integer.class);
+			return num != 0;
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Could not execute : " + e.getMessage());
+			throw new GzPersistenceException("Could not execute : " + e.getMessage());
+		}
+	}
+	
 	/*
 	private GzRole getRole(GzBaseUser user) throws GzPersistenceException {
 		

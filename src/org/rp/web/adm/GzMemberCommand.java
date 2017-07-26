@@ -16,6 +16,7 @@ public class GzMemberCommand implements Serializable {
 	private String search;
 	private String search1;
 	private String search2;
+	private boolean enabled;
 	
 	public GzMemberCommand()
 	{
@@ -109,13 +110,21 @@ public class GzMemberCommand implements Serializable {
 		this.search2 = search2;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	@Override
 	public String toString() {
 		return "GzMemberCommand [username=" + username + ", memberRank=" + memberRank + ", password=" + password
 				+ ", vPassword=" + vPassword + ", weChatName=" + weChatName + ", memberToChangeCode="
 				+ memberToChangeCode + ", memberToChangeUpline=" + memberToChangeUpline + ", superiorCode="
-				+ superiorCode + ", search=" + search + ", search1=" + search1 + ", search2=" + search2 + "]";
+				+ superiorCode + ", search=" + search + ", search1=" + search1 + ", search2=" + search2 + ", enabled="
+				+ enabled + "]";
 	}
 
-	
 }

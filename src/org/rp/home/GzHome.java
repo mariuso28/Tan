@@ -36,6 +36,7 @@ public interface GzHome
 	public List<GzBaseUserStub> getUpstreamPossibleParents(GzRole role,String type,String term) throws GzPersistenceException;
 	public void updateBaseUserParentCode(String code, String code2);
 	public List<GzBaseUserStub> search(String term,String type);
+	public boolean contactExists(String contact);
 
 	
 	// account stuff

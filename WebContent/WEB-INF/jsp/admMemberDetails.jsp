@@ -13,7 +13,7 @@
 
 <body>
   <div class="main">
-    <form:form method="post" action="processAdmMember" modelAttribute="memberEditForm">
+    <form:form method="post" action="processAdmMember" modelAttribute="admMemberForm">
       <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
       <div class="headerPic">
   			<img width="50" height="50"  src='../../img/${currUser.role.shortCode}.png' border='0'>
@@ -64,8 +64,8 @@
         </tbody>
       </table>
       <br/>
-      <tr><td><font color="red">${memberEditForm.errMsg}</font></td></tr>
-      <tr><td><font color="blue">${memberEditForm.infoMsg}</font></td></tr>
+      <tr><td><font color="red">${admMemberForm.errMsg}</font></td></tr>
+      <tr><td><font color="blue">${admMemberForm.infoMsg}</font></td></tr>
       <br/>
     </form:form>
   </div>
