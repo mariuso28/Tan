@@ -15,6 +15,7 @@ public class GzMemberSummary {
 	private GzMemberSummary parent;
 	private List<GzMemberSummary> members = new ArrayList<GzMemberSummary>();
 	private boolean enabled;
+	private double commission;
 	
 	public GzMemberSummary() {
 	}
@@ -27,6 +28,7 @@ public class GzMemberSummary {
 		if (bu.getParent()!=null)
 			setParent(new GzMemberSummary(bu.getParent()));
 		setEnabled(bu.isEnabled());
+		setCommission(bu.getAccount().getCommission());
 	}
 
 	public GzMemberSummary(GzBaseUserStub bu) {
@@ -39,8 +41,29 @@ public class GzMemberSummary {
 		parent.setRank(GzRole.valueOf(bu.getParentrole()).getShortCode());
 		setParent(parent);
 		setEnabled(bu.isEnabled());
+		setCommission(bu.getCommission());
+	}
+	
+	public boolean getHasPeer()
+	{
+		if (parent==null)
+			return false;
+		if (this.equals(parent.members.get(parent.members.size()-1)))
+			return false;
+		return true;
 	}
 
+	public String getRankLongName()
+	{
+		if (rank.equals("Admin"))
+			return "Administrator";
+		if (rank.equals("SMA"))
+			return "Senior Master Agent";
+		if (rank.equals("MA"))
+			return "Master Agent";
+		return rank;
+	}
+	
 	public String getWeChatName() {
 		return weChatName;
 	}
@@ -87,6 +110,14 @@ public class GzMemberSummary {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public double getCommission() {
+		return commission;
+	}
+
+	public void setCommission(double commission) {
+		this.commission = commission;
 	}
 
 }

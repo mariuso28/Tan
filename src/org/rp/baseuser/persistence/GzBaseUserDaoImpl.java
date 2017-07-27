@@ -48,9 +48,9 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 					return getUpstreamPossibleParentsByEmail(role,term);
 			}
 			
-			String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+			String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole,ac.commission as commission" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
-					" join role as r on r.role = bu.role" +
+					" join role as r on r.role = bu.role join account as ac on ac.baseuserid = bu.id " +
 					" where level < (select level from role where role = ?) and level<>1";
 			List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,new PreparedStatementSetter() {
 		        public void setValues(PreparedStatement preparedStatement) throws SQLException {
@@ -68,9 +68,9 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	
 	private List<GzBaseUserStub> getUpstreamPossibleParentsByEmail(GzRole role,String term) throws GzPersistenceException
 	{
-		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole,ac.commission as commission" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
-					" join role as r on r.role = bu.role" +
+					" join role as r on r.role = bu.role join account as ac on ac.baseuserid = bu.id " +
 					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.email) like '%"+ term.toLowerCase() + "%'";
 		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
 		return bus;
@@ -78,9 +78,9 @@ public class GzBaseUserDaoImpl extends GzAccountDaoImpl implements GzBaseUserDao
 	
 	private List<GzBaseUserStub> getUpstreamPossibleParentsByContact(GzRole role,String term) throws GzPersistenceException
 	{
-		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole" + 
+		String sql = "select bu.email as email,bu.contact as contact,bu.role as role,bu.enabled as enabled,pu.email as parentemail,pu.contact as parentcontact,pu.role as parentrole,ac.commission as commission" + 
 					" from baseuser as bu join baseuser as pu on bu.parentcode = pu.code" +
-					" join role as r on r.role = bu.role" +
+					" join role as r on r.role = bu.role join account as ac on ac.baseuserid = bu.id " +
 					" where level < (select level from role where role = '" + role.name() + "') and level<>1 and lower(bu.contact) like '%"+ term.toLowerCase() + "%'";
 		List<GzBaseUserStub> bus = getJdbcTemplate().query(sql,BeanPropertyRowMapper.newInstance(GzBaseUserStub.class));
 		return bus;

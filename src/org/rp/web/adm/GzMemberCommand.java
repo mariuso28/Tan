@@ -17,6 +17,7 @@ public class GzMemberCommand implements Serializable {
 	private String search1;
 	private String search2;
 	private boolean enabled;
+	private String commission;
 	
 	public GzMemberCommand()
 	{
@@ -116,6 +117,14 @@ public class GzMemberCommand implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	
+	public String getCommission() {
+		return commission;
+	}
+
+	public void setCommission(String commission) {
+		this.commission = commission;
 	}
 
 	@Override

@@ -90,6 +90,7 @@ public class GzAccountDaoImpl extends NamedParameterJdbcDaoSupport implements Gz
 					, new PreparedStatementSetter() {
 						public void setValues(PreparedStatement psUpdateAccount) throws SQLException {
 							psUpdateAccount.setDouble(1,account.getCommission());
+							psUpdateAccount.setObject(2,account.getBaseUser().getId());
 						}
 					});
 		}

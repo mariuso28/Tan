@@ -1,5 +1,6 @@
 package org.rp.web.adm;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,6 +87,33 @@ public class GzAdmController {
 			return new ModelAndView("admMemberManage","memberForm", memberForm);
 		}
 		
+		@RequestMapping(value = "/manageMemberFromTree", method = RequestMethod.GET)
+		public ModelAndView manageMemberFromTree(ModelMap model,String name)
+		{
+			GzMemberForm memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+			try
+			{
+				GzBaseUser bu = gzServices.getGzHome().getBaseUserByEmail(name);
+				if (bu == null)
+				{
+					throw new GzPersistenceException("Member does not exist");
+				}
+				memberForm.getInCompleteCommand().setEnabled(bu.isEnabled());
+				memberForm.getInCompleteCommand().setMemberToChangeCode(bu.getEmail());
+				memberForm.getInCompleteCommand().setWeChatName(bu.getContact());
+				DecimalFormat df1 = new DecimalFormat("##0.00");
+				memberForm.getInCompleteCommand().setCommission(df1.format(bu.getAccount().getCommission()));
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				memberForm.setErrMsg("Error managing member - contact support.");
+				return new ModelAndView("admMemberManage","memberForm", memberForm);
+			}
+			
+			return new ModelAndView("admMemberManage","memberForm", memberForm);
+		}
+		
 		@RequestMapping(value = "/activateMember", method = RequestMethod.GET)
 		public ModelAndView activateMember(ModelMap model)
 		{
@@ -142,10 +170,16 @@ public class GzAdmController {
 				for (GzBaseUser bu : gzServices.getGzHome().getUpstreaMembers(newMemberRole))
 					memberForm.getUpstreamMembers().add(new GzMemberSummary(bu));
 			}
+			
+			user = user.getMembers().get(0);
 			memberForm.getInCompleteCommand().setMemberRank(newMemberRole.getShortCode().toUpperCase());
-			memberForm.getInCompleteCommand().setMemberToChangeCode(user.getMembers().get(0).getEmail());
-			memberForm.getInCompleteCommand().setEnabled(user.getMembers().get(0).isEnabled());
-			memberForm.getInCompleteCommand().setMemberToChangeUpline(user.getMembers().get(0).getEmail());
+			memberForm.getInCompleteCommand().setMemberToChangeCode(user.getEmail());
+			memberForm.getInCompleteCommand().setWeChatName(user.getContact());
+			DecimalFormat df1 = new DecimalFormat("##0.00");
+			memberForm.getInCompleteCommand().setCommission(df1.format(user.getAccount().getCommission()));
+			
+			memberForm.getInCompleteCommand().setEnabled(user.isEnabled());
+			memberForm.getInCompleteCommand().setMemberToChangeUpline(user.getEmail());
 			memberForm.getInCompleteCommand().setSuperiorCode(memberForm.getUpstreamMembers().get(0).getWeChatName());
 			return memberForm;
 		}
@@ -323,6 +357,12 @@ public class GzAdmController {
 			return memberChange(memberForm,model,"WeChat Name");
 		}
 		
+		@RequestMapping(value="/processAdm", params="memberChangeCommission", method = RequestMethod.POST)
+		public ModelAndView memberChangeCommission(@ModelAttribute("memberForm") GzMemberForm memberForm,ModelMap model)
+		{
+			return memberChange(memberForm,model,"Commission");
+		}
+		
 		private ModelAndView memberChange(GzMemberForm memberForm,ModelMap model,String field)
 		{
 			GzMemberCommand command = memberForm.getCommand();	
@@ -364,6 +404,26 @@ public class GzAdmController {
 					}	
 					member.setContact(command.getWeChatName());
 					gzServices.getGzHome().updateBaseUserProfile(member);
+				}
+				if (field.equals("Commission"))
+				{
+					double commission = -1;
+					try
+					{
+						commission = Double.parseDouble(command.getCommission());
+					}
+					catch (Exception e)
+					{
+						;
+					}
+					if (commission < 0.0 || commission>100.0)
+					{
+						memberForm = createMemberForm(GzRole.ROLE_SMA,model);
+						memberForm.setErrMsg("Invalid Commission: " + command.getCommission() + " - should be 0.0 -100.0");
+						return new ModelAndView("admMemberManage","memberForm", memberForm);
+					}	
+					member.getAccount().setCommission(commission);
+					gzServices.getGzHome().updateAccount(member.getAccount());
 				}
 			}
 			catch (Exception e)

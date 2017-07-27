@@ -9,6 +9,7 @@ public class GzBaseUserStub {
 	private String parentcontact;
 	private String parentrole;
 	private boolean enabled;
+	private double commission;
 	
 	public GzBaseUserStub()
 	{
@@ -68,6 +69,14 @@ public class GzBaseUserStub {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public double getCommission() {
+		return commission;
+	}
+
+	public void setCommission(double commission) {
+		this.commission = commission;
 	}
 	
 	

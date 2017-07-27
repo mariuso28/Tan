@@ -17,7 +17,7 @@
       <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 
     <h2 style="color:Cyan">Manage Member:</h2>
-    <table border="0" cellpadding="3" cellspacing="0" width="800">
+    <table border="0" cellpadding="3" cellspacing="0" width="1000">
     <tbody align="left" style="color:purple; background-color:white}">
     <tr>
     <td><font color="#33ff36" size="2">Member To Change:</font></td>
@@ -37,7 +37,7 @@
      <td width="20%"><input type="submit" name="searchUserName" value="Search UserName"class="button" style="height:23px; background-color:blue;"/></td>
     </tr>
     <tr>
-    <td><font color="#33ff36" size="2">New Username:</font></td>
+    <td  width="70%"><font color="#33ff36" size="2">New Username  (current : ${memberForm.inCompleteCommand.memberToChangeCode})</font></td>
     </tr>
     <tr>
     <td width="70%"><input type="text" style='width:20em' name="command.username"
@@ -45,18 +45,26 @@
     <td><input type="submit" name="memberChangeUsername" value="Update" class="button" style="height:23px;"/></td>
     </tr>
     <tr>
-      <td><font color="#33ff36" size="2">New WeChat Name:</font></td>
+      <td  width="70%"><font color="#33ff36" size="2">New WeChat Name  (current : ${memberForm.inCompleteCommand.weChatName})</font></td>
     </tr>
     <td width="70%"><input type="text" style='width:20em' name="command.weChatName" value="" /></td>
     <td><input type="submit" name="memberChangeWeChat" value="Update" class="button" style="height:23px;"/></td>
     </tr>
     <tr>
-      <td><font color="#33ff36" size="2">Reset Password:</font></td>
+      <td  width="70%"><font color="#33ff36" size="2">Reset Password:</font></td>
     </tr>
     <tr>
       <td width="70%"><input type="password" style='width:20em' name="command.password"
                 value=""/></td>
       <td><input type="submit" name="memberChangePw" value="Update" class="button" style="height:23px;"/></td>
+    <tr>
+    <tr>
+        <td width="70%"><font color="#33ff36" size="2">Change Commission (Existing :  ${memberForm.inCompleteCommand.commission}%)</font></td>
+    </tr>
+    <tr>
+        <td width="70%"><input type="text" style='width:20em' name="command.commission"
+                  value=""/></td>
+        <td><input type="submit" name="memberChangeCommission" value="Update" class="button" style="height:23px;"/></td>
     <tr>
     </tbody>
     </table>
